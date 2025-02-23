@@ -13,6 +13,15 @@ return {
     config = function() require("lsp_signature").setup() end,
   },
 
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        position = "right",
+      },
+    },
+  },
+
   -- == Examples of Overriding Plugins ==
 
   -- customize alpha options

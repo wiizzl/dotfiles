@@ -14,4 +14,5 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.colorscheme.night-owl-nvim" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
