@@ -43,7 +43,6 @@ packages:
     - cbonsai
     - pipes-rs-bin
     - docker
-    - docker-compose
 
   darwin:
     brews:
