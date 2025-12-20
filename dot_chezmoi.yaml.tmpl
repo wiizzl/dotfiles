@@ -3,15 +3,9 @@
 {{-   $osID = .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{- $name := "pier" -}}
-{{- $email := "pierre@houlliere.com" -}}
-
-{{- $git_name := "Pierre" -}}
-{{- $git_email := "git@houlliere.com" -}}
-
 data:
-  name: {{ $name | quote }}
-  email: {{ $email | quote }}
-  git_name: {{ $git_name | quote }}
-  git_email: {{ $git_email | quote }}
+  name: "pier"
+  email: "pierre@houlliere.com"
+  git_name: "Pierre"
+  git_email: "git@houlliere.com"
   osid: {{ $osID | quote }}
