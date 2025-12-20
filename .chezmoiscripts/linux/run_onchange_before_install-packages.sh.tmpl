@@ -51,17 +51,11 @@
   "docker"
   "docker-compose" -}}
 
-{{ $sudo := "sudo " -}}
-{{ if eq .chezmoi.username "root" -}}
-{{   $sudo = "" -}}
-{{ end -}}
-
 #!/bin/bash
 
 set -eufo pipefail
 
 if ! command -v yay &> /dev/null; then
-  echo "yay not found. Installing..."
   sudo pacman -S --needed git base-devel
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   cd /tmp/yay
@@ -70,5 +64,5 @@ if ! command -v yay &> /dev/null; then
   rm -rf /tmp/yay
 fi
 
-{{ $sudo }}yay
-{{ $sudo }}yay -S --noconfirm {{ $packages | join " " }}
+yay
+yay -S --noconfirm {{ $packages | join " " }}
