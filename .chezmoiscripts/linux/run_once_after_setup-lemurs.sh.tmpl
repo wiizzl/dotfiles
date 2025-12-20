@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo mkdir -p /etc/lemurs/wayland
+
+sudo tee /etc/lemurs/wayland/hyprland <<EOF
+#!/bin/sh
+exec Hyprland
+EOF
+
+sudo chmod 755 /etc/lemurs/wayland/hyprland

@@ -1,4 +1,4 @@
 services:
-  - display-manager # (ly)
+  - lemurs
   - docker
   - tailscaled
