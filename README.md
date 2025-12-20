@@ -4,7 +4,7 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 Used to maintain my devices across different environments:
 
-- Arch Linux
+- Arch Linux (minimal)
 - macOS
 
 ## Required
@@ -13,8 +13,14 @@ Used to maintain my devices across different environments:
 
 ## Installation
 
-1. Init my config
+1. Init my dotfiles
 
 ```sh
 chezmoi init wiizzl
+```
+
+2. Apply them
+
+```sh
+chezmoi apply
 ```
