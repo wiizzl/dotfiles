@@ -9,7 +9,7 @@ packages:
     - fzf
     - jq
     - ripgrep
-    - ly
+    - lemurs
     - hyprland
     - qt5-wayland
     - qt6-wayland
