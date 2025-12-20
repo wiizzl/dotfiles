@@ -1,5 +1,3 @@
-{{ if eq .osid "arch" }}
-
 {{ $packages := list
   "bat"
   "eza"
@@ -62,7 +60,15 @@
 
 set -eufo pipefail
 
+if ! command -v yay &> /dev/null; then
+  echo "yay not found. Installing..."
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay
+  makepkg -si --noconfirm
+  cd -
+  rm -rf /tmp/yay
+fi
+
 {{ $sudo }}yay
 {{ $sudo }}yay -S --no-confirm {{ $packages | join " " }}
-
-{{ end -}}
