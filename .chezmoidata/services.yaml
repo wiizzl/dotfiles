@@ -1,3 +1,8 @@
 services:
-  - docker
-  - tailscaled
+  enable:
+    - ly@tty2
+    - docker
+    - tailscaled
+
+  disable:
+    - getty@tty2
