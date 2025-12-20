@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+for service in {{- range .services }} {{ . }}{{ end }}; do
+  sudo systemctl enable --now "$service"
+done
