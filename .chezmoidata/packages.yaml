@@ -1,0 +1,51 @@
+packages:
+  linux:
+    - bat
+    - eza
+    - lazygit
+    - lazydocker
+    - curl
+    - wget
+    - fzf
+    - jq
+    - ripgrep
+    - ly
+    - hyprland
+    - qt5-wayland
+    - qt6-wayland
+    - xdg-desktop-portal-hyprland
+    - hyprpolkitagent
+    - hyprlock
+    - hyprpicker
+    - waybar
+    - thunar
+    - kitty
+    - vicinae-bin
+    - dbeaver-ce-bin
+    - zen-browser-bin
+    - visual-studio-code-bin
+    - obsidian-bin
+    - localsend-bin
+    - vesktop-bin
+    - spotify-launcher
+    - onlyoffice-bin
+    - tailscale
+    - starship
+    - fastfetch
+    - btop
+    - yazi
+    - cava
+    - bun-bin
+    - uv
+    - tldr
+    - cmatrix
+    - cbonsai
+    - pipes-rs-bin
+    - docker
+    - docker-compose
+
+  darwin:
+    brews:
+      - eza
+    casks:
+      - raycast
