@@ -9,6 +9,8 @@ Used to maintain my devices across different environments:
 
 ## Installation
 
+### Remotely
+
 If you do not have [`chezmoi`](https://www.chezmoi.io/install) installed, here is a one-liner:
 
 ```sh
@@ -23,4 +25,12 @@ Otherwise, simply run:
 
 ```sh
 chezmoi init wiizzl --apply
+```
+
+### Locally
+
+Clone this repository, then run the [install script](./install.sh):
+
+```sh
+./install.sh
 ```
