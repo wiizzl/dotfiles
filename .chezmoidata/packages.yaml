@@ -43,6 +43,7 @@ packages:
     - cbonsai
     - pipes-rs-bin
     - docker
+    - ttf-jetbrains-mono-nerd
 
   darwin:
     brews:
