@@ -71,4 +71,4 @@ if ! command -v yay &> /dev/null; then
 fi
 
 {{ $sudo }}yay
-{{ $sudo }}yay -S --no-confirm {{ $packages | join " " }}
+{{ $sudo }}yay -S --noconfirm {{ $packages | join " " }}
