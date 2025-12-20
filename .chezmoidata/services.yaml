@@ -1,4 +1,3 @@
 services:
-  - lemurs
   - docker
   - tailscaled
