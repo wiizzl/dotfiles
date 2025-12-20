@@ -20,6 +20,7 @@ packages:
     - waybar
     - thunar
     - kitty
+    - matugen-bin
     - vicinae-bin
     - dbeaver-ce-bin
     - zen-browser-bin

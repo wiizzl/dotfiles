@@ -1,0 +1,4 @@
+services:
+  - ly
+  - docker
+  - tailscaled
