@@ -9,10 +9,14 @@ Used to maintain my devices across different environments:
 
 ## Installation
 
-If you do not have `chezmoi` installed, here is a one-liner:
+If you do not have [`chezmoi`](https://www.chezmoi.io/install) installed, here is a one-liner:
 
 ```sh
+# with curl
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply wiizzl
+
+# or, with wget
+sh -c "$(wget -qO- get.chezmoi.io)" -- init --apply wiizzl
 ```
 
 Otherwise, simply run:
