@@ -4,23 +4,19 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 Used to maintain my devices across different environments:
 
-- Arch Linux (minimal)
+- Arch Linux (minimal install)
 - macOS
-
-## Required
-
-- [chezmoi](https://www.chezmoi.io/install)
 
 ## Installation
 
-1. Init and apply the config
+If you do not have `chezmoi` installed, here is a one-liner:
 
 ```sh
-chezmoi init --apply wiizzl
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply wiizzl
 ```
 
-2. Reboot
+Otherwise, simply run:
 
-```
-reboot
+```sh
+chezmoi init wiizzl --apply
 ```
