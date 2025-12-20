@@ -1,0 +1,119 @@
+[
+  {
+    "layer": "top",
+    "width": 40,
+    "position": "left",
+    "spacing": 0,
+
+    "margin-bottom": 8,
+    "margin-left": 8,
+    "margin-right": 0,
+    "margin-top": 8,
+
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-left": [
+      "image#nixos",
+      "clock#hours",
+      "clock#minutes",
+      "custom/sep"
+    ],
+    "modules-right": [
+      "tray",
+      "custom/sep",
+      "bluetooth",
+      "network",
+      "custom/notifications"
+    ],
+
+    "battery": {
+      "format": "{icon}",
+      "format-icons": [
+        "󰁻",
+        "󰁽",
+        "󰁿",
+        "󰂀",
+        "󰁹"
+      ],
+      "format-plugged": "󰂄",
+      "format-time": "{H}:{M}",
+      "states": {
+        "critical": 10,
+        "good": 80,
+        "warning": 30
+      },
+      "tooltip-format": "{capacity}% - {time}"
+    },
+    "bluetooth": {
+      "format": "",
+      "format-connected": "󰂰",
+      "format-disabled": "󰂲",
+      "on-click": "blueman-manager",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "clock#hours": {
+      "format": "{:%H}",
+      "tooltip-format": "{:%d/%m/%Y}"
+    },
+    "clock#minutes": {
+      "format": "{:%M}",
+      "tooltip-format": "{:%d/%m/%Y}"
+    },
+    "custom/notifications": {
+      "exec": "swaync-client -swb",
+      "exec-if": "which swaync-client",
+      "format": "{icon}",
+      "format-icons": {
+        "dnd-inhibited-none": "󰂛",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-none": "󰂛",
+        "dnd-notification": "󰂛",
+        "inhibited-none": "󰂚",
+        "inhibited-notification": "󱅫",
+        "none": "󰂚",
+        "notification": "󱅫"
+      },
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "return-type": "json",
+      "tooltip": false
+    },
+    "custom/sep": {
+      "format": "――",
+      "interval": 0,
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "format": "{name}",
+      "warp-on-scroll": false
+    },
+    "image#nixos": {
+      "path": "/nix/store/id5zp0qrg38rjdjswdh73cmlzz6qqcp1-nixos-icons-0-unstable-2025-06-28/share/icons/hicolor/24x24/apps/nix-snowflake-white.png",
+      "size": 24
+    },
+    "network": {
+      "format": "{ifname}",
+      "format-disconnected": "󰤭",
+      "format-ethernet": "󰈁",
+      "format-icons": [
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ],
+      "format-wifi": "{icon}",
+      "tooltip-format": "{ifname} via {gwaddr}",
+      "tooltip-format-disconnected": "Disconnected",
+      "tooltip-format-ethernet": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+    },
+    "tray": {
+      "reverse-direction": true,
+      "spacing": 10
+    }
+  }
+]

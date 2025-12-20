@@ -3,5 +3,5 @@
 set -eufo pipefail
 
 for service in {{- range .services }} {{ . }}{{ end }}; do
-  sudo systemctl enable --now "$service"
+  sudo systemctl enable "$service"
 done

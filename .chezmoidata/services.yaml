@@ -1,4 +1,4 @@
 services:
-  - ly
+  - display-manager # (ly)
   - docker
   - tailscaled
