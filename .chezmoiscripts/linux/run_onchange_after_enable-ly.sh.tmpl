@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -eufo pipefail
-
-if ! systemctl is-enabled --quiet ly.service; then
-  sudo systemctl enable ly.service
-fi
