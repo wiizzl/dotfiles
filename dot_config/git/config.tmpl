@@ -1,0 +1,26 @@
+[user]
+	email = {{ .git_email | quote }}
+	name = {{ .git_name | quote }}
+
+[init]
+	defaultBranch = "main"
+
+[pull]
+	rebase = true
+
+[url "git@github.com:"]
+	insteadOf = gh:
+	insteadOf = https://github.com/
+
+[url "git@github.com:wiizzl/"]
+	insteadOf = me:
+	insteadOf = https://github.com/wiizzl/
+
+{{- $ghPath := lookPath "gh" }}
+{{- if $ghPath }}
+[credential "https://github.com"]
+	helper = !{{ $ghPath }} auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !{{ $ghPath }} auth git-credential
+{{- end }}
