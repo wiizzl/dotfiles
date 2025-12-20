@@ -1,0 +1,109 @@
+{
+  // Theme Settings
+  "workbench.iconTheme": "flow-dim",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+
+  // Layout and Appearance
+  "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.sideBar.location": "right",
+  "window.commandCenter": false,
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "toggle",
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "breadcrumbs.filePath": "off",
+
+  // Font Settings
+  "editor.fontFamily": "JetBrainsMono NF",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono NF",
+  "terminal.integrated.fontSize": 15,
+  "scm.inputFontFamily": "JetBrainsMono NF",
+  "chat.editor.fontFamily": "JetBrainsMono NF",
+  "debug.console.fontFamily": "JetBrainsMono NF",
+  "editor.codeLensFontFamily": "JetBrainsMono NF",
+  "notebook.output.fontFamily": "JetBrainsMono NF",
+  "markdown.preview.fontFamily": "JetBrainsMono NF",
+  "editor.inlayHints.fontFamily": "JetBrainsMono NF",
+
+  // File Management
+  "files.enableTrash": true,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.husky": true,
+    "**/.expo": true,
+    "**/.astro": true,
+    "**/bun.lockb": true,
+    "**/bun.lock": true,
+    "**/package-lock.json": true,
+    "**/pnpm-lock.yaml": true,
+    "**/next-env.d.ts": true
+  },
+
+  // Editor Behavior
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "editor.cursorBlinking": "expand",
+
+  // Git Settings
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.ignoreRebaseWarning": true,
+  "git.enableSmartCommit": true,
+
+  // Confirmation Settings
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // File Limitations
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 6,
+
+  // Formatter Settings
+  "prettier.printWidth": 120,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  // TypeScript Settings
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Discord RPC
+  "discord.swapBigAndSmallImage": true,
+
+  // Copilot
+  "chat.extensionUnification.enabled": true,
+
+  // Updates
+  "extensions.autoCheckUpdates": false,
+  "update.mode": "none",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "chat.disableAIFeatures": false
+}

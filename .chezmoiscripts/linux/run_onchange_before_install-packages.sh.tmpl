@@ -1,0 +1,68 @@
+{{ if eq .osid "arch" }}
+
+{{ $packages := list
+  "bat"
+  "eza"
+  "lazygit"
+  "lazydocker"
+  "curl"
+  "wget"
+  "fzf"
+  "git"
+  "jj"
+  "jq"
+  "ripgrep"
+  "ly"
+  "hyprland"
+  "qt5-wayland"
+  "qt6-wayland"
+  "xdg-desktop-portal-hyprland"
+  "hyprpolkitagent"
+  "hyprlock"
+  "hyprpicker"
+  "waybar"
+  "thunar"
+  "kitty"
+  "vicinae-bin"
+  "dbeaver-ce-bin"
+  "zen-browser-bin"
+  "mongodb-compass-bin"
+  "redisinsight-bin"
+  "visual-studio-code-bin"
+  "zed"
+  "obsidian-bin"
+  "localsend-bin"
+  "pinta"
+  "vesktop-bin"
+  "spicetify-cli"
+  "spotify-launcher"
+  "onlyoffice-bin"
+  "tailscale"
+  "starship"
+  "awww-git"
+  "fastfetch"
+  "btop"
+  "yazi"
+  "cava"
+  "bun-bin"
+  "uv"
+  "tldr"
+  "cmatrix"
+  "cbonsai"
+  "pipes-rs"
+  "docker"
+  "docker-compose" -}}
+
+{{ $sudo := "sudo " -}}
+{{ if eq .chezmoi.username "root" -}}
+{{   $sudo = "" -}}
+{{ end -}}
+
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $sudo }}yay
+{{ $sudo }}yay -S --no-confirm {{ $packages | join " " }}
+
+{{ end -}}

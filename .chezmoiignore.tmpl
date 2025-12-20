@@ -1,0 +1,13 @@
+README.md
+LICENSE
+
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
+.config/hypr
+.config/kitty
+.config/pipes-rs
+{{ end }}
