@@ -13,14 +13,14 @@ Used to maintain my devices across different environments:
 
 ## Installation
 
-1. Init my dotfiles
+1. Init and apply the config
 
 ```sh
-chezmoi init wiizzl
+chezmoi init --apply wiizzl
 ```
 
-2. Apply them
+2. Reboot
 
-```sh
-chezmoi apply
+```
+reboot
 ```

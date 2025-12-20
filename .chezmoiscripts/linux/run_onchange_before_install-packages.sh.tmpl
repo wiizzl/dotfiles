@@ -25,12 +25,9 @@
   "dbeaver-ce-bin"
   "zen-browser-bin"
   "mongodb-compass-bin"
-  "redisinsight-bin"
   "visual-studio-code-bin"
-  "zed"
   "obsidian-bin"
   "localsend-bin"
-  "pinta"
   "vesktop-bin"
   "spicetify-cli"
   "spotify-launcher"
@@ -64,5 +61,5 @@ if ! command -v yay &> /dev/null; then
   rm -rf /tmp/yay
 fi
 
-yay
-yay -S --noconfirm {{ $packages | join " " }}
+yay -Sy
+yay -S --needed --noconfirm {{ $packages | sortAlpha | uniq | join " " }}
