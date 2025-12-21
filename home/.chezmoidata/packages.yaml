@@ -73,6 +73,7 @@ packages:
     - nwg-look
     - qt5ct
     - qt6ct
+    - kvantum
 
     # Fun
     - cbonsai
