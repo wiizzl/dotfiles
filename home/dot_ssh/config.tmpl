@@ -2,7 +2,7 @@ HashKnownHosts no
 
 Host *
   AddKeysToAgent yes
-  {{- if eq .chezmoi.os "darwin" }}
+  {{- if eq .osid "darwin" }}
   UseKeychain yes
   {{- end }}
 
