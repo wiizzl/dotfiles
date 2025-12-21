@@ -1,5 +1,9 @@
 eval "$(starship init zsh)"
 
+{{- if eq .chezmoi.os "linux"}}
 if [[ "$TERM" == "xterm-kitty" ]]; then
   alias ssh="kitten ssh"
 fi
+
+alias nano=micro
+{{- end }}

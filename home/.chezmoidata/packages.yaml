@@ -53,6 +53,7 @@ packages:
     - yazi
     - tldr
     - btop
+    - micro
 
     # GUI
     - dbeaver-ce-bin
