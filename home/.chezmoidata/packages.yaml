@@ -1,0 +1,75 @@
+packages:
+  linux:
+    # GUI
+    - dbeaver-ce-bin
+    - helium-browser-bin
+    - zen-browser-bin
+    - vesktop-bin
+    - obsidian-bin
+    - localsend-bin
+    - visual-studio-code-bin
+    - onlyoffice-bin
+    - spotify-launcher
+
+    # CLI
+    - docker
+    - bat
+    - eza
+    - lazygit
+    - lazydocker
+    - curl
+    - wget
+    - fzf
+    - jq
+    - ripgrep
+    - yazi
+    - tldr
+    - btop
+
+    # Dev
+    - uv
+    - bun-bin
+
+    # Fun
+    - cbonsai
+    - cmatrix
+    - pipes-rs-bin
+    - fastfetch
+    - cava
+
+    # Shell
+    - starship
+    - zsh
+
+    # System
+    - ly
+    - thunar
+    - kitty
+    - vicinae-bin
+    - nwg-displays
+    - tailscale
+
+    # Hyprland
+    - hyprland
+    - qt5-wayland
+    - qt6-wayland
+    - waybar
+    - hyprlock
+    - hyprpolkitagent
+    - hyprpicker
+    - xdg-desktop-portal-hyprland
+
+    # Theming
+    - nwg-look
+    - qt5ct
+    - qt6ct
+
+    # Fonts
+    - ttf-jetbrains-mono-nerd
+    - noto-fonts
+
+  darwin:
+    brews:
+      - eza
+    casks:
+      - raycast

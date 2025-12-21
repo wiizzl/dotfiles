@@ -9,12 +9,7 @@ Used to maintain my devices across different environments:
 
 ## Installation
 
-> [!IMPORTANT]
-> After installation, reboot your system to ensure all necessary services start.
-
-### Remotely
-
-If you do not have [`chezmoi`](https://www.chezmoi.io/install) installed, here is a one-liner:
+If you do not have [`chezmoi`](https://chezmoi.io/install) installed, here is a one-liner:
 
 ```sh
 # with curl
@@ -30,10 +25,5 @@ Otherwise, simply run:
 chezmoi init wiizzl --apply
 ```
 
-### Locally
-
-Clone this repository, then run the [install script](./install.sh):
-
-```sh
-./install.sh
-```
+> [!IMPORTANT]
+> After installation, reboot your system to ensure all necessary services start.
