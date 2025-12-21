@@ -2,6 +2,6 @@
 
 set -eufo pipefail
 
-for group in {{- range .groups }} {{ . }}{{ end }}; do
-  sudo usermod -aG "$group" $USER
-done
+{{ range .groups -}}
+sudo usermod -aG {{ . }} $USER
+{{ end -}}

@@ -2,10 +2,10 @@
 
 set -eufo pipefail
 
-for service in {{- range .services.enable }} {{ . }}{{ end }}; do
-  sudo systemctl enable "$service"
-done
+{{ range .services.enable -}}
+sudo systemctl enable {{ . }}
+{{ end -}}
 
-for service in {{- range .services.disable }} {{ . }}{{ end }}; do
-  sudo systemctl disable "$service"
-done
+{{ range .services.disable -}}
+sudo systemctl disable {{ . }}
+{{ end -}}
