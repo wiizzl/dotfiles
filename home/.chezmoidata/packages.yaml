@@ -33,8 +33,9 @@ packages:
     - zsh
 
     # Fonts
+    - ttf-montserrat
+    - ttf-meslo-nerd
     - ttf-jetbrains-mono-nerd
-    - otf-apple-sf-pro
     - noto-fonts
 
     # CLI
