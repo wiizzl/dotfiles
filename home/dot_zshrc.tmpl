@@ -1,9 +1,11 @@
-eval "$(starship init zsh)"
-
 {{- if eq .osid "linux-arch"}}
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 if [[ "$TERM" == "xterm-kitty" ]]; then
   alias ssh="kitten ssh"
 fi
 
 alias nano=micro
 {{- end }}
+
+eval "$(starship init zsh)"
