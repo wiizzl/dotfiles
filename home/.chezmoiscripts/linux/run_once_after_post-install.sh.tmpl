@@ -7,3 +7,6 @@ chezmoi execute-template < {{ .chezmoi.sourceDir }}/dot_config/ly/config.ini.tmp
 
 # Set ZSH as default shell
 chsh -s /usr/bin/zsh
+
+# Create user home dirs
+xdg-user-dirs-update
