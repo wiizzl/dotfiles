@@ -1,8 +1,8 @@
-{{ if ne .chezmoi.os "darwin" }}
+{{ if ne .osid "darwin" }}
 .chezmoiscripts/darwin/**
 {{ end }}
 
-{{ if ne .chezmoi.os "linux" }}
+{{ if ne .osid "linux-arch" }}
 .chezmoiscripts/linux/**
 
 .config/hypr
