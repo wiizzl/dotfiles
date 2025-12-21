@@ -1,7 +1,7 @@
 # starship
 eval "$(starship init zsh)"
 
-{{ if .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux"}}
 # variables
 export EDITOR=code --wait
 export BROWSER=zen-browser
