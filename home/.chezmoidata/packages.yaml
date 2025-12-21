@@ -72,6 +72,7 @@ packages:
     - zig
 
     # Theming
+    - bibata-cursor-git
     - nwg-look
     - qt5ct
     - qt6ct
