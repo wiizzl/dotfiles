@@ -2,9 +2,9 @@ HashKnownHosts no
 
 Host *
   AddKeysToAgent yes
-  {{- if eq .osid "darwin" }}
+{{- if eq .osid "darwin" }}
   UseKeychain yes
-  {{- end }}
+{{- end }}
 
 Host github.com
   HostName github.com
