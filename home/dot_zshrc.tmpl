@@ -1,0 +1,13 @@
+# starship
+eval "$(starship init zsh)"
+
+{{ if .chezmoi.os "linux" }}
+# variables
+export EDITOR=code
+export BROWSER=zen-browser
+export FILE_MANAGER=thunar
+export TERMINAL=kitty
+export TERM=$TERMINAL
+
+export QT_QPA_PLATFORMTHEME=qt6ct
+{{ end }}

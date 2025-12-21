@@ -17,6 +17,7 @@ packages:
     - eza
     - lazygit
     - lazydocker
+    - github-cli
     - curl
     - wget
     - fzf
@@ -29,6 +30,8 @@ packages:
     # Dev
     - uv
     - bun-bin
+    - go
+    - zig
 
     # Fun
     - cbonsai
@@ -36,6 +39,7 @@ packages:
     - pipes-rs-bin
     - fastfetch
     - cava
+    - clock-tui
 
     # Shell
     - starship
@@ -48,6 +52,9 @@ packages:
     - vicinae-bin
     - nwg-displays
     - tailscale
+    - impala
+    - bluetui
+    - mpv
 
     # Hyprland
     - hyprland
