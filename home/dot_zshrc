@@ -1,1 +1,5 @@
 eval "$(starship init zsh)"
+
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  alias ssh="kitten ssh"
+fi
