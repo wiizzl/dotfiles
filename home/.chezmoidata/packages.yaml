@@ -1,53 +1,7 @@
 packages:
   linux:
-    # GUI
-    - dbeaver-ce-bin
-    - helium-browser-bin
-    - zen-browser-bin
-    - vesktop-bin
-    - obsidian-bin
-    - localsend-bin
-    - visual-studio-code-bin
-    # - jetbrains-toolbox
-    - onlyoffice-bin
-    - spotify-launcher
-
-    # CLI
-    - docker
-    - bat
-    - eza
-    - lazygit
-    - lazydocker
-    - github-cli
-    - curl
-    - wget
-    - fzf
-    - jq
-    - ripgrep
-    - yazi
-    - tldr
-    - btop
-
-    # Dev
-    - uv
-    - bun-bin
-    - go
-    - zig
-
-    # Fun
-    - cbonsai
-    - cmatrix
-    - pipes-rs-bin
-    - fastfetch
-    - cava
-
-    # Shell
-    - starship
-    - zsh
-
     # System
     - ly
-    - thunar
     - kitty
     - vicinae-bin
     - nwg-displays
@@ -66,14 +20,66 @@ packages:
     - hyprpicker
     - xdg-desktop-portal-hyprland
 
+    # File manager
+    - thunar
+    - gvfs
+    - thunar-archive-plugin
+    - tumbler
+    - ffmpegthumbnailer
+    - thunar-volman
+
+    # Shell
+    - starship
+    - zsh
+
+    # Fonts
+    - ttf-jetbrains-mono-nerd
+    - noto-fonts
+
+    # CLI
+    - docker
+    - bat
+    - eza
+    - lazygit
+    - lazydocker
+    - github-cli
+    - curl
+    - wget
+    - fzf
+    - jq
+    - ripgrep
+    - yazi
+    - tldr
+    - btop
+
+    # GUI
+    - dbeaver-ce-bin
+    - helium-browser-bin
+    - zen-browser-bin
+    - vesktop-bin
+    - obsidian-bin
+    - localsend-bin
+    - visual-studio-code-bin
+    - onlyoffice-bin
+    - spotify-launcher
+
+    # Dev
+    - uv
+    - bun-bin
+    - go
+    - zig
+
     # Theming
     - nwg-look
     - qt5ct
     - qt6ct
 
-    # Fonts
-    - ttf-jetbrains-mono-nerd
-    - noto-fonts
+    # Fun
+    - cbonsai
+    - cmatrix
+    - pipes-rs-bin
+    - fastfetch
+    - cava
 
   darwin:
     brews:
