@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sudo mkdir -p /etc/ly
-chezmoi execute-template < {{ .chezmoi.sourceDir }}/dot_config/ly/config.ini.tmpl | sudo tee /etc/ly/config.ini > /dev/null
