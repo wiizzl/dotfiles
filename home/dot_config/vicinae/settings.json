@@ -1,7 +1,7 @@
 {
   "search_files_in_root": false,
-  "close_on_focus_lost": true,
-  "pop_to_root_on_close": true,
+  "close_on_focus_lost": false,
+  "pop_to_root_on_close": false,
 
   "favicon_service": "twenty",
 

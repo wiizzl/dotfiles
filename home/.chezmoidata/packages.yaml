@@ -8,7 +8,7 @@ packages:
     - obsidian-bin
     - localsend-bin
     - visual-studio-code-bin
-    - jetbrains-toolbox
+    # - jetbrains-toolbox
     - onlyoffice-bin
     - spotify-launcher
 
