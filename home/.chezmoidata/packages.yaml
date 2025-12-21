@@ -40,7 +40,6 @@ packages:
     - pipes-rs-bin
     - fastfetch
     - cava
-    - peaclock
 
     # Shell
     - starship
