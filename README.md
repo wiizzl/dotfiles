@@ -1,9 +1,8 @@
 # dotfiles
 
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-  <p>My dotfiles, managed with <a href="https://github.com/twpayne/chezmoi"><code>chezmoi</code></a></p>
-  <img src="https://raw.githubusercontent.com/twpayne/chezmoi/refs/heads/master/assets/images/mono.png" width="100" />
-</div>
+My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
+
+<img src="https://raw.githubusercontent.com/twpayne/chezmoi/refs/heads/master/assets/images/mono.png" width="150" style="margin-bottom:10px;" />
 
 Used to maintain my devices across different environments:
 
