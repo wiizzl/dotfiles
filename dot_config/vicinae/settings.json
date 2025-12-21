@@ -1,0 +1,29 @@
+{
+  "search_files_in_root": false,
+  "close_on_focus_lost": true,
+  "pop_to_root_on_close": true,
+
+  "favicon_service": "twenty",
+
+  "font": {
+    "normal": {
+      "family": "auto",
+      "size": 10.5
+    }
+  },
+
+  "theme": {
+    "dark": {
+      "name": "catppuccin-mocha",
+      "icon_theme": "auto"
+    },
+    "light": {
+      "name": "catppuccin-latte",
+      "icon_theme": "auto"
+    }
+  },
+
+  "launcheur_window": {
+    "opacity": 0.8
+  }
+}
