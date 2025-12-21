@@ -49,7 +49,7 @@
       "format": "",
       "format-connected": "󰂰",
       "format-disabled": "󰂲",
-      "on-click": "blueman-manager",
+      "on-click": "{{ .terminal }} -e bluetui",
       "tooltip-format": "{controller_alias}\t{controller_address}",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -92,7 +92,7 @@
       "warp-on-scroll": false
     },
     "image#nixos": {
-      "path": "./arch.png",
+      "path": "{{ .chezmoi.homeDir }}/.config/waybar/arch.png",
       "size": 24
     },
     "network": {
@@ -105,6 +105,7 @@
         "󰤥",
         "󰤨"
       ],
+      "on-click": "{{ .terminal }} -e impala",
       "format-wifi": "{icon}",
       "tooltip-format": "{ifname} via {gwaddr}",
       "tooltip-format-disconnected": "Disconnected",
