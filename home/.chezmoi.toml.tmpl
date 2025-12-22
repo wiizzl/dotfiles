@@ -3,8 +3,17 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{- if not (or (eq $osid "linux-arch") (eq $osid "darwin")) -}}
+{{-   fail "Error: These dotfiles are exclusive to Arch Linux and macOS" -}}
+{{- end -}}
+
 [data]
-{{- if eq .chezmoi.os "linux"}}
+  osid = {{ $osid | quote }}
+  git_name = {{ promptStringOnce . "git_name" "What is your git username" | quote }}
+  git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
+
+{{- if eq $osid "linux-arch" }}
+  is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
   terminal = "kitty"
   cursor_name = "Bibata-Modern-Ice"
   cursor_size = "32"
@@ -12,8 +21,3 @@
   font = "Montserrat"
   font_mono = "Meslo LGM Nerd Font"
 {{- end }}
-
-  osid = {{ $osid | quote }}
-  name = {{ promptStringOnce . "name" "What is your name" | quote }}
-  git_name = {{ promptStringOnce . "git_name" "What is your git username" | quote }}
-  git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}

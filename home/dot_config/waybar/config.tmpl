@@ -89,11 +89,12 @@
     "hyprland/workspaces": {
       "disable-scroll": true,
       "format": "{name}",
-      "warp-on-scroll": false
+      "warp-on-scroll": false,
+      "persistent-workspaces": { "*": 8 }
     },
     "image#nixos": {
       "path": "{{ .chezmoi.homeDir }}/.config/waybar/arch.png",
-      "size": 24
+      "size": 22
     },
     "network": {
       "format": "{ifname}",

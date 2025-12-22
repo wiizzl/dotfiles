@@ -8,12 +8,14 @@ colormix_col3 = 0x00cba6f7
 bigclock = en
 clock = %d/%m/%y
 
+{{- if eq .is_laptop false }}
 brightness_down_key = null
 brightness_up_key = null
+{{- end }}
 
 clear_password = true
 default_input = password
 
 edge_margin = 2
 
-box_title = Welcome {{ .name }}
+box_title = Welcome
