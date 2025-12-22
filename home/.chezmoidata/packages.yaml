@@ -14,6 +14,7 @@ packages:
     # - swaync
 
     # Audio
+    - playerctl
     - pipewire
     - pipewire-pulse
     - wireplumber
@@ -65,21 +66,21 @@ packages:
     # - micro
 
     # GUI
-    # - dbeaver-ce-bin
-    # - helium-browser-bin
-    # - zen-browser-bin
-    # - vesktop-bin
-    # - obsidian-bin
-    # - localsend-bin
-    # - visual-studio-code-bin
-    # - onlyoffice-bin
-    # - spotify-launcher
+    - dbeaver-ce-bin
+    - helium-browser-bin
+    - zen-browser-bin
+    - vesktop-bin
+    - obsidian-bin
+    - localsend-bin
+    - visual-studio-code-bin
+    - onlyoffice-bin
+    - spotify-launcher
 
     # Dev
-    # - uv
-    # - bun-bin
-    # - go
-    # - zig
+    - uv
+    - bun-bin
+    - go
+    - zig
 
     # Theming
     - bibata-cursor-git

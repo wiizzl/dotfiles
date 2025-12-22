@@ -3,5 +3,5 @@
 set -eufo pipefail
 
 {{ range .extensions.vscode -}}
-# code --force --install-extension {{ . }}
+code --force --install-extension {{ . }}
 {{ end -}}
