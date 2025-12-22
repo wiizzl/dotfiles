@@ -9,6 +9,15 @@ packages:
     - impala
     - bluetui
     - mpv
+    - ark
+    - brightnessctl
+    - swaync
+
+    # Audio
+    - pipewire
+    - pipewire-pulse
+    - wireplumber
+    - pavucontrol
 
     # Hyprland
     - hyprland
