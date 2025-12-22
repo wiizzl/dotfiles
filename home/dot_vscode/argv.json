@@ -1,4 +1,4 @@
 {
   // See https://code.visualstudio.com/docs/configure/settings-sync#_recommended-configure-the-keyring-to-use-with-vs-code
-  "password-store": "gnome-libsecret"
+  "password-store": "gnome-libsecret",
 }
