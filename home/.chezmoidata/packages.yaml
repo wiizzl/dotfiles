@@ -75,6 +75,7 @@ packages:
     - jdk21-openjdk
 
     # GUI
+    - yaak-bin
     - dbgate-bin
     - helium-browser-bin
     - zen-browser-bin
