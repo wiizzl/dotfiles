@@ -24,11 +24,6 @@ packages:
     - brightnessctl
     - swaync
 
-    # Secrets
-    - gnome-keyring
-    - libsecret
-    - seahorse
-
     # Audio
     - playerctl
     - pipewire
