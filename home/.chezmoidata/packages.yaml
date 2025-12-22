@@ -3,15 +3,15 @@ packages:
     # System
     - ly
     - kitty
-    - vicinae-bin
-    - nwg-displays
-    - tailscale
-    - impala
-    - bluetui
-    - mpv
-    - ark
-    - brightnessctl
-    - swaync
+    # - vicinae-bin
+    # - nwg-displays
+    # - tailscale
+    # - impala
+    # - bluetui
+    # - mpv
+    # - ark
+    # - brightnessctl
+    # - swaync
 
     # Audio
     - pipewire
@@ -30,12 +30,12 @@ packages:
     - xdg-desktop-portal-hyprland
 
     # File manager
-    - thunar
-    - gvfs
-    - thunar-archive-plugin
-    - tumbler
-    - ffmpegthumbnailer
-    - thunar-volman
+    # - thunar
+    # - gvfs
+    # - thunar-archive-plugin
+    # - tumbler
+    # - ffmpegthumbnailer
+    # - thunar-volman
 
     # Shell
     - starship
@@ -48,38 +48,38 @@ packages:
     - noto-fonts
 
     # CLI
-    - docker
-    - bat
-    - eza
-    - lazygit
-    - lazydocker
-    - github-cli
-    - curl
-    - wget
-    - fzf
-    - jq
-    - ripgrep
-    - yazi
-    - tldr
-    - btop
-    - micro
+    # - docker
+    # - bat
+    # - eza
+    # - lazygit
+    # - lazydocker
+    # - github-cli
+    # - curl
+    # - wget
+    # - fzf
+    # - jq
+    # - ripgrep
+    # - yazi
+    # - tldr
+    # - btop
+    # - micro
 
     # GUI
-    - dbeaver-ce-bin
-    - helium-browser-bin
-    - zen-browser-bin
-    - vesktop-bin
-    - obsidian-bin
-    - localsend-bin
-    - visual-studio-code-bin
-    - onlyoffice-bin
-    - spotify-launcher
+    # - dbeaver-ce-bin
+    # - helium-browser-bin
+    # - zen-browser-bin
+    # - vesktop-bin
+    # - obsidian-bin
+    # - localsend-bin
+    # - visual-studio-code-bin
+    # - onlyoffice-bin
+    # - spotify-launcher
 
     # Dev
-    - uv
-    - bun-bin
-    - go
-    - zig
+    # - uv
+    # - bun-bin
+    # - go
+    # - zig
 
     # Theming
     - bibata-cursor-git
