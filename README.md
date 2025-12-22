@@ -9,12 +9,6 @@ Used to maintain my devices across different environments:
 - Arch Linux (minimal install)
 - macOS
 
-## TODO
-
-- swaync
-- screenshots
-- gtk theme
-
 ## Installation
 
 If you do not have [`chezmoi`](https://chezmoi.io/install) installed, here is a one-liner:
