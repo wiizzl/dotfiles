@@ -3,7 +3,7 @@ services:
     - ly@tty2
     # - docker
     # - tailscaled
-    - sshd
+    # - sshd
 
   disable:
     - getty@tty2
