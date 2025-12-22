@@ -1,8 +1,8 @@
 services:
   enable:
     - ly@tty2
-    - docker
-    - tailscaled
+    # - docker
+    # - tailscaled
     - sshd
 
   disable:
