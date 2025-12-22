@@ -12,6 +12,7 @@ packages:
     - ark
     - brightnessctl
     - swaync
+    - flameshot
 
     # Audio
     - playerctl
@@ -67,14 +68,13 @@ packages:
 
     # GUI
     # - dbeaver-ce-bin
-    # - helium-browser-bin
-    # - zen-browser-bin
-    # - vesktop-bin
-    # - obsidian-bin
-    # - localsend-bin
-    # - visual-studio-code-bin
-    # - onlyoffice-bin
-    # - spotify-launcher
+    - helium-browser-bin
+    - zen-browser-bin
+    - vesktop-bin
+    - localsend-bin
+    - visual-studio-code-bin
+    - onlyoffice-bin
+    - spotify-launcher
 
     # Dev
     - uv
