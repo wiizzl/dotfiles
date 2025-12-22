@@ -24,6 +24,11 @@ packages:
     - brightnessctl
     - swaync
 
+    # Secrets
+    - gnome-keyring
+    - libsecret
+    - seahorse
+
     # Audio
     - playerctl
     - pipewire
@@ -72,6 +77,7 @@ packages:
     - bun-bin
     - go
     - zig
+    - jdk21-openjdk
 
     # GUI
     - dbgate-bin
