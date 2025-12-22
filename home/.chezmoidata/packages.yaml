@@ -65,6 +65,7 @@ packages:
     - tldr
     - btop
     - micro
+    - less
 
     # Dev
     - uv
