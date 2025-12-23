@@ -1,13 +1,12 @@
 {
   "search_files_in_root": false,
-  "close_on_focus_lost": false,
   "pop_to_root_on_close": false,
 
   "favicon_service": "twenty",
 
   "font": {
     "normal": {
-      "family": {{ .font_mono }},
+      "family": "{{ .font_mono }}",
       "size": 12
     }
   },
@@ -24,8 +23,26 @@
   },
 
   "launcheur_window": {
-    "opacity": 0.8
+    "opacity": 0.7
   },
 
-  "favorites": []
+  "favorites": [],
+
+  "providers": {
+    "core": {
+      "about": { "enabled": false },
+      "documentation": { "enabled": false },
+      "keybind-settings": { "enabled": false },
+      "manage-fallbacks": { "enabled": false },
+      "open-config-file": { "enabled": false },
+      "open-default-config": { "enabled": false },
+      "report-bug": { "enabled": false },
+      "sponsor": { "enabled": false },
+    };
+    "developer": { "enabled": false },
+    "manage-shortcuts": { "enabled": false },
+    "power": { "enabled": false },
+    "system": { "enabled": false },
+    "theme": { "enabled": false }
+  }
 }

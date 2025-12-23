@@ -5,7 +5,6 @@ packages:
     - qt5-wayland
     - qt6-wayland
     - waybar
-    - wlogout
     - hyprlock
     - hyprpolkitagent
     - hyprpicker

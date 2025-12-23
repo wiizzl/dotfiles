@@ -11,22 +11,22 @@ bind = $mainMod Shift, T, exec, $taskManager
 bind = $mainMod Shift, M, exec, $music
 bind = $mainMod Shift, B, exec, $browser
 bind = $mainMod Shift, D, exec, $docker
-bind = $mainMod Shift, Alt B, exec, $browser --private-window
-bind = $mainMod Shift, A, exec, $browser --new-window "$ai"
+bind = $mainMod Shift Alt, B, exec, $private
+bind = $mainMod Shift, A, exec, $ai
 
 bind = $mainMod, Escape, exec, wlogout
 
 bind = $mainMod, Space, exec, vicinae toggle
 bind = $mainMod Ctrl, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history
-bind = $mainMod Ctrl, E, exec, vicinae vicinae://extensions/vicinae/vicinae/search-emojis
+bind = $mainMod Ctrl, E, exec, vicinae vicinae://extensions/vicinae/core/search-emojis
 bind = $mainMod Ctrl, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid
 
 bind = $mainMod, T, togglefloating
 bind = $mainMod, F, fullscreen
 bind = $mainMod, W, togglesplit
 
-bind = $mainMod, Q, killactive
-bind = $mainMod Alt, K, exec, hyprctl kill
+bind = $mainMod Shift, Q, killactive
+bind = $mainMod Shift, K, exec, hyprctl kill
 
 bind = $mainMod, G, togglegroup
 bind = $mainMod Alt, G, moveoutofgroup
@@ -80,9 +80,9 @@ bind = $mainMod Alt, code:19, movetoworkspace, 10
 bind = $mainMod, mouse_down, workspace, e-1
 bind = $mainMod, mouse_up, workspace, e+1
 
-bind = $mainMod, S, togglespecialworkspace
-bind = $mainMod Alt, S, movetoworkspace, e+0
-bind = $mainMod Shift, S, movetoworkspacesilent, special
+bind = $mainMod, X, togglespecialworkspace
+bind = $mainMod Alt, X, movetoworkspace, e+0
+bind = $mainMod Shift, X, movetoworkspacesilent, special
 
 bind = $mainMod Shift, P, exec, hyprpicker -aln
 bind = $mainMod Shift, S, exec, hyprshot --mode region --freeze --output-folder ~/Pictures/Screenshots/
