@@ -24,6 +24,7 @@ packages:
     - ark
     - brightnessctl
     - swaync
+    - swww
 
     # Audio
     - playerctl
