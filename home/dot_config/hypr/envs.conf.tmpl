@@ -1,6 +1,10 @@
+$terminal = {{ .terminal }}
 $browser = zen-browser
 $fileManager = thunar
-$terminal = {{ .terminal }}
+$taskManager = $terminal -e btop
+$docker = $terminal -e lazydocker
+$music = spotify-launcheur
+$ai = https://gemini.google.com
 
 env = TERMINAL,$terminal
 env = EDITOR,code --wait
