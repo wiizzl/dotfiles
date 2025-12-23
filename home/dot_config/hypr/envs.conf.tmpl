@@ -1,10 +1,13 @@
 $terminal = {{ .terminal }}
+
 $browser = zen-browser
+$ai = zen-browser --new-window "https://gemini.google.com"
+$private = zen-browser --private-window
+
 $fileManager = thunar
 $taskManager = $terminal -e btop
 $docker = $terminal -e lazydocker
-$music = spotify-launcheur
-$ai = https://gemini.google.com
+$music = spotify-launcher
 
 env = TERMINAL,$terminal
 env = EDITOR,code --wait

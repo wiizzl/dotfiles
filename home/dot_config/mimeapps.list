@@ -1,3 +1,6 @@
 [Default Applications]
 x-scheme-handler/discord=vesktop.discord
 x-scheme-handler/terminal=kitty.desktop
+
+[Added Associations]
+application/pdf=zen-beta.desktop;

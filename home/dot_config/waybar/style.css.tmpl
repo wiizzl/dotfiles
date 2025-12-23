@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrainsMono Nerd Font Propo";
+  font-family: "{{ .font_mono }}";
   font-size: 16px;
 }
 
@@ -8,13 +8,11 @@ window#waybar {
   color: #cdd6f4;
   border: 2px solid #45475a;
   background: #181825;
-  opacity: 0.85;
 }
 
 tooltip {
   background: #181825;
   border: 1.5px solid #45475a;
-  opacity: 0.85;
 }
 
 tooltip label {
@@ -23,9 +21,8 @@ tooltip label {
 
 #workspaces button {
   padding: 0;
-  background: transparent;
+  background: none;
   transition: all 0.3s ease;
-  font-size: 14px;
 }
 
 #workspaces button:hover {
