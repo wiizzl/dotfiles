@@ -14,6 +14,7 @@ packages:
     # System
     - ly
     - kitty
+    - openssh
     - vicinae-bin
     - nwg-displays
     - tailscale
@@ -69,8 +70,13 @@ packages:
 
     # Dev
     - uv
+    - nodejs
+    - npm
+    - pnpm-bin
     - bun-bin
     - go
+    - lua
+    - rustup
     - zig
     - jdk21-openjdk
 
