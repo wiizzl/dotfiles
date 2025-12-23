@@ -46,9 +46,8 @@ packages:
 
     # Fonts
     - ttf-montserrat
-    - ttf-meslo-nerd
     - ttf-jetbrains-mono-nerd
-    - noto-fonts
+    - noto-fonts-emoji
 
     # CLI
     - docker
