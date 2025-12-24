@@ -29,3 +29,9 @@ chezmoi init wiizzl --apply
 
 > [!IMPORTANT]
 > After installation, reboot your system to ensure all necessary services start.
+
+## Arch specific steps
+
+### Secure boot
+
+Please see [this guide](https://gist.github.com/wiizzl/75297c2fd5d6f451021198fda341fbbd) that I wrote.
