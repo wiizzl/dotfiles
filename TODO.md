@@ -1,3 +1,11 @@
 - [ ] [Default apps](./home/dot_config/mimeapps.list)
 - [ ] GTK theme
 - [ ] Hyprland windows/layers/workspaces rules
+- [ ] Zen browser theme/extensions/settings
+- [ ] Spotify (spicetify) theme/extensions
+- [ ] Vesktop theme/extensions
+- [ ] SwayNC theme/settings
+- [ ] Wallpaper with swww
+- [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
+- [ ] [oh-my-zsh](https://ohmyz.sh)
+- [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)

@@ -84,6 +84,7 @@ packages:
     - tldr
     - man-db
     - less
+    - zoxide
 
     # Dev
     - base-devel
@@ -99,6 +100,7 @@ packages:
     - jdk21-openjdk
 
     # GUI
+    - github-desktop-bin
     - yaak-bin
     - dbgate-bin
     - zen-browser-bin
@@ -126,5 +128,8 @@ packages:
   darwin:
     brews:
       - eza
+      - fzf
+      - zoxide
+      - starship
     casks:
       - raycast
