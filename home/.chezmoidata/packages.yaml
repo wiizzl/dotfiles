@@ -11,12 +11,14 @@ packages:
     - hyprpicker
     - hypridle
     - hyprshot
-    - xdg-desktop-portal-hyprland
     - wlogout
+    - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal-gtk
 
     # System
     - ly
     - xdg-user-dirs
+    - xdg-terminal-execs
     - kitty
     - unzip
     - zip
