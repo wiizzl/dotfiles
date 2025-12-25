@@ -3,7 +3,7 @@
 - [ ] Hyprland windows/layers/workspaces rules
 - [ ] Zen browser theme/extensions/settings
 - [ ] Spotify (spicetify) theme/extensions
-- [ ] Vesktop theme/extensions
+- [ ] Vesktop extensions
 - [ ] Wallpaper with swww
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
 - [ ] [oh-my-zsh](https://ohmyz.sh)
