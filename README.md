@@ -2,7 +2,9 @@
 
 My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
-<a href="https://chezmoi.io"><img src="https://raw.githubusercontent.com/twpayne/chezmoi/refs/heads/master/assets/images/mono.png" width="150" style="margin-bottom:10px;" /></a>
+<a href="https://chezmoi.io" style="margin-bottom:10px;">
+  <img src="https://raw.githubusercontent.com/twpayne/chezmoi/refs/heads/master/assets/images/mono.png" width="150" />
+</a>
 
 Used to maintain my devices across different environments:
 

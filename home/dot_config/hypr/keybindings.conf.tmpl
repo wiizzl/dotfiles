@@ -2,9 +2,6 @@ $mainMod = SUPER
 
 misc:middle_click_paste = false
 
-bindm = $mainMod, mouse:272, movewindow
-bindm = $mainMod, mouse:273, resizewindow
-
 bind = $mainMod, Return, exec, $terminal
 bind = $mainMod Shift, F, exec, $fileManager
 bind = $mainMod Shift, T, exec, $taskManager
@@ -19,7 +16,7 @@ bind = $mainMod, Escape, exec, wlogout --buttons-per-row 2
 bind = $mainMod, Space, exec, vicinae toggle
 bind = $mainMod Ctrl, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history
 bind = $mainMod Ctrl, E, exec, vicinae vicinae://extensions/vicinae/core/search-emojis
-bind = $mainMod Ctrl, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid
+# bind = $mainMod Ctrl, W, exec, vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid
 
 bind = $mainMod, T, togglefloating
 bind = $mainMod, F, fullscreen
@@ -33,15 +30,23 @@ bind = $mainMod Alt, Tab, changegroupactive, f
 
 bind = $mainMod, Tab, cyclenext
 
-bind = $mainMod, H, movefocus, l
-bind = $mainMod, L, movefocus, r
-bind = $mainMod, K, movefocus, u
-bind = $mainMod, J, movefocus, d
+bind = $mainMod, right, movefocus, r
+bind = $mainMod, left, movefocus, l
+bind = $mainMod, up, movefocus, u
+bind = $mainMod, down, movefocus, d
 
-bind = $mainMod Shift, H, movewindow, l
-bind = $mainMod Shift, L, movewindow, r
-bind = $mainMod Shift, K, movewindow, u
-bind = $mainMod Shift, J, movewindow, d
+bind = $mainMod Shift, right, movewindow, r
+bind = $mainMod Shift, left, movewindow, l
+bind = $mainMod Shift, up, movewindow, u
+bind = $mainMod Shift, down, movewindow, d
+
+binde = $mainMod Ctrl, right, resizeactive, 20 0
+binde = $mainMod Ctrl, left, resizeactive, -20 0
+binde = $mainMod Ctrl, up, resizeactive, 0 -20
+binde = $mainMod Ctrl, down, resizeactive, 0 20
+
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
 
 bind = $mainMod, code:10, workspace, 1
 bind = $mainMod, code:11, workspace, 2
@@ -86,8 +91,8 @@ bind = $mainMod Shift, X, movetoworkspacesilent, special
 bind = $mainMod Shift, P, exec, hyprpicker -aln
 bind = $mainMod Shift, S, exec, hyprshot --mode region --freeze --output-folder ~/Pictures/Screenshots/
 
-bindl = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
-bindl = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindel = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindel = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindl = , XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 {{- if eq .is_laptop true }}
