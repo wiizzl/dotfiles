@@ -27,7 +27,7 @@ button:hover {
   outline-style: none;
 }
 
-{{- $home := .chezmoi.homeDir -}}
+{{ $home := .chezmoi.homeDir -}}
 
 #lock {
   background-image: url("{{ $home }}/.config/wlogout/icons/lock.svg");
@@ -35,14 +35,6 @@ button:hover {
 
 #logout {
   background-image: url("{{ $home }}/.config/wlogout/icons/logout.svg");
-}
-
-#suspend {
-  background-image: url("{{ $home }}/.config/wlogout/icons/suspend.svg");
-}
-
-#hibernate {
-  background-image: url("{{ $home }}/.config/wlogout/icons/hibernate.svg");
 }
 
 #shutdown {
