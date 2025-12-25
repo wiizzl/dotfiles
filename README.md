@@ -9,6 +9,10 @@ Used to maintain my devices across different environments:
 - Arch Linux (minimal install)
 - macOS
 
+## TODO
+
+See [TODO.md](./TODO.md)
+
 ## Installation
 
 If you do not have [`chezmoi`](https://chezmoi.io/install) installed, here is a one-liner:
@@ -53,4 +57,4 @@ Below is a table of suggested settings for a minimal Arch Linux installation, ta
 
 First, your secure boot needs to be turned off. Make sure to also remove any existing secure boot keys/variables.
 
-Then, reboot and see [this guide](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl).
+Then, reboot and follow [this guide](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl).
