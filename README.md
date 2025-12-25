@@ -40,18 +40,18 @@ chezmoi init wiizzl --apply
 
 Below is a table of suggested settings for a minimal Arch Linux installation, tailored for use with these dotfiles. Adjust options as needed for your hardware and preferences.
 
-| Setting                    | Value/Example        | Description                                                             |
-| -------------------------- | -------------------- | ----------------------------------------------------------------------- |
-| Swap                       | `enabled`            | Enables swap space for better memory management, especially on low RAM  |
-| Profile                    | `minimal`            | Minimal install; dotfiles include Hyprland and essential tools          |
-| Bootloader                 | `systemd-boot`       | Recommended for easier dual-boot setups                                 |
-| Unified Kernel Image (UKI) | `enabled`            | Simplifies kernel updates and secure boot (see guide below)             |
-| Authentication             | _as you wish_        | Create a user with sudo privileges for administrative tasks             |
-| Additional packages        | `chezmoi`            | Required for managing dotfiles                                          |
-| Bluetooth                  | _as you wish_        | Enable if your hardware supports Bluetooth                              |
-| Audio                      | `pipewire` or `none` | Pipewire is recommended; dotfiles will install necessary audio packages |
-| Network                    | `Copy ISO config`    | Use the network configuration from the installation ISO                 |
-| Other options              | _as you wish_        | Customize other system settings to your needs                           |
+| Setting                    | Value/Example        | Description                                                                 |
+| -------------------------- | -------------------- | --------------------------------------------------------------------------- |
+| Swap                       | `enabled`            | Enables swap space for better memory management, especially on low RAM      |
+| Profile                    | `minimal`            | Minimal install; dotfiles already include Hyprland and essential tools      |
+| Bootloader                 | `systemd-boot`       | Recommended for easier dual-boot setups                                     |
+| Unified Kernel Image (UKI) | `enabled`            | Simplifies kernel updates and secure boot (see guide below)                 |
+| Authentication             | _as you wish_        | Create a user with sudo privileges                                          |
+| Additional packages        | `chezmoi`            | Required for managing dotfiles                                              |
+| Bluetooth                  | _as you wish_        | Enable if your hardware supports Bluetooth                                  |
+| Audio                      | `pipewire` or `none` | Pipewire is recommended; but dotfiles will install necessary audio packages |
+| Network                    | `Copy ISO config`    | Use the network configuration from the installation ISO                     |
+| Other options              | _as you wish_        | Customize other system settings to your needs                               |
 
 ### Secure boot
 

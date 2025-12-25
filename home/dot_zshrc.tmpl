@@ -19,6 +19,8 @@ autoload -Uz compinit
 compinit
 
 alias cat=bat
+export MANPAGER="bat -plman"
+
 alias ls="eza -l --icons --group-directories-first --git"
 alias l="eza --icons -a --group-directories-first -1"
 alias ll="eza --icons -a --group-directories-first -1 --no-user --long"
