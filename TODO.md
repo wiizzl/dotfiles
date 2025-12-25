@@ -1,3 +1,3 @@
 - [ ] [Default apps](./home/dot_config/mimeapps.list)
 - [ ] GTK theme
-- [ ] Hyprland Windows and layers rules
+- [ ] Hyprland windows/layers/workspaces rules
