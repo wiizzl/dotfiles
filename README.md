@@ -51,4 +51,6 @@ Below is a table of suggested settings for a minimal Arch Linux installation, ta
 
 ### Secure boot
 
-Please see [this guide](https://gist.github.com/wiizzl/75297c2fd5d6f451021198fda341fbbd) that I wrote.
+First, your secure boot needs to be turned off. Make sure to also remove any existing secure boot keys/variables.
+
+Then, reboot and see [this guide](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl).
