@@ -26,6 +26,7 @@ packages:
     - nwg-displays
     - tailscale
     - mpv
+    - lximage-qt
     - brightnessctl
     - swaync
     - swww
