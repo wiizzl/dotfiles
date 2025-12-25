@@ -9,6 +9,7 @@ packages:
     - wl-clipboard
     - hyprpolkitagent
     - hyprpicker
+    - hypridle
     - hyprshot
     - xdg-desktop-portal-hyprland
     - wlogout
