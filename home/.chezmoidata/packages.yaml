@@ -6,22 +6,26 @@ packages:
     - qt6-wayland
     - waybar
     - hyprlock
+    - wl-clipboard
     - hyprpolkitagent
     - hyprpicker
     - hyprshot
     - xdg-desktop-portal-hyprland
+    - wlogout
 
     # System
     - ly
+    - xdg-user-dirs
     - kitty
+    - unzip
+    - zip
+    - unrar
+    - ark
     - openssh
     - vicinae-bin
     - nwg-displays
     - tailscale
-    - impala
-    - bluetui
     - mpv
-    - ark
     - brightnessctl
     - swaync
     - swww
@@ -41,6 +45,12 @@ packages:
     - ffmpegthumbnailer
     - thunar-volman
 
+    # Virtual machines
+    - libvirt
+    - virt-manager
+    - qemu-desktop
+    - dnsmasq
+
     # Shell
     - starship
     - zsh
@@ -50,25 +60,32 @@ packages:
     - ttf-jetbrains-mono-nerd
     - noto-fonts-emoji
 
+    # TUI
+    - lazygit
+    - lazydocker
+    - yazi
+    - btop
+    - micro
+    - impala
+    - bluetui
+
     # CLI
+    - git
     - docker
     - bat
     - eza
-    - lazygit
-    - lazydocker
     - github-cli
     - curl
     - wget
     - fzf
     - jq
     - ripgrep
-    - yazi
     - tldr
-    - btop
-    - micro
+    - man-db
     - less
 
     # Dev
+    - base-devel
     - uv
     - nodejs
     - npm

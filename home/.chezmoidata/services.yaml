@@ -4,6 +4,7 @@ services:
     - docker
     - tailscaled
     - sshd
+    - libvirtd
 
   disable:
     - getty@tty2
