@@ -18,7 +18,7 @@ packages:
     # System
     - ly
     - xdg-user-dirs
-    - xdg-terminal-execs
+    - xdg-terminal-exec
     - kitty
     - unzip
     - zip

@@ -1,15 +1,25 @@
-tab_bar_edge bottom
-tab_bar_style powerline
-tab_powerline_style slanted
-tab_title_template {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
-
 font_family {{ .font_mono }}
-bold_font auto
-italic_font auto
-bold_italic_font auto
+font_size 12
+
+disable_ligatures no
 enable_audio_bell no
-font_size 10.0
-window_padding_width 18
+
+shell zsh
+shell_integration disabled
+
 cursor_trail 1
+url_style curly
+sync_to_monitor no
+
+remember_window_size no
+initial_window_width 640
+initial_window_height 480
+window_padding_width 20
+
+scrollbar_handle_opacity 0
+scrollbar_track_opacity 0
+scrollbar_track_hover_opacity 0
+
+confirm_os_window_close 0
 
 include theme.conf

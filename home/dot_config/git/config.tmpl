@@ -10,13 +10,12 @@
 
 [url "git@github.com:"]
 	insteadOf = gh:
-	insteadOf = https://github.com/
 
 [url "git@github.com:wiizzl/"]
 	insteadOf = me:
 
 {{- $ghPath := lookPath "gh" }}
-{{- if $ghPath }}
+{{ if $ghPath }}
 [credential "https://github.com"]
 	helper = !{{ $ghPath }} auth git-credential
 
