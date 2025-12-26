@@ -60,3 +60,7 @@ Below is a table of suggested settings for a minimal Arch Linux installation, ta
 First, your secure boot needs to be turned off. Make sure to also remove any existing secure boot keys/variables.
 
 Then, reboot and follow [this guide](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Assisted_process_with_sbctl).
+
+### Wallpapers
+
+Simply places your wallpapers in `Pictures/Wallpapers` folder. You can choose a wallpaper with `SUPER+CTRL+W`.
