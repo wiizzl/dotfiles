@@ -5,7 +5,6 @@ autoload -U compinit && compinit
 autoload -U colors && colors
 
 zstyle ':completion:*' menu select # tab opens cmp menu
-zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
 zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
 
 setopt append_history inc_append_history share_history # better history

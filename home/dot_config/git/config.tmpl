@@ -14,11 +14,16 @@
 [url "git@github.com:wiizzl/"]
 	insteadOf = me:
 
-{{- $ghPath := lookPath "gh" }}
-{{ if $ghPath }}
+{{- $ghPath := lookPath "gh" -}}
+
 [credential "https://github.com"]
 	helper = !{{ $ghPath }} auth git-credential
 
 [credential "https://gist.github.com"]
 	helper = !{{ $ghPath }} auth git-credential
-{{- end }}
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

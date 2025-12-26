@@ -1,5 +1,4 @@
 - [ ] GTK theme
-- [ ] Wallpaper with swww
 - [ ] Waybar audio module
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
 - [ ] Zen browser theme/extensions/settings
