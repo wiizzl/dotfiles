@@ -7,6 +7,5 @@
 - [ ] Wallpaper with swww
 - [ ] Waybar audio module
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
-- [ ] [oh-my-zsh](https://ohmyz.sh) Also see [this](https://www.chezmoi.io/user-guide/include-files-from-elsewhere)
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 - [ ] Use chezmoi's external module to include catppuccin theme. See [this](https://www.chezmoi.io/user-guide/include-files-from-elsewhere)

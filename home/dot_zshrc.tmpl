@@ -1,54 +1,46 @@
-export ZSH="$HOME/.oh-my-zsh"
+[ -f "$XDG_CONFIG_HOME/shell/alias" ] && source "$XDG_CONFIG_HOME/shell/alias"
 
-ZSH_THEME=""
+zmodload zsh/complist
+autoload -U compinit && compinit
+autoload -U colors && colors
 
-zstyle ':omz:update' mode reminder
+zstyle ':completion:*' menu select # tab opens cmp menu
+zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
+zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
 
-plugins=(
-  sudo
-  web-search
-  copypath
-  copyfile
-  copybuffer
-  dirhistory
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-{{ if eq .osid "linux-arch" -}}
-  archlinux
-{{- end }}
-{{ if eq .osid "darwin" -}}
-  macos
-{{- end }}
-)
+setopt append_history inc_append_history share_history # better history
+setopt auto_menu menu_complete # autocmp first menu match
+setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
+setopt no_case_glob no_case_match # make cmp case insensitive
+setopt globdots # include dotfiles
+setopt extended_glob # match ~ # ^
+setopt interactive_comments # allow comments in shell
+unsetopt prompt_sp # don't autoclean blanklines
 
-source $ZSH/oh-my-zsh.sh
-
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-bindkey -e
-
-{{ if eq .osid "linux-arch" -}}
-if [[ "$TERM" == "xterm-kitty" ]]; then
-  alias ssh="kitten ssh"
-fi
-
-export "MICRO_TRUECOLOR=1"
-
-alias nano=micro
-{{- end }}
-
-alias cat=bat
-export MANPAGER="bat -plman"
-
-alias ls="eza -l --icons --group-directories-first --git"
-alias l="eza --icons -a --group-directories-first -1"
-alias ll="eza --icons -a --group-directories-first -1 --no-user --long"
-alias tree="eza --icons --tree --group-directories-first"
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
+HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
 
 source <(fzf --zsh)
+
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^k" kill-line
+bindkey "^j" backward-word
+bindkey "^k" forward-word
+bindkey "^H" backward-kill-word
+bindkey '^R' fzf-history-widget
+
+{{ if eq .osid "linux-arch" -}}
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end }}
+
+{{ if eq .osid "darwin" -}}
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end }}
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
