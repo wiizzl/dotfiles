@@ -58,6 +58,8 @@ packages:
     # Shell
     - starship
     - zsh
+    - zsh-syntax-highlighting
+    - zsh-autosuggestions
 
     # Fonts
     - ttf-montserrat
@@ -135,5 +137,7 @@ packages:
       - zoxide
       - starship
       - bat
+      - zsh-autosuggestions
+      - zsh-syntax-highlighting
     casks:
       - raycast
