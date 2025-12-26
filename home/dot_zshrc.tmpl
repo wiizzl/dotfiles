@@ -1,3 +1,22 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME=""
+
+zstyle ':omz:update' mode disabled
+
+plugins=(
+  git
+  zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+bindkey -e
+
 {{- if eq .osid "linux-arch" -}}
 if [[ "$TERM" == "xterm-kitty" ]]; then
   alias ssh="kitten ssh"
@@ -7,16 +26,6 @@ export "MICRO_TRUECOLOR=1"
 
 alias nano=micro
 {{- end }}
-
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-bindkey -e
-
-zstyle :compinstall filename '{{ .chezmoi.homeDir }}/.zshrc'
-autoload -Uz compinit
-compinit
 
 alias cat=bat
 export MANPAGER="bat -plman"
