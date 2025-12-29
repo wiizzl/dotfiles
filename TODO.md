@@ -1,9 +1,8 @@
 - [ ] GTK theme
 - [ ] Waybar audio module
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
-- [ ] Zen browser theme/extensions/settings
+- [ ] Zen browser extensions
 - [ ] Spotify (spicetify) theme/extensions
-- [ ] [Default apps](./home/dot_config/mimeapps.list)
 - [ ] Hyprland windows/layers/workspaces rules
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
