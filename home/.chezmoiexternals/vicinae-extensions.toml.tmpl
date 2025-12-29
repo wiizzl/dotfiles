@@ -2,12 +2,13 @@
   "awww-switcher"
   "arch-packages"
 -}}
-{{- range $name := $exts }}
-[".cache/vicinae-build/store.vicinae.{{ $name }}"]
+
+{{- range $slug := $exts }}
+[".cache/vicinae-build/store.vicinae.{{ $slug }}"]
   type = "archive"
   url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
   exact = true
   stripComponents = 3
   refreshPeriod = "168h"
-  include = ["*/extensions/{{ $name }}/**"]
+  include = ["*/extensions/{{ $slug }}/**"]
 {{ end -}}
