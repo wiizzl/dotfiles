@@ -126,7 +126,6 @@ packages:
 
     # Fun
     - cbonsai
-    - cmatrix
     - pipes-rs-bin
     - fastfetch
     - cava
