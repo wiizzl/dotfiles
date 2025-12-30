@@ -42,3 +42,14 @@ extensions:
     - github.copilot-chat
     - ms-vsliveshare.vsliveshare
     - quicktype.quicktype
+  spicetify:
+    - adblock
+    - shuffle+
+  vicinae:
+    - awww-switcher
+    - arch-packages
+  zen:
+    - ublock-origin: uBlock0@raymondhill.net
+    - react-devtools: "@react-devtools"
+    - styl-us: "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}"
+    - wappalyzer: wappalyzer@crunchlabz.com

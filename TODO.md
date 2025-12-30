@@ -1,3 +1,4 @@
+- [ ] Use zen extensions from [data file](./home/.chezmoidata/extensions.yaml) in [external file](./home/.chezmoiexternals/zen-extensions.toml.tmpl)
 - [ ] GTK theme
 - [ ] Waybar audio module
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)

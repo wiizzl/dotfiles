@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+spicetify config spotify_path "/Applications/Spotify.app/Contents/Resources"
+
+{{ range .extensions.spicetify -}}
+spicetify config extensions {{ . }}.js
+{{ end -}}
