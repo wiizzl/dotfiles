@@ -17,7 +17,9 @@ cursor {
   no_hardware_cursors = true
 }
 
+{{- if eq .is_laptop true }}
 gesture = 3, horizontal, workspace
+{{- end }}
 
 ecosystem {
   no_update_news = true
