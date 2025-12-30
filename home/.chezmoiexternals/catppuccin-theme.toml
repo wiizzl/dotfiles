@@ -54,19 +54,19 @@
   url = "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml"
   refreshPeriod = "336h"
 
-[".config/wlogout/catppuccin-mocha-mauve.css"]
-  type = "file"
-  url = "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
-  refreshPeriod = "336h"
-
 [".config/waybar/logo.png"]
   type = "file"
   url = "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
   refreshPeriod = "336h"
 
+[".config/wlogout/catppuccin-mocha-mauve.css"]
+  type = "file"
+  url = "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
+  refreshPeriod = "336h"
+
 [".config/wlogout/icons"]
   type = "archive"
   url = "https://github.com/catppuccin/wlogout/archive/refs/heads/main.tar.gz"
-  stripComponents = 3
+  stripComponents = 4
   refreshPeriod = "336h"
   include = ["*/icons/wlogout/mocha/mauve/**"]
