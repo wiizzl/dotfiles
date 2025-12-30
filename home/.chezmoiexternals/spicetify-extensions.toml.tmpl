@@ -1,0 +1,10 @@
+{{- $exts := dict
+  "adblock" "https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js"
+-}}
+
+{{- range $name, $url := $exts }}
+[".config/spicetify/Extensions/{{ $name }}.js"]
+  type = "file"
+  url = "$url"
+  refreshPeriod = "168h"
+{{ end -}}

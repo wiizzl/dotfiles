@@ -18,7 +18,7 @@
 [".zen/default/chrome"]
   type = "archive"
   url = "https://github.com/catppuccin/zen-browser/archive/refs/heads/main.tar.gz"
-  stripComponents = 3
+  stripComponents = 4
   refreshPeriod = "336h"
   include = ["*/themes/Mocha/Mauve/**"]
 
@@ -67,6 +67,6 @@
 [".config/wlogout/icons"]
   type = "archive"
   url = "https://github.com/catppuccin/wlogout/archive/refs/heads/main.tar.gz"
-  stripComponents = 4
+  stripComponents = 5
   refreshPeriod = "336h"
   include = ["*/icons/wlogout/mocha/mauve/**"]
