@@ -82,6 +82,7 @@ packages:
     - bat
     - eza
     - github-cli
+    - spicetify-cli
     - curl
     - wget
     - fzf
@@ -106,6 +107,7 @@ packages:
     - jdk21-openjdk
 
     # GUI
+    - spotify
     - github-desktop-bin
     - yaak-bin
     - dbgate-bin
@@ -141,5 +143,7 @@ packages:
       - zsh-syntax-highlighting
       - git
       - git-lfs
+      - spicetify-cli
     casks:
       - raycast
+      - spotify
