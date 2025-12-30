@@ -28,6 +28,6 @@ spicetify config extensions {{ $name }}.js
   "lyrics-plus"
 -}}
 
-{{- range $name := $exts }}
+{{- range $name := $apps }}
 spicetify config custom_apps {{ $name }}
 {{ end -}}
