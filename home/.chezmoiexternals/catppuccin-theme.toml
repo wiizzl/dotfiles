@@ -1,7 +1,7 @@
 [".config/spicetify/Themes/catppuccin"]
   type = "archive"
   url = "https://github.com/catppuccin/spicetify/archive/refs/heads/main.tar.gz"
-  stripComponents = 3
+  stripComponents = 1
   refreshPeriod = "336h"
   include = ["*/catppuccin/**"]
 
