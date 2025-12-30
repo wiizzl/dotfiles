@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eufo pipefail
+
 SOURCE_CACHE="{{ .chezmoi.homeDir }}/.cache/vicinae-build"
 FINAL_DEST="{{ .chezmoi.homeDir }}/.local/share/vicinae/extensions"
 
