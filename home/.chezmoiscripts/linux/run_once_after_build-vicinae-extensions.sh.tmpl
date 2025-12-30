@@ -5,12 +5,10 @@ set -eufo pipefail
 SOURCE_CACHE="{{ .chezmoi.homeDir }}/.cache/vicinae-build"
 FINAL_DEST="{{ .chezmoi.homeDir }}/.local/share/vicinae/extensions"
 
-{{- $extensions := list "awww-switcher" "arch-packages" }}
-
-{{ range $ext := $extensions }}
-SRC="$SOURCE_CACHE/store.vicinae.{{ $ext }}"
-DEST="$FINAL_DEST/store.vicinae.{{ $ext }}"
-BUILD_OUTPUT="$SOURCE_CACHE/{{ $ext }}"
+{{ range .extensions.vicinae -}}
+SRC="$SOURCE_CACHE/store.vicinae.{{ . }}"
+DEST="$FINAL_DEST/store.vicinae.{{ . }}"
+BUILD_OUTPUT="$SOURCE_CACHE/{{ . }}"
 
 if [ -d "$SRC" ]; then
   cd "$SRC"
@@ -28,4 +26,4 @@ if [ -d "$SRC" ]; then
     fi
   fi
 fi
-{{ end }}
+{{ end -}}
