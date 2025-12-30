@@ -1,33 +1,6 @@
-* {
-  background-image: none;
-  box-shadow: none;
-}
-
-window {
-  background-color: rgba(30, 30, 46, 0.9);
-}
-
-button {
-  border-radius: 0;
-  border-color: #cba6f7;
-  text-decoration-color: #cdd6f4;
-  color: #cdd6f4;
-  background-color: #181825;
-  border-style: solid;
-  border-width: 1px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25%;
-}
-
-button:focus,
-button:active,
-button:hover {
-  background-color: rgb(48, 50, 66);
-  outline-style: none;
-}
-
 {{ $home := .chezmoi.homeDir -}}
+
+@import url("{{ $home }}/.config/wlogout/catppuccin-mocha-mauve.css");
 
 #lock {
   background-image: url("{{ $home }}/.config/wlogout/icons/lock.svg");

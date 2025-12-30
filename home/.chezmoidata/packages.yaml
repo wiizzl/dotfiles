@@ -116,7 +116,6 @@ packages:
     - localsend-bin
     - visual-studio-code-bin
     - onlyoffice-bin
-    - spotify-launcher
 
     # Theming
     - bibata-cursor-git
