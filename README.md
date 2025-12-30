@@ -36,6 +36,12 @@ chezmoi init wiizzl --apply
 > [!IMPORTANT]
 > After installation, reboot your system to ensure all necessary services start.
 
+## Spotify
+
+First, open Spotify and keep it running for at least 60 seconds to ensure it is fully initialized. Then, run `spicetify apply`.
+
+See [this](https://spicetify.app/docs/getting-started#before-first-run).
+
 ## Arch specific steps
 
 ### Recommended installation
