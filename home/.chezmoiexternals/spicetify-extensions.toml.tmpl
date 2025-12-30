@@ -5,6 +5,6 @@
 {{- range $name, $url := $exts }}
 [".config/spicetify/Extensions/{{ $name }}.js"]
   type = "file"
-  url = "$url"
+  url = $url
   refreshPeriod = "168h"
 {{ end -}}
