@@ -1,24 +1,11 @@
-{{- $themes := dict
-  ".config/kitty/catppuccin-mocha.conf" "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf"
-  ".config/micro/colorschemes/catppuccin-mocha-transparent.micro" "https://raw.githubusercontent.com/catppuccin/micro/refs/heads/main/themes/catppuccin-mocha-transparent.micro"
-  ".config/bat/Catppuccin Mocha.tmTheme" "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
-  ".config/btop/themes/catppuccin_mocha.theme" "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
-  ".config/cava/config" "https://raw.githubusercontent.com/catppuccin/cava/refs/heads/main/themes/mocha-transparent.cava"
-  ".config/hypr/colors.conf" "https://raw.githubusercontent.com/catppuccin/hyprland/refs/heads/main/themes/mocha.conf"
-  ".config/yazi/theme.toml" "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml"
-  ".config/waybar/logo.png" "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
-  ".config/wlogout/catppuccin-mocha-mauve.css" "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
-  ".config/dunst/dunstrc" "https://raw.githubusercontent.com/catppuccin/dunst/refs/heads/main/themes/mocha.conf"
--}}
-
-{{- range $path, $url := $themes }}
+{{- range $path, $url := .themes.catppuccin.files }}
 ["{{ $path }}"]
   type = "file"
   url = "{{ $url }}"
   refreshPeriod = "336h"
 {{ end -}}
 
-[".config/spicetify/Themes/catppuccin"]
+[".config/spicetify/Themes/custom_theme"]
   type = "archive"
   url = "https://github.com/catppuccin/spicetify/archive/refs/heads/main.tar.gz"
   stripComponents = 2
@@ -32,7 +19,7 @@
   refreshPeriod = "336h"
   include = ["*/themes/Mocha/Mauve/**"]
 
-[".config/Kvantum/catppucin-mocha-mauve"]
+[".config/Kvantum/custom-theme"]
   type = "archive"
   url = "https://github.com/catppuccin/kvantum/archive/refs/heads/main.tar.gz"
   stripComponents = 3

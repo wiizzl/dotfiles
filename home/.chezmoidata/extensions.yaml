@@ -42,12 +42,12 @@ extensions:
     - github.copilot-chat
     - ms-vsliveshare.vsliveshare
     - quicktype.quicktype
-  spicetify:
-    - adblock
-    - shuffle+
   vicinae:
     - awww-switcher
     - arch-packages
+  spicetify:
+    - adblock: "https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js"
+    - shuffle+: null
   zen:
     - ublock-origin: uBlock0@raymondhill.net
     - react-devtools: "@react-devtools"
