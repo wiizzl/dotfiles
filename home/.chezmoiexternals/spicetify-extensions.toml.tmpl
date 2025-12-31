@@ -1,8 +1,0 @@
-{{- range $name, $url := .extensions.spicetify }}
-{{- if $url }}
-[".config/spicetify/Extensions/{{ $name }}.js"]
-  type = "file"
-  url = "{{ $url }}"
-  refreshPeriod = "168h"
-{{- end }}
-{{- end -}}

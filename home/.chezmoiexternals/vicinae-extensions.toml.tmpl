@@ -1,9 +1,0 @@
-{{ range .extensions.vicinae -}}
-[".cache/vicinae-build/store.vicinae.{{ . }}"]
-  type = "archive"
-  url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
-  exact = true
-  stripComponents = 3
-  refreshPeriod = "168h"
-  include = ["*/extensions/{{ . }}/**"]
-{{ end -}}
