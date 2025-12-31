@@ -1,0 +1,27 @@
+{{- range $name, $url := .extensions.spicetify }}
+{{- if $url }}
+[".config/spicetify/Extensions/{{ $name }}.js"]
+  type = "file"
+  url = "{{ $url }}"
+  refreshPeriod = "168h"
+{{- end }}
+{{- end -}}
+
+{{- range $slug, $id := .extensions.zen }}
+[".zen/default/extensions/{{ $id }}.xpi"]
+  type = "file"
+  url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
+  refreshPeriod = "168h"
+{{ end -}}
+
+{{ if eq .osid "linux-arch" -}}
+{{ range .extensions.vicinae -}}
+[".cache/vicinae-build/store.vicinae.{{ . }}"]
+  type = "archive"
+  url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
+  exact = true
+  stripComponents = 3
+  refreshPeriod = "168h"
+  include = ["*/extensions/{{ . }}/**"]
+{{ end -}}
+{{- end }}

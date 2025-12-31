@@ -1,4 +1,4 @@
-{{- range $path, $url := .themes.catppuccin.files }}
+{{- range $path, $url := .themes.{{ .selected_theme }}.files }}
 ["{{ $path }}"]
   type = "file"
   url = "{{ $url }}"

@@ -1,6 +1,0 @@
-{{- range $slug, $id := .extensions.zen }}
-[".zen/default/extensions/{{ $id }}.xpi"]
-  type = "file"
-  url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
-  refreshPeriod = "168h"
-{{ end -}}
