@@ -5,7 +5,7 @@ expose_apis = 1
 disable_sentry = 1
 
 [AdditionalOptions]
-extensions = {{ range $i, $ext := .extensions.spicetify }}{{ if $i }}|{{ end }}{{ $ext }}.js{{- end }}
+extensions = {{- $first := true -}}{{- range $name, $_ := .extensions.spicetify }}{{- if not $first }}|{{ end }}{{ $name }}.js{{- $first = false }}{{- end }}
 custom_apps =
 sidebar_config = 0
 home_config = 1
