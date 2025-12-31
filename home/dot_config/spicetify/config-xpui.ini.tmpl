@@ -1,0 +1,37 @@
+[Preprocesses]
+disable_ui_logging = 1
+remove_rtl_rule = 1
+expose_apis = 1
+disable_sentry = 1
+
+[AdditionalOptions]
+extensions = {{- range $i, $ext := .extensions.spicetify }}{{ if $i }}|{{ end }}{{ $ext }}.js{{- end }}
+custom_apps =
+sidebar_config = 0
+home_config = 1
+experimental_features = 1
+
+[Patch]
+
+[Setting]
+{{- if eq .osid "linux-arch" }}
+spotify_path = /opt/spotify/
+prefs_path = {{ .chezmoi.homeDir }}/.config/spotify/prefs
+{{- end }}
+{{- if eq .osid "darwin" }}
+spotify_path = /Applications/Spotify.app/Contents/Resources
+prefs_path =
+{{- end }}
+inject_css = 1
+check_spicetify_update = 1
+current_theme = catppuccin
+color_scheme = mocha
+inject_theme_js = 1
+replace_colors = 1
+overwrite_assets = 1
+spotify_launch_flags =
+always_enable_devtools = 0
+
+[Backup]
+version =
+with =
