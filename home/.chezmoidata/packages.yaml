@@ -31,8 +31,11 @@ packages:
     - mpv
     - lximage-qt
     - brightnessctl
-    - swaync
     - swww
+
+    # Notifications
+    - libnotify
+    - dunst
 
     # Audio
     - playerctl
