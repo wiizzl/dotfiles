@@ -1,4 +1,4 @@
-{{- $files_themes := dict
+{{- $themes := dict
   ".config/kitty/catppuccin-mocha.conf" "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf"
   ".config/micro/colorschemes/catppuccin-mocha-transparent.micro" "https://raw.githubusercontent.com/catppuccin/micro/refs/heads/main/themes/catppuccin-mocha-transparent.micro"
   ".config/bat/Catppuccin Mocha.tmTheme" "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
@@ -8,9 +8,10 @@
   ".config/yazi/theme.toml" "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml"
   ".config/waybar/logo.png" "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
   ".config/wlogout/catppuccin-mocha-mauve.css" "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
+  ".config/dunst/dunstrc" "https://raw.githubusercontent.com/catppuccin/dunst/refs/heads/main/themes/mocha.conf"
 -}}
 
-{{- range $path, $url := $files_themes }}
+{{- range $path, $url := $themes }}
 ["{{ $path }}"]
   type = "file"
   url = "{{ $url }}"
