@@ -8,6 +8,7 @@ themes:
       ".config/cava/config": "https://raw.githubusercontent.com/catppuccin/cava/refs/heads/main/themes/mocha-transparent.cava"
       ".config/hypr/colors.conf": "https://raw.githubusercontent.com/catppuccin/hyprland/refs/heads/main/themes/mocha.conf"
       ".config/yazi/theme.toml": "https://raw.githubusercontent.com/catppuccin/yazi/refs/heads/main/themes/mocha/catppuccin-mocha-mauve.toml"
+      ".config/yazi/Catppuccin-mocha.tmTheme": "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
       ".config/waybar/logo.png": "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
       ".config/wlogout/custom-theme.css": "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
       ".config/dunst/dunstrc": "https://raw.githubusercontent.com/catppuccin/dunst/refs/heads/main/themes/mocha.conf"
