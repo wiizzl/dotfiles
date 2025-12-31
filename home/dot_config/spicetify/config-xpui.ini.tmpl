@@ -13,10 +13,12 @@ experimental_features = 1
 
 [Patch]
 
+{{- $home := .chezmoi.homeDir -}}
+
 [Setting]
 {{- if eq .osid "linux-arch" }}
-spotify_path = /opt/spotify/
-prefs_path = {{ .chezmoi.homeDir }}/.config/spotify/prefs
+spotify_path = {{ $home }}/.local/share/spotify-launcher/install/usr/share/spotify
+prefs_path = {{ $home }}/.config/spotify/prefs
 {{- end }}
 {{- if eq .osid "darwin" }}
 spotify_path = /Applications/Spotify.app/Contents/Resources

@@ -84,6 +84,7 @@ packages:
     - docker
     - bat
     - eza
+    - ffmpeg
     - github-cli
     - spicetify-cli
     - curl
@@ -110,7 +111,7 @@ packages:
     - jdk21-openjdk
 
     # GUI
-    - spotify
+    - spotify-launcher
     - github-desktop-bin
     - yaak-bin
     - dbgate-bin
