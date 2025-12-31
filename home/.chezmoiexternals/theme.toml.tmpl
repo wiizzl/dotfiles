@@ -1,9 +1,9 @@
-{{- range $path, $url := .themes.{{ .selected_theme }}.files }}
+{{- range $path, $url := index (index .themes .selected_theme) "files" }}
 ["{{ $path }}"]
   type = "file"
   url = "{{ $url }}"
   refreshPeriod = "336h"
-{{ end -}}
+{{- end }}
 
 [".config/spicetify/Themes/custom_theme"]
   type = "archive"
