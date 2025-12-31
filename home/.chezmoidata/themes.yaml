@@ -1,6 +1,6 @@
 themes:
   catppuccin:
-    file:
+    files:
       - ".config/kitty/custom-theme.conf": "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf"
       - ".config/micro/colorschemes/custom-theme.micro": "https://raw.githubusercontent.com/catppuccin/micro/refs/heads/main/themes/catppuccin-mocha-transparent.micro"
       - ".config/bat/Custom Theme.tmTheme": "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
