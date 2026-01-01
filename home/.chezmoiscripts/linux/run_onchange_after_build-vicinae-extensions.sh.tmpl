@@ -2,8 +2,8 @@
 
 set -eufo pipefail
 
-SOURCE_CACHE="{{ .chezmoi.homeDir }}/.cache/vicinae-build"
-FINAL_DEST="{{ .chezmoi.homeDir }}/.local/share/vicinae/extensions"
+SOURCE_CACHE="$HOME/.cache/vicinae-build"
+FINAL_DEST="$HOME/.local/share/vicinae/extensions"
 
 {{ range .extensions.vicinae -}}
 SRC="$SOURCE_CACHE/store.vicinae.{{ . }}"
