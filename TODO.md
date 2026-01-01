@@ -1,4 +1,3 @@
-- [ ] GTK theme
 - [ ] Multi monitors support (workspaces, waybar)
 - [ ] Zen browser containers
 - [ ] Vesktop extensions

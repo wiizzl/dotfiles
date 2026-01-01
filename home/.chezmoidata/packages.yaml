@@ -107,7 +107,7 @@ packages:
     - nodejs
     - npm
     - pnpm-bin
-    - bun-bin
+    - bun
     - go
     - lua
     - rustup
