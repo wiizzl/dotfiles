@@ -56,11 +56,12 @@ packages:
     - ffmpegthumbnailer
     - thunar-volman
 
-    # Virtual machines
+    # Virtualization
     - libvirt
     - virt-manager
     - qemu-desktop
     - dnsmasq
+    - docker
 
     # Shell
     - starship
@@ -85,7 +86,6 @@ packages:
     # CLI
     - git
     - git-lfs
-    - docker
     - bat
     - eza
     - ffmpeg
