@@ -1,7 +1,5 @@
 - [ ] GTK theme
-- [ ] Waybar audio module
 - [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
 - [ ] Zen browser containers
-- [ ] Hyprland windows/layers/workspaces rules
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)

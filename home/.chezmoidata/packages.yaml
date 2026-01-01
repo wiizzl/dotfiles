@@ -6,11 +6,9 @@ packages:
     - qt6-wayland
     - waybar
     - hyprlock
-    - wl-clipboard
     - hyprpolkitagent
     - hyprpicker
     - hypridle
-    - hyprshot
     - wlogout
     - xdg-desktop-portal-hyprland
     - xdg-desktop-portal-gtk
@@ -33,9 +31,18 @@ packages:
     - brightnessctl
     - swww
 
+    # Clipboard
+    - wl-clipboard
+    - cliphist
+
     # Notifications
     - libnotify
     - dunst
+
+    # Screenshot
+    - grim
+    - slurp
+    - satty
 
     # Audio
     - playerctl
