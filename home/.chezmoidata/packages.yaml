@@ -9,6 +9,7 @@ packages:
     - hyprpolkitagent
     - hyprpicker
     - hypridle
+    - wl-clipboard
     - wlogout
     - xdg-desktop-portal-hyprland
     - xdg-desktop-portal-gtk
@@ -30,10 +31,6 @@ packages:
     - lximage-qt
     - brightnessctl
     - swww
-
-    # Clipboard
-    - wl-clipboard
-    - cliphist
 
     # Notifications
     - libnotify
