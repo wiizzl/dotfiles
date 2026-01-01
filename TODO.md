@@ -1,4 +1,5 @@
 - [ ] GTK theme
+- [ ] Multi monitors support (workspaces, waybar)
 - [ ] Zen browser containers
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
