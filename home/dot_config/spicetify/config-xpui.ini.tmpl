@@ -13,17 +13,14 @@ experimental_features = 1
 
 [Patch]
 
-{{- $home := .chezmoi.homeDir -}}
-
 [Setting]
 {{- if eq .osid "linux-arch" }}
-spotify_path = {{ $home }}/.local/share/spotify-launcher/install/usr/share/spotify
-prefs_path = {{ $home }}/.config/spotify/prefs
+spotify_path = {{ .chezmoi.homeDir }}/.local/share/spotify-launcher/install/usr/share/spotify
 {{- end }}
 {{- if eq .osid "darwin" }}
 spotify_path = /Applications/Spotify.app/Contents/Resources
-prefs_path =
 {{- end }}
+prefs_path =
 inject_css = 1
 check_spicetify_update = 1
 current_theme = custom_theme

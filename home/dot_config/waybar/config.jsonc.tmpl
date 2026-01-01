@@ -11,21 +11,22 @@
     "margin-right": 0,
     "margin-top": 8,
 
-    "modules-center": [
-      "hyprland/workspaces"
-    ],
     "modules-left": [
-      "image#os",
+      "image#logo",
       "clock#hours",
       "clock#minutes",
       "custom/sep"
     ],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
     "modules-right": [
       "tray",
       "custom/sep",
+      "pulseaudio",
       "bluetooth",
       "network",
-      "custom/notifications"
+      "battery"
     ],
 
     "battery": {
@@ -53,7 +54,8 @@
       "on-click": "{{ .terminal }} -e bluetui",
       "tooltip-format": "{controller_alias}\t{controller_address}",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "format-no-controller": ""
     },
     "clock#hours": {
       "format": "{:%H}",
@@ -62,25 +64,6 @@
     "clock#minutes": {
       "format": "{:%M}",
       "tooltip-format": "{:%d/%m/%Y}"
-    },
-    "custom/notifications": {
-      "exec": "swaync-client -swb",
-      "exec-if": "which swaync-client",
-      "format": "{icon}",
-      "format-icons": {
-        "dnd-inhibited-none": "󰂛",
-        "dnd-inhibited-notification": "󰂛",
-        "dnd-none": "󰂛",
-        "dnd-notification": "󰂛",
-        "inhibited-none": "󰂚",
-        "inhibited-notification": "󱅫",
-        "none": "󰂚",
-        "notification": "󱅫"
-      },
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "return-type": "json",
-      "tooltip": false
     },
     "custom/sep": {
       "format": "――",
@@ -93,9 +76,17 @@
       "warp-on-scroll": false,
       "persistent-workspaces": { "*": 8 }
     },
-    "image#os": {
+    "image#logo": {
       "path": "{{ .chezmoi.homeDir }}/.config/waybar/logo.png",
       "size": 22
+    },
+    "pulseaudio": {
+      "format": "{icon}",
+      "format-bluetooth": "{icon}",
+      "format-icons": { "default": ["", "", ""] },
+      "tooltip-format": "{volume}%",
+      "format-muted": "",
+      "on-click": "pavucontrol"
     },
     "network": {
       "format": "{ifname}",
