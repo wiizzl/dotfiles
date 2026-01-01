@@ -1,5 +1,4 @@
 - [ ] GTK theme
-- [ ] Better screenshot with [Satty](https://github.com/Satty-org/Satty)
 - [ ] Zen browser containers
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
