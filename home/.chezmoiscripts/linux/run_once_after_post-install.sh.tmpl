@@ -10,3 +10,10 @@ chsh -s /usr/bin/zsh
 
 # Create user home dirs
 xdg-user-dirs-update
+
+# Create Wallpapers and Screenshots dirs
+mkdir -p "$HOME/Pictures/Wallpapers" && mkdir -p "$HOME/Pictures/Screenshots"
+
+# GTK theme
+# gsettings set org.gnome.desktop.interface gtk-theme "custom-theme"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
