@@ -12,4 +12,6 @@ themes:
       ".config/waybar/logo.png": "https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"
       ".config/wlogout/custom-theme.css": "https://raw.githubusercontent.com/catppuccin/wlogout/refs/heads/main/themes/mocha/mauve.css"
       ".config/dunst/dunstrc": "https://raw.githubusercontent.com/catppuccin/dunst/refs/heads/main/themes/mocha.conf"
+      ".config/Kvantum/custom-theme/custom-theme.kvconfig": "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.kvconfig"
+      ".config/Kvantum/custom-theme/custom-theme.svg": "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.svg"
     archives:
