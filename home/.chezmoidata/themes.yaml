@@ -3,7 +3,7 @@ themes:
     files:
       ".config/kitty/custom-theme.conf": "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf"
       ".config/micro/colorschemes/custom-theme.micro": "https://raw.githubusercontent.com/catppuccin/micro/refs/heads/main/themes/catppuccin-mocha-transparent.micro"
-      ".config/bat/Custom Theme.tmTheme": "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
+      ".config/bat/themes/Custom Theme.tmTheme": "https://raw.githubusercontent.com/catppuccin/bat/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme"
       ".config/btop/themes/custom_theme.theme": "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
       ".config/cava/config": "https://raw.githubusercontent.com/catppuccin/cava/refs/heads/main/themes/mocha-transparent.cava"
       ".config/hypr/colors.conf": "https://raw.githubusercontent.com/catppuccin/hyprland/refs/heads/main/themes/mocha.conf"
