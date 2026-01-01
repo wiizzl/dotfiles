@@ -26,7 +26,8 @@
       "pulseaudio",
       "bluetooth",
       "network",
-      "battery"
+      "battery",
+      "custom/power"
     ],
 
     "battery": {
@@ -69,6 +70,12 @@
       "format": "――",
       "interval": 0,
       "tooltip": false
+    },
+    "custom/power": {
+      "format": "",
+      "interval": 0,
+      "tooltip": false,
+      "on-click": "wlogout --buttons-per-row 2"
     },
     "hyprland/workspaces": {
       "disable-scroll": true,
