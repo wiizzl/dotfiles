@@ -9,7 +9,8 @@
 
 [data]
   osid = {{ $osid | quote }}
-  git_name = {{ promptStringOnce . "git_name" "What is your git username" | quote }}
+  github_username = {{ promptStringOnce . "github_username" "What is your GitHub username" | quote }}
+  git_name = {{ promptStringOnce . "git_name" "What is your git name" | quote }}
   git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
 
 {{- if eq $osid "linux-arch" }}
