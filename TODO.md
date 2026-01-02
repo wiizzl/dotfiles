@@ -1,4 +1,5 @@
 - [ ] Multi monitors support (workspaces, waybar)
+- [ ] Change ly animation colors
 - [ ] Zen browser containers
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
