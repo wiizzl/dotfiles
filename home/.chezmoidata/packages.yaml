@@ -32,6 +32,10 @@ packages:
     - brightnessctl
     - swww
 
+    # Printing
+    - cups
+    - cups-pdf
+
     # Notifications
     - libnotify
     - dunst

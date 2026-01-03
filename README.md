@@ -38,9 +38,7 @@ chezmoi init wiizzl --apply
 
 ## Spotify
 
-First, open Spotify and keep it running for at least 60 seconds to ensure it is fully initialized. Then, run `spicetify apply`.
-
-See [this](https://spicetify.app/docs/getting-started#before-first-run).
+First, open Spotify and login. Then, run `spicetify apply`. See [this](https://spicetify.app/docs/getting-started#before-first-run) to know why you need to do this step manually.
 
 ## Arch specific steps
 
@@ -48,18 +46,18 @@ See [this](https://spicetify.app/docs/getting-started#before-first-run).
 
 Below is a table of suggested settings for a minimal Arch Linux installation, tailored for use with these dotfiles. Adjust options as needed for your hardware and preferences.
 
-| Setting                    | Value/Example        | Description                                                                 |
-| -------------------------- | -------------------- | --------------------------------------------------------------------------- |
-| Swap                       | `enabled`            | Enables swap space for better memory management, especially on low RAM      |
-| Profile                    | `minimal`            | Minimal install; dotfiles already include Hyprland and essential tools      |
-| Bootloader                 | `systemd-boot`       | Recommended for easier dual-boot setups                                     |
-| Unified Kernel Image (UKI) | `enabled`            | Simplifies kernel updates and secure boot (see guide below)                 |
-| Authentication             | _as you wish_        | Create a user with sudo privileges                                          |
-| Additional packages        | `chezmoi`            | Required for managing dotfiles                                              |
-| Bluetooth                  | _as you wish_        | Enable if your hardware supports Bluetooth                                  |
-| Audio                      | `pipewire` or `none` | Pipewire is recommended; but dotfiles will install necessary audio packages |
-| Network                    | `Copy ISO config`    | Use the network configuration from the installation ISO                     |
-| Other options              | _as you wish_        | Customize other system settings to your needs                               |
+| Setting                    | Value             | Description                                                            |
+| -------------------------- | ----------------- | ---------------------------------------------------------------------- |
+| Swap                       | `enabled`         | Enables swap space for better memory management, especially on low RAM |
+| Profile                    | `minimal`         | Dotfiles already install hyprland and essential tools                  |
+| Bootloader                 | `systemd-boot`    | Recommended for easier dual-boot setups                                |
+| Unified Kernel Image (UKI) | `enabled`         | Simplifies kernel updates and secure boot (see guide below)            |
+| Authentication             | _as you wish_     | Create a user with sudo privileges                                     |
+| Additional packages        | `chezmoi`         | Required for managing dotfiles                                         |
+| Bluetooth                  | _as you wish_     | Enable if your hardware supports bluetooth                             |
+| Audio / Printing           | `none`            | Dotfiles already install packages                                      |
+| Network                    | `Copy ISO config` | Use the network configuration from the installation ISO                |
+| Other options              | _as you wish_     | Customize other system settings to your needs                          |
 
 ### Secure boot
 
@@ -69,4 +67,4 @@ Then, reboot and follow [this guide](https://wiki.archlinux.org/title/Unified_Ex
 
 ### Wallpapers
 
-Simply places your wallpapers in `Pictures/Wallpapers` folder. You can choose a wallpaper with `SUPER+CTRL+W`.
+Simply places your wallpapers in `~/Pictures/Wallpapers` folder. You can choose a wallpaper with `MOD+CTRL+W`.
