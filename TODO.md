@@ -3,3 +3,4 @@
 - [ ] Zen browser containers
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
+- [ ] Vicinae submap
