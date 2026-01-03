@@ -1,6 +1,7 @@
-- [ ] Multi monitors support (workspaces, waybar)
+- [ ] Fix kitty bg color
 - [ ] Change ly animation colors
 - [ ] Zen browser containers
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 - [ ] Vicinae submap
+- [ ] See if GTK 4.0 theme work
