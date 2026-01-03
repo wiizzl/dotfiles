@@ -1,0 +1,24 @@
+source "$ZDOTDIR/aliases.zsh"
+
+setopt EXTENDED_GLOB INTERACTIVE_COMMENTS
+
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTFILE="$XDG_CACHE_HOME/zsh_history"
+HISTCONTROL=ignoreboth
+
+source <(fzf --zsh)
+bindkey '^R' fzf-history-widget
+
+{{ if eq .osid "linux-arch" -}}
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end }}
+
+{{- if eq .osid "darwin" -}}
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end }}
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
