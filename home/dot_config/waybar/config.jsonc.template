@@ -85,14 +85,14 @@
       "persistent-workspaces": { "*": 8 }
     },
     "image#logo": {
-      "path": "~/.config/waybar/logo.png",
+      "path": "{{ .chezmoi.homeDir }}/.config/waybar/logo.png",
       "size": 22
     },
     "pulseaudio": {
       "format": "{icon}",
       "format-bluetooth": "{icon}",
       "format-icons": { "default": ["", "", ""] },
-      "tooltip-format": "{volume}%",
+      "tooltip-format": "Volume: {volume}%",
       "format-muted": "",
       "on-click": "pavucontrol"
     },
