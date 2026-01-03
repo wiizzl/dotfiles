@@ -2,4 +2,4 @@
 - [ ] Vesktop extensions
 - [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 - [ ] Vicinae submap
-- [ ] See if GTK 4.0 theme work
+- [ ] Better [GTK theming](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme)
