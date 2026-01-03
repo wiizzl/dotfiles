@@ -48,6 +48,7 @@ Below is a table of suggested settings for a minimal Arch Linux installation, ta
 
 | Setting                      | Value             | Description                                                            |
 | ---------------------------- | ----------------- | ---------------------------------------------------------------------- |
+| Language                     | `English`         | ATM, you need to keep english as your OS language                      |
 | Swap                         | `enabled`         | Enables swap space for better memory management, especially on low RAM |
 | Profile                      | `minimal`         | Dotfiles already install packages                                      |
 | Bootloader                   | `systemd-boot`    | Recommended for easier dual-boot setups                                |

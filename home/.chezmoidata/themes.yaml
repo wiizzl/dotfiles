@@ -13,4 +13,5 @@ themes:
       ".config/dunst/dunstrc": "https://raw.githubusercontent.com/catppuccin/dunst/refs/heads/main/themes/mocha.conf"
       ".config/Kvantum/custom-theme/custom-theme.kvconfig": "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.kvconfig"
       ".config/Kvantum/custom-theme/custom-theme.svg": "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.svg"
+      "Downloads/import.json": "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json"
     archives:
