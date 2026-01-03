@@ -1,7 +1,7 @@
 themes:
   catppuccin:
     files:
-      ".config/kitty/custom-theme.conf": "https://raw.githubusercontent.com/catppuccin/kitty/refs/heads/main/themes/mocha.conf"
+      ".config/alacritty/custom-theme.toml": "https://raw.githubusercontent.com/catppuccin/alacritty/refs/heads/main/catppuccin-mocha.toml"
       ".config/micro/colorschemes/custom-theme.micro": "https://raw.githubusercontent.com/catppuccin/micro/refs/heads/main/themes/catppuccin-mocha-transparent.micro"
       ".config/btop/themes/custom_theme.theme": "https://raw.githubusercontent.com/catppuccin/btop/refs/heads/main/themes/catppuccin_mocha.theme"
       ".config/cava/config": "https://raw.githubusercontent.com/catppuccin/cava/refs/heads/main/themes/mocha-transparent.cava"

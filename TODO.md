@@ -1,4 +1,3 @@
-- [ ] Fix kitty bg color
 - [ ] Change ly animation colors
 - [ ] Zen browser containers
 - [ ] Vesktop extensions

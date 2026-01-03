@@ -15,7 +15,7 @@
 
 {{- if eq $osid "linux-arch" }}
   is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
-  terminal = "kitty"
+  terminal = "alacritty"
   selected_theme = "catppuccin"
   cursor_name = "Bibata-Modern-Ice"
   cursor_size = "32"
