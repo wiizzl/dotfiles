@@ -19,4 +19,4 @@ gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 gsettings set org.gnome.desktop.interface gtk-theme "custom-theme"
 
 # Make scripts executables
-chmod +x "$HOME/.config/hypr/scripts/*"
+find /home/pier/.config/hypr/scripts/ -type f -name "*.sh" -exec chmod +x {} +
