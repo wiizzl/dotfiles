@@ -1,5 +1,4 @@
-- [ ] Zen browser containers
 - [ ] Vesktop extensions
-- [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
 - [ ] Vicinae submap
-- [ ] Better [GTK theming](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme)
+- [ ] Better [GTK theming](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme) ?
+- [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)

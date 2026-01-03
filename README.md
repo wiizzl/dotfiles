@@ -70,4 +70,4 @@ Simply places your wallpapers in `~/Pictures/Wallpapers` folder. You can choose 
 
 ### Monitors
 
-You need to reapply dotfiles when you change your primary monitor. See [this script](./home/dot_config/hypr/scripts/detect-screens.sh).
+You need to [reapply](https://www.chezmoi.io/reference/commands/apply) when you change your primary monitor. See [this script](./home/dot_config/hypr/scripts/detect-screens.sh).
