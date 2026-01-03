@@ -1,4 +1,4 @@
-[ -f "$XDG_CONFIG_HOME/shell/alias" ] && source "$XDG_CONFIG_HOME/shell/alias"
+source "$XDG_CONFIG_HOME/shell/alias"
 
 zmodload zsh/complist
 autoload -U compinit && compinit
@@ -23,11 +23,9 @@ HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space a
 
 source <(fzf --zsh)
 
-bindkey "^a" beginning-of-line
-bindkey "^e" end-of-line
 bindkey '^R' fzf-history-widget
 
-{{- if eq .osid "linux-arch" -}}
+{{ if eq .osid "linux-arch" -}}
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 {{- end }}
