@@ -5,6 +5,7 @@ services:
     - tailscaled
     - sshd
     - libvirtd
+    - cups
 
   disable:
     - getty@tty2
