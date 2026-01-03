@@ -1,5 +1,7 @@
 [
   {
+    "output": ["$MAIN_MONITOR"],
+
     "layer": "top",
     "width": 40,
     "position": "left",
@@ -75,13 +77,13 @@
       "format": "",
       "interval": 0,
       "tooltip": false,
-      "on-click": "wlogout --buttons-per-row 2"
+      "on-click": "exec ~/.config/hypr/scripts/power-menu.sh"
     },
     "hyprland/workspaces": {
       "disable-scroll": true,
       "format": "{name}",
       "warp-on-scroll": false,
-      "persistent-workspaces": { "*": 8 }
+      // "persistent-workspaces": { "*": 8 }
     },
     "image#logo": {
       "path": "{{ .chezmoi.homeDir }}/.config/waybar/logo.png",
