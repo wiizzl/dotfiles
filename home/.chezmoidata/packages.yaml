@@ -49,8 +49,14 @@ packages:
     - playerctl
     - pipewire
     - pipewire-pulse
+    - pipewire-alsa
+    - pipewire-jack
     - wireplumber
     - pavucontrol
+
+    # Bluetooth
+    - bluez
+    - bluez-utils
 
     # File manager
     - thunar

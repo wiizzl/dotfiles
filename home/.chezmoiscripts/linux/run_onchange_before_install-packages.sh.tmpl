@@ -12,4 +12,4 @@ if ! command -v yay &> /dev/null; then
 fi
 
 yay -Sy
-yay -S --needed --noconfirm {{ .packages.linux | uniq | join " " }}
+yay -S --needed --noconfirm --sudoloop {{ .packages.linux | uniq | join " " }}

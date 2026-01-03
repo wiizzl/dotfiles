@@ -6,6 +6,7 @@ services:
     - sshd
     - libvirtd
     - cups
+    - bluetooth
 
   disable:
     - getty@tty2
