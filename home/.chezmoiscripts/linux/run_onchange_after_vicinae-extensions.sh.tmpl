@@ -2,8 +2,8 @@
 
 set -eufo pipefail
 
-SOURCE_CACHE="$XDG_CACHE_HOME/vicinae-build"
-FINAL_DEST="$XDG_DATA_HOME/vicinae/extensions"
+SOURCE_CACHE="$HOME/.cache/vicinae-build"
+FINAL_DEST="$HOME/.local/share/vicinae/extensions"
 
 {{ range .extensions.vicinae -}}
 SRC="$SOURCE_CACHE/store.vicinae.{{ . }}"
