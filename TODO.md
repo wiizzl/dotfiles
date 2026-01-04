@@ -1,5 +1,6 @@
 - [ ] Thunar network doesnt work
 - [ ] Layer rule or impala/bluetui/btop/lazydocker
+- [ ] Fix hyprlock
 - [ ] Keyring integration (VSCode, ...)
 - [ ] Vesktop extensions
 - [ ] Vicinae submap
