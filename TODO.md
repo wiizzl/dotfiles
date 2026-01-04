@@ -1,5 +1,5 @@
 - [ ] Thunar network doesnt work
-- [ ] Layer rule or impala/bluetui/btop/lazydocker/lazygit
+- [ ] Layer rule or impala/bluetui/btop/lazydocker
 - [ ] Keyring integration (VSCode, ...)
 - [ ] Vesktop extensions
 - [ ] Vicinae submap
