@@ -1,4 +1,5 @@
 - [ ] Thunar network doesnt work
+- [ ] Keyring integration (VSCode, ...)
 - [ ] Vesktop extensions
 - [ ] Vicinae submap
 - [ ] Better [GTK theming](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme) ?
