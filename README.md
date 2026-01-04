@@ -68,7 +68,3 @@ Then, reboot and follow [this guide](https://wiki.archlinux.org/title/Unified_Ex
 ### Wallpapers
 
 Simply places your wallpapers in `~/Pictures/Wallpapers` folder. You can choose a wallpaper with `MOD+CTRL+W`.
-
-### Monitors
-
-You need to [reapply](https://www.chezmoi.io/reference/commands/apply) when you change your primary monitor. See [this script](./home/dot_config/hypr/scripts/detect-screens.sh).

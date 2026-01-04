@@ -10,9 +10,7 @@ hyprctl --batch "
   keyword workspace 5, monitor:$MONITOR, persistent:true ;
   keyword workspace 6, monitor:$MONITOR, persistent:true ;
   keyword workspace 7, monitor:$MONITOR, persistent:true ;
-  keyword workspace 8, monitor:$MONITOR, persistent:true ;
-  keyword workspace 9, monitor:$MONITOR ;
-  keyword workspace 10, monitor:$MONITOR
+  keyword workspace 8, monitor:$MONITOR, persistent:true
 "
 
 envsubst < ~/.config/waybar/config.jsonc.template > ~/.config/waybar/config.jsonc
