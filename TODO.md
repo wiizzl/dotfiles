@@ -1,4 +1,5 @@
 - [ ] Thunar network doesnt work
+- [ ] Layer rule or impala and bluetui
 - [ ] Keyring integration (VSCode, ...)
 - [ ] Vesktop extensions
 - [ ] Vicinae submap
