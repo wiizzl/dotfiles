@@ -14,7 +14,7 @@
 [url "git@github.com:{{ .github_username }}/"]
 	insteadOf = me:
 
-{{- $ghPath := lookPath "gh" -}}
+{{- $ghPath := lookPath "gh" }}
 
 [credential "https://github.com"]
 	helper = !{{ $ghPath }} auth git-credential
