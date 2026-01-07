@@ -76,6 +76,8 @@ packages:
     - qemu-desktop
     - dnsmasq
     - docker
+    - docker-compose
+    - docker-buildx
 
     # Shell
     - starship
