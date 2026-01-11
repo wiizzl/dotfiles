@@ -85,7 +85,7 @@
       "persistent-workspaces": { "*": 8 }
     },
     "image#logo": {
-      "path": "{{ .chezmoi.homeDir }}/.config/waybar/logo.png",
+      "path": "~/.config/waybar/logo.png",
       "size": 22
     },
     "pulseaudio": {
