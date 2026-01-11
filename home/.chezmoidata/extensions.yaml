@@ -43,7 +43,8 @@ extensions:
     - ms-vsliveshare.vsliveshare
     - quicktype.quicktype
   vicinae:
-    # store.vicinae.awww-switcher: "https://api.vicinae.com/v1/store/vicinae/awww-switcher/download"
+    store.vicinae.awww-switcher: "https://api.vicinae.com/v1/store/sovereign/awww-switcher/download"
+    store.vicinae.arch-packages: "https://api.vicinae.com/v1/store/rithvikvibhu/arch-packages/download"
   spicetify:
     adblock: "https://raw.githubusercontent.com/rxri/spicetify-extensions/refs/heads/main/adblock/adblock.js"
     shuffle+: null
