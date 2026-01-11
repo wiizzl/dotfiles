@@ -15,12 +15,11 @@
 {{ end -}}
 
 {{ if eq .osid "linux-arch" -}}
-{{ range .extensions.vicinae -}}
-[".cache/vicinae-build/store.vicinae.{{ . }}"]
+{{- range $slug, $url := .extensions.vicinae }}
+[".local/share/vicinae/extensions/{{ $slug }}"]
   type = "archive"
-  url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
-  stripComponents = 3
+  url = "{{ $url }}"
+  stripComponents = 1
   refreshPeriod = "168h"
-  include = ["*/extensions/{{ . }}/**"]
 {{ end -}}
 {{- end }}
