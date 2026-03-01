@@ -1,8 +1,1 @@
-- [ ] Thunar network doesnt work
-- [ ] Layer rule or impala/bluetui/btop/lazydocker
-- [ ] Fix hyprlock
-- [ ] Keyring integration (VSCode, ...)
-- [ ] Vesktop extensions
-- [ ] Vicinae submap
-- [ ] Better [GTK theming](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme) ?
-- [ ] [UWSM setup](https://wiki.hypr.land/Useful-Utilities/Systemd-start)
+- Mise config

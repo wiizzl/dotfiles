@@ -1,0 +1,14 @@
+(
+    state: Enabled,
+    acceleration: Some((
+        profile: Some(Adaptive),
+        speed: -0.10288643756187243
+    )),
+    click_method: Some(ButtonAreas),
+    scroll_config: Some((
+        method: None,
+        natural_scroll: Some(true),
+        scroll_button: None,
+        scroll_factor: None
+    )),
+)

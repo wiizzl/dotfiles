@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# services.toml hash: {{ include "{{ .chezmoi.sourceDir }}/home/.chezmoidata/services.toml" | sha256sum }}
+
+set -euo pipefail
+
+{{ range .services.enable -}}
+sudo systemctl enable {{ . }}
+{{ end -}}
+
+{{ range .services.disable -}}
+sudo systemctl disable {{ . }}
+{{ end -}}

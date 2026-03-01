@@ -1,0 +1,8 @@
+{{- range $slug, $url := .fonts }}
+["/usr/share/fonts/{{ $slug }}"]
+  type = "archive"
+  url = "{{ $url }}"
+  stripComponents = 0
+  refreshPeriod = "336h"
+  include = ["**"]
+{{- end }}

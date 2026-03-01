@@ -1,0 +1,65 @@
+[packages.install]
+
+dnf = [
+    "podman",
+    # "podman-compose",
+    "@virtualization",
+    "tailscale",
+    "git",
+    "fish",
+    "@development-tools",
+    "code",
+    "mise",
+    "fuse",
+    "fuse-libs"
+]
+
+flatpak = [
+    "io.podman_desktop.PodmanDesktop",
+    "it.mijorus.gearlever",
+    "io.github.flattool.Warehouse",
+    "org.onlyoffice.desktopeditors",
+    "org.localsend.localsend_app",
+    "io.dbeaver.DBeaverCommunity",
+    "com.github.tchx84.Flatseal",
+    "dev.vencord.Vesktop",
+    "com.spotify.Client",
+    "app.zen_browser.zen",
+    "com.usebruno.Bruno"
+]
+
+mise = [
+    "node@24",
+    "bun",
+    "go",
+    "rust",
+    "java@21",
+    "dotnet@9",
+    "zig",
+    "uv",
+    "bat",
+    "eza",
+    "fzf",
+    "jq",
+    "ripgrep",
+    "zoxide",
+    "lazygit",
+    "lazydocker",
+    "lazyssh",
+    "fastfetch",
+    "gh",
+    "starship",
+]
+
+brew = []
+
+cask = []
+
+[packages.remove]
+
+dnf = [
+    "firefox",
+    "libreoffice*",
+    "rhythmbox",
+    "nheko"
+]
