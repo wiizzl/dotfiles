@@ -1,9 +1,9 @@
 {{- if ne .chezmoi.os "darwin" }}
 {{- range $slug, $id := .extensions.zen }}
 [".var/app/app.zen_browser.zen/.zen/default/extensions/{{ $id }}.xpi"]
-  type = "file"
-  url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
-  refreshPeriod = "168h"
+    type = "file"
+    url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
+    refreshPeriod = "168h"
 {{- end }}
 {{- end }}
 

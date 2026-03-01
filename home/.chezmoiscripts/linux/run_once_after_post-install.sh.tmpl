@@ -12,8 +12,8 @@ sudo dnf autoremove -y
 # Hostname
 {{- $fedora_type := "" -}}
 {{- if .is_laptop -}}
-  {{- $fedora_type = "laptop" -}}
+    {{- $fedora_type = "laptop" -}}
 {{- else -}}
-  {{- $fedora_type = "desktop" -}}
+    {{- $fedora_type = "desktop" -}}
 {{- end -}}
 sudo hostnamectl set-hostname "fedora-{{ $fedora_type }}"
