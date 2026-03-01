@@ -1,10 +1,18 @@
-[services]
+[services.enable]
 
-enable = [
+global = [
     "tailscaled",
     "sshd"
 ]
 
-disable = [
+user = [
+    "vicinae"
+]
+
+[services.disable]
+
+global = [
     "NetworkManager-wait-online"
 ]
+
+user = []

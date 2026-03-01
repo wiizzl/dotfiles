@@ -4,10 +4,18 @@
 
 set -euo pipefail
 
-{{ range .services.enable -}}
-sudo systemctl enable {{ . }}
+{{ range .services.enable.global -}}
+sudo systemctl enable --now {{ . }}
 {{ end -}}
 
-{{ range .services.disable -}}
-sudo systemctl disable {{ . }}
+{{ range .services.enable.user -}}
+systemctl --user enable --now {{ . }}
+{{ end -}}
+
+{{ range .services.disable.global -}}
+sudo systemctl disable --now {{ . }}
+{{ end -}}
+
+{{ range .services.disable.user -}}
+systemctl --user disable --now {{ . }}
 {{ end -}}

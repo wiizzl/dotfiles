@@ -1,2 +1,2 @@
 - Mise config
-- Cosmic Keybindings
+- Cosmic Keybindings (workspaces, [vicinae](https://docs.vicinae.com/quickstart/cosmic#create-keyboard-shortcuts), ...)
