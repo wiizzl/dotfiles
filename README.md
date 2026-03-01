@@ -34,4 +34,4 @@ chezmoi init wiizzl --apply
 ```
 
 > [!WARNING]
-> After installation, reboot your system to ensure all necessary services start.
+> After installation, reboot your system to ensure everything works as expected.
