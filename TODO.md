@@ -1,1 +1,2 @@
 - Mise config
+- Cosmic Keybindings
