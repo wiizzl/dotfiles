@@ -8,8 +8,8 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 Used to maintain my devices across different environments:
 
-- Fedora (Cosmic Spin)
-- macOS
+- [Fedora (Cosmic Spin)](https://fedoraproject.org/fr/spins/cosmic)
+- [macOS](https://www.apple.com/fr/os/macos)
 
 ## TODO
 
