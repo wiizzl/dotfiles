@@ -3,23 +3,21 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{- if not (or (eq $osid "linux-arch") (eq $osid "darwin")) -}}
-{{-   fail "Error: These dotfiles are exclusive to Arch Linux and macOS" -}}
+{{- if eq $osid "linux-fedora" -}}
+{{-   $de := output "bash" "-c" "ps -e | grep -qw cosmic-session && echo cosmic || echo unknown" | trim -}}
+{{-   $osid = printf "%s-%s" $osid $de -}}
+{{- end -}}
+
+{{- if not (or (eq $osid "linux-fedora-cosmic") (eq $osid "darwin")) -}}
+{{- fail "Error: These dotfiles are exclusive to Fedora (Cosmic Spin) and macOS" -}}
 {{- end -}}
 
 [data]
-  osid = {{ $osid | quote }}
-  github_username = {{ promptStringOnce . "github_username" "What is your GitHub username" | quote }}
-  git_name = {{ promptStringOnce . "git_name" "What is your git name" | quote }}
-  git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
+    github_username = {{ promptStringOnce . "github_username" "What is your GitHub username" | quote }}
+    git_name = {{ promptStringOnce . "git_name" "What is your git name" | quote }}
+    git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
 
-{{- if eq $osid "linux-arch" }}
-  is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
-  terminal = "alacritty"
-  selected_theme = "catppuccin"
-  cursor_name = "Bibata-Modern-Ice"
-  cursor_size = "32"
-  icon = "Adwaita"
-  font = "Montserrat"
-  font_mono = "JetBrainsMono Nerd Font"
+{{- if eq $osid "linux-fedora-cosmic" }}
+    is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
+    mono_font = "JetBrainsMono Nerd Font Mono"
 {{- end }}

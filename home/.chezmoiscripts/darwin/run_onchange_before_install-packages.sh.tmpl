@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eufo pipefail
+set -euo pipefail
 
 if ! command -v brew &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -13,10 +13,10 @@ if ! command -v brew &> /dev/null; then
 fi
 
 brew bundle --file=/dev/stdin <<EOF
-{{ range (.packages.darwin.brews | uniq) -}}
+{{ range (.packages.install.brew | uniq) -}}
 brew "{{ . }}"
 {{ end -}}
-{{ range (.packages.darwin.casks | uniq) -}}
+{{ range (.packages.install.cask | uniq) -}}
 cask "{{ . }}"
 {{ end -}}
 EOF

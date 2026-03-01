@@ -1,22 +1,19 @@
 #!/bin/bash
 
-set -eufo pipefail
+set -euo pipefail
 
-# Configure Ly
-chezmoi execute-template < {{ .chezmoi.sourceDir }}/dot_config/ly/config.ini.tmpl | sudo tee /etc/ly/config.ini > /dev/null
+# Set Fish as default shell
+chsh -s /usr/bin/fish
 
-# Set ZSH as default shell
-chsh -s /usr/bin/zsh
+# Cleanup
+sudo dnf clean all
+sudo dnf autoremove -y
 
-# Create user home dirs
-xdg-user-dirs-update
-
-# Create Wallpapers and Screenshots dirs
-mkdir -p "$HOME/Pictures/Wallpapers" && mkdir -p "$HOME/Pictures/Screenshots"
-
-# GTK theme
-gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "custom-theme"
-
-# Make scripts executables
-find "$HOME/.config/hypr/scripts/" -type f -name "*.sh" -exec chmod +x {} +
+# Hostname
+{{- $fedora_type := "" -}}
+{{- if .is_laptop -}}
+  {{- $fedora_type = "laptop" -}}
+{{- else -}}
+  {{- $fedora_type = "desktop" -}}
+{{- end -}}
+sudo hostnamectl set-hostname "fedora-{{ $fedora_type }}"

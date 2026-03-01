@@ -1,0 +1,12 @@
+Some(([
+    "com.system76.CosmicAppletNotifications",
+    "com.system76.CosmicAppletTime",
+], [
+    "com.system76.CosmicAppletAudio",
+    "com.system76.CosmicAppletBluetooth",
+    "com.system76.CosmicAppletNetwork",
+{{- if .is_laptop }}
+    "com.system76.CosmicAppletBattery",
+{{- end }}
+    "com.system76.CosmicAppletPower",
+]))

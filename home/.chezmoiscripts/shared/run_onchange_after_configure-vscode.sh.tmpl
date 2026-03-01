@@ -1,6 +1,8 @@
 #!/bin/bash
 
-set -eufo pipefail
+# extensions.toml hash: {{ include "{{ .chezmoi.sourceDir }}/home/.chezmoidata/extensions.toml" | sha256sum }}
+
+set -euo pipefail
 
 {{ range .extensions.vscode -}}
 code --force --install-extension {{ . }}

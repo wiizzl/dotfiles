@@ -1,25 +1,12 @@
-{{- range $name, $url := .extensions.spicetify }}
-{{- if $url }}
-[".config/spicetify/Extensions/{{ $name }}.js"]
-  type = "file"
-  url = "{{ $url }}"
-  refreshPeriod = "168h"
-{{- end }}
-{{- end -}}
-
+{{- if ne .chezmoi.os "darwin" }}
 {{- range $slug, $id := .extensions.zen }}
-[".zen/default/extensions/{{ $id }}.xpi"]
+[".var/app/app.zen_browser.zen/.zen/default/extensions/{{ $id }}.xpi"]
   type = "file"
   url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
   refreshPeriod = "168h"
-{{ end -}}
+{{- end }}
+{{- end }}
 
-{{ if eq .osid "linux-arch" -}}
-{{- range $slug, $url := .extensions.vicinae }}
-[".local/share/vicinae/extensions/{{ $slug }}"]
-  type = "archive"
-  url = "{{ $url }}"
-  stripComponents = 1
-  refreshPeriod = "168h"
-{{ end -}}
+{{- if ne .chezmoi.os "linux" }}
+
 {{- end }}
