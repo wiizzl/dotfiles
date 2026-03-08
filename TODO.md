@@ -1,3 +1,4 @@
 - Mise config
-- Cosmic Keybindings (workspaces, [vicinae](https://docs.vicinae.com/quickstart/cosmic#create-keyboard-shortcuts), ...)
+- Cosmic keybindings (workspaces, [vicinae](https://docs.vicinae.com/quickstart/cosmic#create-keyboard-shortcuts), ...)
+- Cosmic theme
 - Cursor theme
