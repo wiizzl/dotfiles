@@ -10,6 +10,7 @@ dnf = [
     "@development-tools",
     "code",
     "mise",
+    "vicinae",
     "fuse",
     "fuse-libs"
 ]
