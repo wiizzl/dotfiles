@@ -1,10 +1,8 @@
-alias \
-\
-c="clear" \
-ping="ping -c 5" \
-please="sudo" \
-cat="bat" \
-ls="eza -l --icons --group-directories-first --git" \
-l="eza --icons -a --group-directories-first -1" \
-ll="eza --icons -a --group-directories-first -1 --no-user --long" \
-tree="eza --icons --tree --group-directories-first"
+alias c="clear"
+alias ping="ping -c 5"
+alias please="sudo"
+alias cat="bat"
+alias ls="eza -l --icons --group-directories-first --git"
+alias l="eza --icons -a --group-directories-first -1"
+alias ll="eza --icons -a --group-directories-first -1 --no-user --long"
+alias tree="eza --icons --tree --group-directories-first"

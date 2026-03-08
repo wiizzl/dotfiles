@@ -45,7 +45,6 @@ mise = [
     "ripgrep",
     "zoxide",
     "lazygit",
-    "lazydocker",
     "lazyssh",
     "fastfetch",
     "github-cli",
@@ -62,5 +61,6 @@ dnf = [
     "firefox",
     "libreoffice*",
     "rhythmbox",
-    "nheko"
+    "nheko",
+    "thunderbird"
 ]
