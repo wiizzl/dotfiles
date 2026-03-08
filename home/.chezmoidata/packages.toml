@@ -2,13 +2,14 @@
 
 dnf = [
     "podman",
-    # "podman-compose",
+    "podman-compose",
     "@virtualization",
     "tailscale",
     "git",
     "fish",
     "@development-tools",
     "code",
+    "discord",
     "mise",
     "vicinae",
     "fuse",
@@ -23,7 +24,6 @@ flatpak = [
     "org.localsend.localsend_app",
     "io.dbeaver.DBeaverCommunity",
     "com.github.tchx84.Flatseal",
-    "dev.vencord.Vesktop",
     "com.spotify.Client",
     "app.zen_browser.zen",
     "com.usebruno.Bruno"
