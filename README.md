@@ -38,6 +38,20 @@ chezmoi init wiizzl --apply
 
 ## Manual steps
 
+### Spicetify
+
+Open Spotify and log in for at least 60 seconds before running Spicetify. This allows Spotify to generate the files that Spicetify needs to function. Then run thoses commands :
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+
+GROUP=users
+sudo chgrp $GROUP /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
+sudo chgrp -R $GROUP /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
+sudo chmod 775 /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify
+sudo chmod 775 -R /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/Apps
+```
+
 ### Zen browser
 
 #### Stylus
