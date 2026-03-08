@@ -4,7 +4,7 @@ color_theme = "catppuccin"
 [tools]
 {{- range .packages.install.mise }}
 {{- if contains "@" . }}
-{{- $parts := split "@" . }}
+{{- $parts := splitList "@" . }}
 {{ index $parts 0 }} = "{{ index $parts 1 }}"
 {{- else }}
 {{ . }} = "latest"
