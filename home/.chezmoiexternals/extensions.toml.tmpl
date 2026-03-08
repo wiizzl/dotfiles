@@ -3,7 +3,14 @@
 [".var/app/app.zen_browser.zen/.zen/default/extensions/{{ $id }}.xpi"]
     type = "file"
     url = "https://addons.mozilla.org/firefox/downloads/latest/{{ $slug }}/latest.xpi"
-    refreshPeriod = "168h"
+    refreshPeriod = "336h"
+{{- end }}
+
+{{- range $name, $url := .extensions.spicetify }}
+[".config/spicetify/Extensions/{{ $name }}.js"]
+    type = "file"
+    url = "{{ $url }}"
+    refreshPeriod = "336h"
 {{- end }}
 {{- end }}
 

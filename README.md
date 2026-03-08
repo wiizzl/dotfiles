@@ -35,3 +35,15 @@ chezmoi init wiizzl --apply
 
 > [!WARNING]
 > After installation, reboot your system to ensure everything works as expected.
+
+## Manual steps
+
+### Zen browser
+
+#### Stylus
+
+Download this [configuration](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json) and import it.
+
+#### Dark reader
+
+Follow [this guide](https://github.com/catppuccin/dark-reader?tab=readme-ov-file#usage).
