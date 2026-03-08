@@ -1,5 +1,5 @@
 {{- range $slug, $url := .fonts }}
-["/usr/share/fonts/{{ $slug }}"]
+[".local/share/fonts/{{ $slug }}"]
     type = "archive"
     url = "{{ $url }}"
     stripComponents = 0
