@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# services.toml hash: {{ include "{{ .chezmoi.sourceDir }}/home/.chezmoidata/services.toml" | sha256sum }}
+# services.toml hash: {{ include ".chezmoidata/services.toml" | sha256sum }}
 
 set -euo pipefail
 
