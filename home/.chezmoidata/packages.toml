@@ -48,7 +48,7 @@ mise = [
     "lazydocker",
     "lazyssh",
     "fastfetch",
-    "gh",
+    "github-cli",
     "starship",
 ]
 
