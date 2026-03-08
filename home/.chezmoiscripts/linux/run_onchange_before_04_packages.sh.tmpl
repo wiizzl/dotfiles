@@ -7,6 +7,6 @@ set -euo pipefail
 sudo dnf install -y {{ .packages.install.dnf | uniq | join " " }}
 sudo dnf remove -y {{ .packages.remove.dnf | uniq | join " " }}
 
-{{ range .packages.flatpaks -}}
+{{ range .packages.flatpak -}}
 flatpak install flathub -y {{ . }}
 {{ end -}}
