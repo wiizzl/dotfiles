@@ -15,7 +15,7 @@ flatpak remote-delete --force fedora 2>/dev/null || true
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Copr
-sudo dnf copr enable -y jdxcode/mise quadratech188/vicinae
+sudo dnf copr enable -y jdxcode/mise
 sudo dnf copr enable -y quadratech188/vicinae
 
 # VSCode
