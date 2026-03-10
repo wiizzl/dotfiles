@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# services.toml hash: {{ include ".chezmoidata/groups.toml" | sha256sum }}
+
+set -euo pipefail
+
+{{ range .groups.add -}}
+sudo usermod -aG {{ . }} $USER
+{{ end -}}
+
+{{ range .groups.remove -}}
+sudo gpasswd -d $USER {{ . }}
+{{ end -}}

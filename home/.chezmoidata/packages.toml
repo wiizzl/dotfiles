@@ -1,9 +1,10 @@
 [packages.install]
 
 dnf = [
-    "podman",
-    "podman-compose",
     "@virtualization",
+    "docker-cli",
+    "containerd",
+    "docker-compose",
     "tailscale",
     "git",
     "fish",
@@ -46,6 +47,7 @@ mise = [
     "zoxide",
     "lazygit",
     "lazyssh",
+    "lazydocker",
     "fastfetch",
     "github-cli",
     "starship",
@@ -62,5 +64,6 @@ dnf = [
     "libreoffice*",
     "rhythmbox",
     "nheko",
-    "thunderbird"
+    "thunderbird",
+    "podman"
 ]
