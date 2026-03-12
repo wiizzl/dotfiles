@@ -35,7 +35,7 @@ mise = [
     "go",
     "rust",
     "java@21",
-    "dotnet@9",
+    "dotnet@10",
     "zig",
     "uv",
     "bat",
