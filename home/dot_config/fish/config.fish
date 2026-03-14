@@ -4,3 +4,5 @@ if status is-interactive
     zoxide init fish --cmd cd | source
     fzf --fish | source
 end
+
+fish_add_path $HOME/.spicetify
