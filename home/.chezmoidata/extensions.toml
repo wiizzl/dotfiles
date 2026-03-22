@@ -42,7 +42,8 @@ vscode = [
     "github.copilot-chat",
     "ms-vsliveshare.vsliveshare",
     "quicktype.quicktype",
-    "EditorConfig.EditorConfig"
+    "EditorConfig.EditorConfig",
+    "oxc.oxc-vscode"
 ]
 
 [extensions.spicetify]
