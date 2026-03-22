@@ -10,6 +10,7 @@ dnf = [
     "fish",
     "@development-tools",
     "code",
+    "zed",
     "discord",
     "mise",
     "vicinae",
