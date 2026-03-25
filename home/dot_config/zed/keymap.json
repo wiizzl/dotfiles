@@ -1,0 +1,33 @@
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-shift-r": "editor::Rename",
+        },
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "ctrl-shift-t": "workspace::NewTerminal",
+        },
+    },
+    {
+        "context": "!ContextEditor > (Editor && mode == full)",
+        "bindings": {
+            "cmd-k": "assistant::InlineAssist",
+        },
+    },
+    {
+        "context": "Editor",
+        "use_key_equivalents": false,
+        "bindings": {
+            "cmd-/": ["editor::ToggleComments", { "advance_downwards": false }],
+        },
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "alt-escape": "editor::ShowCompletions",
+        },
+    },
+]
