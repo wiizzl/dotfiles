@@ -18,6 +18,12 @@
   },
 
   "colorize_brackets": true,
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
+
+  "format_on_save": "on",
+  "autosave": "on_focus_change",
 
   "middle_click_paste": false,
 
@@ -27,8 +33,11 @@
     "max_width_columns": 65,
   },
 
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+  },
+
   "diagnostics": {
-    "button": true,
     "include_warnings": true,
     "inline": {
       "enabled": true,
@@ -47,12 +56,18 @@
   },
 
   "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-3-flash-preview",
+      "enable_thinking": false,
+    },
+    "play_sound_when_agent_done": true,
     "dock": "left",
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4.1",
-      "enable_thinking": true,
+      "enable_thinking": false,
     },
   },
 
@@ -62,10 +77,33 @@
   "project_panel": {
     "dock": "right",
     "auto_fold_dirs": false,
+    "indent_size": 12,
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "notification_panel": {
+    "button": false,
   },
 
   "max_tabs": 6,
-  "autosave": "on_focus_change",
+
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true,
+        "source.removeUnusedImports": true,
+      },
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true,
+        "source.removeUnusedImports": true,
+      },
+    },
+  },
 
   "lsp": {
     "tailwindcss-language-server": {
@@ -93,6 +131,7 @@
     "astro": true,
     "prisma": true,
     "discord-presence": true,
+    "oxc": true,
   },
 
   "telemetry": {
