@@ -43,7 +43,7 @@ vscode = [
     "ms-vsliveshare.vsliveshare",
     "quicktype.quicktype",
     "EditorConfig.EditorConfig",
-    "oxc.oxc-vscode"
+    "oxc.oxc-vscode",
 ]
 
 [extensions.spicetify]

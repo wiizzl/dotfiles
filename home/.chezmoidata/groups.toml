@@ -1,7 +1,3 @@
 [groups]
-
-add = [
-    "docker"
-]
-
+add = ["docker"]
 remove = []

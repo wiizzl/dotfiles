@@ -1,4 +1,3 @@
-alias c="clear"
 alias ping="ping -c 5"
 alias please="sudo"
 alias cat="bat"
