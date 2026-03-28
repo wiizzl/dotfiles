@@ -49,7 +49,7 @@
   },
 
   "edit_predictions": {
-    "provider": "copilot",
+    "provider": "zed",
     "copilot": {
       "enable_next_edit_suggestions": false,
     },
@@ -57,17 +57,18 @@
 
   "agent": {
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-3-flash-preview",
+      "provider": "zed.dev",
+      "model": "gemini-3-flash",
       "enable_thinking": false,
     },
     "play_sound_when_agent_done": true,
     "dock": "left",
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1",
-      "enable_thinking": false,
+      "effort": "high",
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
     },
   },
 

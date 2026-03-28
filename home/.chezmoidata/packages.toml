@@ -15,7 +15,7 @@ dnf = [
     "mise",
     "vicinae",
     "fuse",
-    "fuse-libs"
+    "fuse-libs",
 ]
 
 flatpak = [
@@ -27,7 +27,8 @@ flatpak = [
     "com.github.tchx84.Flatseal",
     "com.spotify.Client",
     "app.zen_browser.zen",
-    "com.usebruno.Bruno"
+    "com.usebruno.Bruno",
+    "com.bitwarden.desktop",
 ]
 
 mise = [
@@ -59,11 +60,4 @@ cask = []
 
 [packages.remove]
 
-dnf = [
-    "firefox",
-    "libreoffice*",
-    "rhythmbox",
-    "nheko",
-    "thunderbird",
-    "podman"
-]
+dnf = ["firefox", "libreoffice*", "rhythmbox", "nheko", "thunderbird", "podman"]

@@ -20,16 +20,28 @@ See [`TODO.md`](./TODO.md).
 > [!WARNING]
 > If you want to try these dotfiles, fork this repository first, review the files, and remove anything you do not want. Do not blindly apply settings you do not understand. Use at your own risk.
 
-If you do not have [`chezmoi`](https://chezmoi.io/install) installed, here is a one-liner:
+### Prerequisites
+
+Before running the install script, make sure you have an **SSH key** stored in your Bitwarden vault:
+
+1. Generate an SSH key pair if you don't have one:
+
+    ```sh
+    ssh-keygen -t ed25519 -C "your@email.com"
+    ```
+
+2. In your Bitwarden vault, create a new item of type SSH Key and name it exactly `Git`.
+
+3. Paste your private key (`~/.ssh/id_ed25519`) into the Private Key field.
+
+4. Add the public key (`~/.ssh/id_ed25519.pub`) to your [GitHub account](https://github.com/settings/keys).
+
+### Steps
+
+Run the install script, which will set up the Bitwarden CLI, authenticate, and apply the dotfiles:
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply wiizzl
-```
-
-Otherwise, simply run:
-
-```sh
-chezmoi init wiizzl --apply
+sh -c "$(curl -fsLS https://raw.githubusercontent.com/wiizzl/dotfiles/main/install.sh)"
 ```
 
 > [!IMPORTANT]

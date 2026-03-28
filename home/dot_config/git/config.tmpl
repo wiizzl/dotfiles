@@ -1,6 +1,16 @@
 [user]
 	email = "{{ .git_email }}"
 	name = "{{ .git_name }}"
+	signingkey = "~/.ssh/id_ed25519_sign.pub"
+
+[gpg]
+    format = "ssh"
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
 
 [init]
 	defaultBranch = "main"
