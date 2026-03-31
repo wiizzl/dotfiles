@@ -32,11 +32,12 @@ flatpak = [
 ]
 
 mise = [
+    "usage",
     "node@24",
     "bun",
-    "go@26",
+    "go@1.26",
     "rust",
-    "java@5",
+    "java@25",
     "dotnet@10",
     "zig",
     "uv",
