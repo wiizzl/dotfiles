@@ -34,9 +34,9 @@ flatpak = [
 mise = [
     "node@24",
     "bun",
-    "go",
+    "go@26",
     "rust",
-    "java@21",
+    "java@5",
     "dotnet@10",
     "zig",
     "uv",
@@ -49,9 +49,11 @@ mise = [
     "lazygit",
     "lazyssh",
     "lazydocker",
+    "lazyjournal",
     "fastfetch",
     "github-cli",
     "starship",
+    "kubectl",
 ]
 
 brew = []
