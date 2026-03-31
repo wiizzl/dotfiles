@@ -9,7 +9,7 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 Used to maintain a consistent setup across different environments:
 
 - [Fedora (COSMIC Spin)](https://fedoraproject.org/fr/spins/cosmic)
-- [macOS](https://www.apple.com/fr/os/macos)
+- [~~macOS~~](https://www.apple.com/fr/os/macos) (not yet supported...)
 
 ## What's next ?
 
@@ -22,19 +22,26 @@ See [`TODO.md`](./TODO.md).
 
 ### Prerequisites
 
-Before running the install script, make sure you have an **SSH key** stored in your Bitwarden vault:
+Before running the install script, make sure you have **two SSH keys** stored in your Bitwarden vault — one for authentication and one for signing:
 
-1. Generate an SSH key pair if you don't have one:
+1. Generate both key pairs if you don't have them:
 
     ```sh
-    ssh-keygen -t ed25519 -C "your@email.com"
+    ssh-keygen -t ed25519 -C "your@email.com" -f ~/.ssh/id_ed25519
+    ssh-keygen -t ed25519 -C "your@email.com" -f ~/.ssh/id_ed25519_sign
     ```
 
-2. In your Bitwarden vault, create a new item of type SSH Key and name it exactly `Git`.
+2. In your Bitwarden vault, create two items of type **SSH Key**:
 
-3. Paste your private key (`~/.ssh/id_ed25519`) into the Private Key field.
+    | Name       | Private Key              | Purpose        |
+    | ---------- | ------------------------ | -------------- |
+    | `git-auth` | `~/.ssh/id_ed25519`      | Authentication |
+    | `git-sign` | `~/.ssh/id_ed25519_sign` | Commit signing |
 
-4. Add the public key (`~/.ssh/id_ed25519.pub`) to your [GitHub account](https://github.com/settings/keys).
+3. Add both public keys to your [GitHub account](https://github.com/settings/keys) — the authentication one as an **Authentication Key**, and the signing one as a **Signing Key**.
+
+> [!IMPORTANT]
+> The items **must** be named exactly `git-auth` and `git-sign` in Bitwarden, as the dotfiles rely on those exact names to retrieve the keys.
 
 ### Steps
 
