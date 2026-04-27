@@ -18,6 +18,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 sudo dnf copr enable -y jdxcode/mise
 sudo dnf copr enable -y quadratech188/vicinae
 sudo dnf copr enable -y che/zed
+sudo dnf copr enable -y imput/helium
 
 # VSCode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
