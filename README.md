@@ -9,7 +9,7 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 Used to maintain a consistent setup across different environments:
 
 - [Fedora (COSMIC Spin)](https://fedoraproject.org/fr/spins/cosmic)
-- [~~macOS~~](https://www.apple.com/fr/os/macos) (not yet supported...)
+- [~~macOS~~](https://apple.com/fr/os/macos) (not yet supported...)
 
 ## What's next ?
 
@@ -22,14 +22,15 @@ See [`TODO.md`](./TODO.md).
 
 ### Prerequisites
 
-Before running the install script, make sure you have two SSH keys stored in your Bitwarden vault — one for authentication and one for signing:
+- [chezmoi](https://chezmoi.io/install)
+- [Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install)
 
-> [!IMPORTANT]
-> The items must be named exactly `git-auth` and `git-sign` in Bitwarden, as the dotfiles rely on those exact names to retrieve the keys.
+> [!NOTE]
+> Before running the install script, ensure your SSH keys are saved in your vault as `git-auth` and `git-sign`. These exact names are required for the script to function.
 
 ### Steps
 
-Run the [install script](./install.sh), which will set up the Bitwarden CLI, authenticate, and apply the dotfiles:
+Run the [install script](./install.sh), which will check for missing dependencies and apply the dotfiles:
 
 ```sh
 sh -c "$(curl -fsLS https://raw.githubusercontent.com/wiizzl/dotfiles/main/install.sh)"

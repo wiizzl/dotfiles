@@ -1,15 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
-sudo dnf install -y unzip curl chezmoi
-
-if ! command -v bw &> /dev/null; then
-    curl -Lso bw.zip "https://vault.bitwarden.com/download/?app=cli&platform=linux"
-    sudo unzip -q bw.zip -d /usr/local/bin/
-    sudo chmod +x /usr/local/bin/bw
-    rm bw.zip
-fi
+for cmd in chezmoi bw; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "Error: '$cmd' is required." >&2
+        exit 1
+    fi
+done
 
 if bw status | grep -q '"status":"unauthenticated"'; then
     bw config server https://vault.bitwarden.eu
