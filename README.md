@@ -22,30 +22,14 @@ See [`TODO.md`](./TODO.md).
 
 ### Prerequisites
 
-Before running the install script, make sure you have **two SSH keys** stored in your Bitwarden vault — one for authentication and one for signing:
-
-1. Generate both key pairs if you don't have them:
-
-    ```sh
-    ssh-keygen -t ed25519 -C "your@email.com" -f ~/.ssh/id_ed25519
-    ssh-keygen -t ed25519 -C "your@email.com" -f ~/.ssh/id_ed25519_sign
-    ```
-
-2. In your Bitwarden vault, create two items of type **SSH Key**:
-
-    | Name       | Private Key              | Purpose        |
-    | ---------- | ------------------------ | -------------- |
-    | `git-auth` | `~/.ssh/id_ed25519`      | Authentication |
-    | `git-sign` | `~/.ssh/id_ed25519_sign` | Commit signing |
-
-3. Add both public keys to your [GitHub account](https://github.com/settings/keys) — the authentication one as an **Authentication Key**, and the signing one as a **Signing Key**.
+Before running the install script, make sure you have two SSH keys stored in your Bitwarden vault — one for authentication and one for signing:
 
 > [!IMPORTANT]
-> The items **must** be named exactly `git-auth` and `git-sign` in Bitwarden, as the dotfiles rely on those exact names to retrieve the keys.
+> The items must be named exactly `git-auth` and `git-sign` in Bitwarden, as the dotfiles rely on those exact names to retrieve the keys.
 
 ### Steps
 
-Run the install script, which will set up the Bitwarden CLI, authenticate, and apply the dotfiles:
+Run the [install script](./install.sh), which will set up the Bitwarden CLI, authenticate, and apply the dotfiles:
 
 ```sh
 sh -c "$(curl -fsLS https://raw.githubusercontent.com/wiizzl/dotfiles/main/install.sh)"
@@ -68,7 +52,3 @@ sudo chmod a+wr -R /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/
 
 spicetify backup apply
 ```
-
-### Browser (theming)
-
-Download this [configuration](https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json) and import it in Stylus.

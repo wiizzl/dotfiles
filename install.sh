@@ -18,4 +18,5 @@ fi
 
 export BW_SESSION=$(bw unlock --raw)
 
-chezmoi init --apply wiizzl
+read -rp "Enter your GitHub username: " GITHUB_USERNAME
+chezmoi init --apply "$GITHUB_USERNAME"
