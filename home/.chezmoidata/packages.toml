@@ -27,7 +27,6 @@ flatpak = [
     "io.dbeaver.DBeaverCommunity",
     "com.github.tchx84.Flatseal",
     "com.spotify.Client",
-    "app.zen_browser.zen",
     "com.usebruno.Bruno",
     "com.bitwarden.desktop",
 ]
