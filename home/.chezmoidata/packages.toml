@@ -14,7 +14,7 @@ dnf = [
     "discord",
     "mise",
     "vicinae",
-    "helium-bin",
+    "helium-browser-bin",
     "fuse",
     "fuse-libs",
 ]
