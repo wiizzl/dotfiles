@@ -24,8 +24,5 @@ if [ -f "$SESSION_FILE" ] && ! grep -q "COSMIC_DATA_CONTROL_ENABLED" "$SESSION_F
     sudo sed -i 's|^Exec=/usr/bin/start-cosmic|Exec=env COSMIC_DATA_CONTROL_ENABLED=1 /usr/bin/start-cosmic|' "$SESSION_FILE"
 fi
 
-# Vencord
-curl -sS https://vencord.dev/install.sh | sh -s -- -install
-
 # Install mise packages
 mise install
