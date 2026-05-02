@@ -39,7 +39,6 @@ vscode = [
     "ms-vscode-remote.remote-ssh-edit",
     "ms-vscode.remote-explorer",
     "ms-azuretools.vscode-containers",
-    "github.copilot-chat",
     "ms-vsliveshare.vsliveshare",
     "quicktype.quicktype",
     "EditorConfig.EditorConfig",
