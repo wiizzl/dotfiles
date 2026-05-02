@@ -11,7 +11,7 @@ dnf = [
     "@development-tools",
     "code",
     "zed",
-    "discord",
+    "vesktop",
     "mise",
     "vicinae",
     "helium-browser-bin",
