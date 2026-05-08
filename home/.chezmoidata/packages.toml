@@ -42,6 +42,7 @@ mise = [
     "zig",
     "uv",
     "bat",
+    "opencode",
     "eza",
     "fzf",
     "jq",
@@ -54,7 +55,6 @@ mise = [
     "fastfetch",
     "github-cli",
     "starship",
-    "kubectl",
 ]
 
 brew = []
