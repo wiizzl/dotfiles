@@ -42,6 +42,7 @@ mise = [
     "zig",
     "uv",
     "bat",
+    "ollama",
     "opencode",
     "eza",
     "fzf",
