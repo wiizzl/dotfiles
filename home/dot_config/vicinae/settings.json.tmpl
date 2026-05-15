@@ -1,44 +1,53 @@
 {
-  "search_files_in_root": false,
-  "pop_to_root_on_close": false,
+   "$schema": "https://vicinae.com/schemas/config.json",
 
-  "favicon_service": "twenty",
+   "pop_to_root_on_close": true,
+   "favicon_service": "twenty",
+   "search_files_in_root": false,
 
-  "font": {
-    "normal": {
-      "family": "{{ .mono_font }}",
-      "size": 12
-    }
-  },
-
-  "theme": {
-    "dark": {
-      "name": "catppuccin-mocha"
-    },
-    "light": {
-      "name": "catppuccin-mocha"
-    }
-  },
-
-  "favorites": [],
-
-  "providers": {
-    "core": {
-      "entrypoints": {
-        "about": { "enabled": false },
-        "documentation": { "enabled": false },
-        "keybind-settings": { "enabled": false },
-        "manage-fallbacks": { "enabled": false },
-        "open-config-file": { "enabled": false },
-        "open-default-config": { "enabled": false },
-        "report-bug": { "enabled": false },
-        "sponsor": { "enabled": false }
+   "font": {
+      "normal": {
+         "family": "{{ .mono_font }}",
+         "size": 12
       }
-    },
-    "developer": { "enabled": false },
-    "manage-shortcuts": { "enabled": false },
-    "power": { "enabled": false },
-    "system": { "enabled": false },
-    "theme": { "enabled": false }
-  }
+   },
+
+   "theme": {
+      "light": {
+         "name": "catppuccin-latte"
+      },
+      "dark": {
+         "name": "catppuccin-mocha"
+      }
+   },
+
+   "telemetry": {
+      "system_info": false
+   },
+
+   "favorites": [],
+
+   "providers": {
+      "browser-extension": { "enabled": false },
+      "clipboard": { "preferences": { "eraseOnStartup": true } },
+      "core": {
+         "entrypoints": {
+            "about": { "enabled": false },
+            "documentation": { "enabled": false },
+            "keybind-settings": { "enabled": false },
+            "manage-fallbacks": { "enabled": false },
+            "open-config-file": { "enabled": false },
+            "open-default-config": { "enabled": false },
+            "report-bug": { "enabled": false },
+            "sponsor": { "enabled": false }
+         }
+      },
+      "developer": { "enabled": false },
+      "manage-shortcuts": { "enabled": false },
+      "power": { "enabled": false },
+      "snippets": { "enabled": false },
+      "system": { "enabled": false },
+      "theme": { "enabled": false },
+      "wm": { "enabled": false }
+   }
 }
