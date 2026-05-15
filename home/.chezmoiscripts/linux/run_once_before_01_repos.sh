@@ -18,9 +18,6 @@ fi
 flatpak remote-delete --force fedora 2>/dev/null || true
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Copr
-sudo dnf copr enable -y quadratech188/vicinae
-
 # VSCode
 if [ ! -f /etc/yum.repos.d/vscode.repo ]; then
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
