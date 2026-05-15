@@ -14,6 +14,7 @@ dnf = [
     "vesktop",
     "mise",
     "vicinae",
+    "ollama",
     "helium-browser-bin",
     "fuse",
     "fuse-libs",
@@ -29,6 +30,8 @@ flatpak = [
     "com.spotify.Client",
     "com.usebruno.Bruno",
     "com.bitwarden.desktop",
+    "org.gnome.DejaDup",
+    "io.missioncenter.MissionCenter",
 ]
 
 mise = [
@@ -63,4 +66,12 @@ cask = []
 
 [packages.remove]
 
-dnf = ["firefox", "libreoffice*", "rhythmbox", "nheko", "thunderbird", "podman"]
+dnf = [
+    "firefox",
+    "libreoffice*",
+    "rhythmbox",
+    "nheko",
+    "thunderbird",
+    "podman",
+    "gnome-system-monitor",
+]
