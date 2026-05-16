@@ -14,7 +14,6 @@ dnf = [
     "vesktop",
     "mise",
     "vicinae",
-    "ollama",
     "helium-browser-bin",
     "fuse",
     "fuse-libs",
