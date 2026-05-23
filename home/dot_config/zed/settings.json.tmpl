@@ -9,6 +9,8 @@
 
   "base_keymap": "VSCode",
 
+  "cli_default_open_behavior": "new_window",
+
   "buffer_font_family": "{{ .mono_font }}",
   "buffer_font_size": 15,
   "ui_font_size": 15,
@@ -61,7 +63,7 @@
       "model": "gemini-3-flash",
       "enable_thinking": false,
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "dock": "left",
     "default_profile": "write",
     "default_model": {
@@ -83,9 +85,6 @@
   "collaboration_panel": {
     "button": false,
   },
-  "notification_panel": {
-    "button": false,
-  },
 
   "max_tabs": 6,
 
@@ -93,14 +92,12 @@
     "TypeScript": {
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true,
         "source.removeUnusedImports": true,
       },
     },
     "TSX": {
       "code_actions_on_format": {
         "source.organizeImports": true,
-        "source.fixAll.eslint": true,
         "source.removeUnusedImports": true,
       },
     },
@@ -118,9 +115,11 @@
 
   "auto_install_extensions": {
     "html": true,
+    "scss": true,
     "toml": true,
     "catppuccin": true,
     "catppuccin-icons": true,
+    "biome": true,
     "java": true,
     "dockerfile": true,
     "docker-compose": true,
@@ -130,10 +129,14 @@
     "csharp": true,
     "zig": true,
     "astro": true,
+    "vue": true,
+    "svelte": true,
+    "terraform": true,
     "prisma": true,
     "discord-presence": true,
     "oxc": true,
     "git-firefly": true,
+    "make": true,
   },
 
   "telemetry": {
