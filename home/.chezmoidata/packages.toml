@@ -73,4 +73,5 @@ dnf = [
     "thunderbird",
     "podman",
     "gnome-system-monitor",
+    "gnome-calculator",
 ]
