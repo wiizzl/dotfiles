@@ -72,4 +72,5 @@ dnf = [
     "podman",
     "gnome-system-monitor",
     "gnome-calculator",
+    "cosmic-store",
 ]
