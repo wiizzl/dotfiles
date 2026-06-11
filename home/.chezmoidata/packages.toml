@@ -29,6 +29,10 @@ flatpak = [
     "com.bitwarden.desktop",
     "org.gnome.DejaDup",
     "io.missioncenter.MissionCenter",
+    "eu.betterbird.Betterbird",
+    "io.github.cosmic_utils.Examine",
+    "io.github.cosmic_utils.camera",
+    "dev.heppen.webapps",
 ]
 
 mise = [
