@@ -25,7 +25,6 @@ vscode = [
     "charliermarsh.ruff",
     "meganrogge.template-string-converter",
     "github.vscode-github-actions",
-    "icrawl.discord-vscode",
     "tamasfe.even-better-toml",
     "redhat.vscode-yaml",
     "redhat.java",
