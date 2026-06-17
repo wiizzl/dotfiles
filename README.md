@@ -11,10 +11,6 @@ Used to maintain a consistent setup across different environments:
 - [Fedora](https://fedoraproject.org)
 - [~~macOS~~](https://apple.com/fr/os/macos) (not yet supported...)
 
-## What's next ?
-
-See [`TODO.md`](./TODO.md).
-
 ## Installation
 
 > [!WARNING]
@@ -22,6 +18,7 @@ See [`TODO.md`](./TODO.md).
 
 ### Prerequisites
 
+- [git](https://git-scm.com)
 - [chezmoi](https://chezmoi.io/install)
 - [Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install)
 
