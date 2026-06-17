@@ -8,7 +8,7 @@ dnf = [
     "bluez",
     "bluez-tools",
     "blueman",
-    "polkit-gnome",
+    "lxqt-policykit",
 
     "sway",
     "swaybg",
