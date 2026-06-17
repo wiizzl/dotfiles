@@ -1,6 +1,28 @@
 [packages.install]
 
 dnf = [
+    "pipewire",
+    "wireplumber",
+    "pipewire-pulseaudio",
+    "pipewire-alsa",
+    "bluez",
+    "bluez-tools",
+    "blueman",
+    "polkit-gnome",
+
+    "sway",
+    "swaybg",
+    "swayidle",
+    "swaylock",
+    "xdg-desktop-portal",
+    "xdg-desktop-portal-wlr",
+    "xdg-desktop-portal-gtk",
+    "wl-clipboard",
+    "wdisplays",
+
+    "kitty",
+    "thunar",
+
     "@virtualization",
     "moby-engine",
     "docker-compose",
