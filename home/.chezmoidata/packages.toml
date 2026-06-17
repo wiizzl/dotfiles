@@ -23,12 +23,12 @@ dnf = [
     "kitty",
     "thunar",
 
+    "flatpak",
     "@virtualization",
     "moby-engine",
     "docker-compose",
     "tailscale",
     "fish",
-    "flatpak",
     "code",
     "zed",
     "mise",
