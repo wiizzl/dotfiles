@@ -82,7 +82,3 @@ mise = [
 brew = []
 
 cask = []
-
-[packages.remove]
-
-dnf = []
