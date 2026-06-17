@@ -5,7 +5,6 @@
 set -euo pipefail
 
 sudo dnf install -y {{ .packages.install.dnf | uniq | join " " }}
-sudo dnf remove -y {{ .packages.remove.dnf | uniq | join " " }}
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 {{ range .packages.install.flatpak -}}
