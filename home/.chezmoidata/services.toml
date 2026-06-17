@@ -1,5 +1,5 @@
 [services.enable]
-global = ["tailscaled", "sshd", "docker"]
+global = ["tailscaled", "docker"]
 user = ["vicinae"]
 
 [services.disable]
