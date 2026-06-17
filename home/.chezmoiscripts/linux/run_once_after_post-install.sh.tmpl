@@ -17,6 +17,3 @@ sudo dnf autoremove -y
     {{- $fedora_type = "desktop" -}}
 {{- end -}}
 sudo hostnamectl set-hostname "fedora-{{ $fedora_type }}"
-
-# Install mise packages
-mise install

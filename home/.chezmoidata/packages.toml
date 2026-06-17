@@ -19,6 +19,7 @@ dnf = [
     "xdg-desktop-portal-gtk",
     "wl-clipboard",
     "wdisplays",
+    "mako",
 
     "kitty",
     "thunar",
