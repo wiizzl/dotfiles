@@ -1,6 +1,3 @@
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.spicetify
-
 if status is-login
     if test (tty) = /dev/tty1
         exec sway
@@ -13,3 +10,6 @@ if status is-interactive
     zoxide init fish --cmd cd | source
     fzf --fish | source
 end
+
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.spicetify
