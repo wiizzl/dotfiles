@@ -51,7 +51,6 @@ flatpak = [
     "org.gnome.DejaDup",
     "io.missioncenter.MissionCenter",
     "eu.betterbird.Betterbird",
-    "dev.heppen.webapps",
 ]
 
 mise = [
