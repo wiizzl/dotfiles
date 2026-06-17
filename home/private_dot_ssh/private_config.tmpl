@@ -1,0 +1,10 @@
+Host *
+    HashKnownHosts no
+
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+{{- if eq .chezmoi.os "darwin" }}
+    UseKeychain yes
+    AddKeysToAgent yes
+{{- end }}

@@ -6,14 +6,12 @@ dnf = [
     "docker-compose",
     "tailscale",
     "fish",
-    "@development-tools",
+    "flatpak",
     "code",
     "zed",
     "mise",
     "vicinae",
     "helium-browser-bin",
-    "fuse",
-    "fuse-libs",
 ]
 
 flatpak = [
@@ -30,8 +28,6 @@ flatpak = [
     "org.gnome.DejaDup",
     "io.missioncenter.MissionCenter",
     "eu.betterbird.Betterbird",
-    "io.github.cosmic_utils.Examine",
-    "io.github.cosmic_utils.camera",
     "dev.heppen.webapps",
 ]
 
@@ -67,14 +63,4 @@ cask = []
 
 [packages.remove]
 
-dnf = [
-    "firefox",
-    "libreoffice*",
-    "rhythmbox",
-    "nheko",
-    "thunderbird",
-    "podman",
-    "gnome-system-monitor",
-    "gnome-calculator",
-    "cosmic-store",
-]
+dnf = []

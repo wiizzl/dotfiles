@@ -8,7 +8,7 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 Used to maintain a consistent setup across different environments:
 
-- [Fedora (COSMIC Spin)](https://fedoraproject.org/fr/spins/cosmic)
+- [Fedora](https://fedoraproject.org)
 - [~~macOS~~](https://apple.com/fr/os/macos) (not yet supported...)
 
 ## What's next ?
