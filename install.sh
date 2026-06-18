@@ -2,7 +2,7 @@
 
 set -e
 
-for cmd in chezmoi bw; do
+for cmd in git chezmoi bw; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
         echo "Error: '$cmd' is required." >&2
         exit 1

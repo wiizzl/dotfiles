@@ -1,30 +1,6 @@
 [packages.install]
 
 dnf = [
-    "pipewire",
-    "wireplumber",
-    "pipewire-pulseaudio",
-    "pipewire-alsa",
-    "bluez",
-    "bluez-tools",
-    "blueman",
-    "lxqt-policykit",
-
-    "sway",
-    "swaybg",
-    "swayidle",
-    "swaylock",
-    "xdg-desktop-portal",
-    "xdg-desktop-portal-wlr",
-    "xdg-desktop-portal-gtk",
-    "wl-clipboard",
-    "wdisplays",
-    "mako",
-
-    "kitty",
-    "thunar",
-
-    "flatpak",
     "@virtualization",
     "moby-engine",
     "docker-compose",
@@ -51,6 +27,9 @@ flatpak = [
     "org.gnome.DejaDup",
     "io.missioncenter.MissionCenter",
     "eu.betterbird.Betterbird",
+    "io.github.cosmic_utils.Examine",
+    "io.github.cosmic_utils.camera",
+    "dev.heppen.webapps",
 ]
 
 mise = [
@@ -82,3 +61,17 @@ mise = [
 brew = []
 
 cask = []
+
+[packages.remove]
+
+dnf = [
+    "firefox",
+    "libreoffice*",
+    "rhythmbox",
+    "nheko",
+    "thunderbird",
+    "podman",
+    "gnome-system-monitor",
+    "gnome-calculator",
+    "cosmic-store",
+]

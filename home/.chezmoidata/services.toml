@@ -1,6 +1,6 @@
 [services.enable]
-global = ["tailscaled", "docker"]
-user = []
+global = ["tailscaled", "sshd", "docker"]
+user = ["vicinae"]
 
 [services.disable]
 global = ["NetworkManager-wait-online"]
