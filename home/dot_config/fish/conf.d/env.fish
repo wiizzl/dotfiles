@@ -3,3 +3,6 @@ set -gx EDITOR "zed --wait"
 set -gx MANPAGER "bat -plman"
 set -gx STARSHIP_CONFIG "$HOME/.config/starship.toml"
 set -gx SSH_AUTH_SOCK "$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock"
+
+set -gx XCURSOR_THEME=Bibata-Modern-Ice
+set -gx XCURSOR_SIZE=32
