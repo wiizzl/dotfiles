@@ -4,6 +4,7 @@ dnf = [
     "@virtualization",
     "moby-engine",
     "docker-compose",
+    "bibata-cursor-theme",
     "tailscale",
     "fish",
     "code",
