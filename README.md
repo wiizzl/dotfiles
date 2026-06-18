@@ -18,12 +18,12 @@ Used to maintain a consistent setup across different environments:
 
 ### Prerequisites
 
-- [git](https://git-scm.com)
+- [git](https://git-scm.com/install)
 - [chezmoi](https://chezmoi.io/install)
 - [Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install)
 
 > [!NOTE]
-> Before running the install script, ensure your SSH keys are saved in your vault as `git-auth` and `git-sign`. These exact names are required for the script to function.
+> Before running the install script, ensure your SSH keys are saved in your vault as `git-auth` and `git-sign`. These exact names are required for the script to function. You also need to enable the SSH agent in your settings.
 
 ### Steps
 
