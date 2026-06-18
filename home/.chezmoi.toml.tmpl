@@ -16,8 +16,8 @@
     github_username = {{ promptStringOnce . "github_username" "What is your GitHub username" | quote }}
     git_name = {{ promptStringOnce . "git_name" "What is your git name" | quote }}
     git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
-
-{{- if eq $osid "linux-fedora" }}
-    is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
     mono_font = "JetBrainsMono Nerd Font Mono"
+
+{{- if eq $osid "linux-fedora-cosmic" }}
+    is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
 {{- end }}
