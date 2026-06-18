@@ -3,8 +3,13 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-{{- if not (or (eq $osid "linux-fedora") (eq $osid "darwin")) -}}
-{{- fail "Error: These dotfiles are exclusive to Fedora and macOS" -}}
+{{- if eq $osid "linux-fedora" -}}
+{{-   $de := output "bash" "-c" "ps -e | grep -qw cosmic-session && echo cosmic || echo unknown" | trim -}}
+{{-   $osid = printf "%s-%s" $osid $de -}}
+{{- end -}}
+
+{{- if not (or (eq $osid "linux-fedora-cosmic") (eq $osid "darwin")) -}}
+{{- fail "Error: These dotfiles are exclusive to Fedora (COSMIC Spin) and macOS" -}}
 {{- end -}}
 
 [data]

@@ -14,6 +14,10 @@ if ! rpm -q terra-release >/dev/null 2>&1; then
     sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 fi
 
+# Flathub
+flatpak remote-delete --force fedora 2>/dev/null || true
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # VSCode
 if [ ! -f /etc/yum.repos.d/vscode.repo ]; then
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
