@@ -43,8 +43,6 @@ mise = [
     "zig",
     "uv",
     "bat",
-    "claude-code",
-    "opencode",
     "eza",
     "fzf",
     "herdr",

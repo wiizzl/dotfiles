@@ -1,53 +1,59 @@
 {
-   "$schema": "https://vicinae.com/schemas/config.json",
+    "$schema": "https://vicinae.com/schemas/config.json",
 
-   "pop_to_root_on_close": true,
-   "favicon_service": "twenty",
-   "search_files_in_root": false,
+    "pop_to_root_on_close": true,
+    "favicon_service": "twenty",
+    "search_files_in_root": false,
 
-   "font": {
-      "normal": {
-         "family": "{{ .mono_font }}",
-         "size": 12
-      }
-   },
+    "tray": { "enabled": false },
 
-   "theme": {
-      "light": {
-         "name": "catppuccin-latte"
-      },
-      "dark": {
-         "name": "catppuccin-mocha"
-      }
-   },
+    "font": {
+        "normal": {
+            "family": "{{ .mono_font }}",
+            "size": 12
+        }
+    },
 
-   "telemetry": {
-      "system_info": false
-   },
+    "theme": {
+        "light": { "name": "catppuccin-latte" },
+        "dark": { "name": "catppuccin-mocha" }
+    },
 
-   "favorites": [],
+    "telemetry": { "system_info": false },
 
-   "providers": {
-      "browser-extension": { "enabled": false },
-      "clipboard": { "preferences": { "eraseOnStartup": true } },
-      "core": {
-         "entrypoints": {
-            "about": { "enabled": false },
-            "documentation": { "enabled": false },
-            "keybind-settings": { "enabled": false },
-            "manage-fallbacks": { "enabled": false },
-            "open-config-file": { "enabled": false },
-            "open-default-config": { "enabled": false },
-            "report-bug": { "enabled": false },
-            "sponsor": { "enabled": false }
-         }
-      },
-      "developer": { "enabled": false },
-      "manage-shortcuts": { "enabled": false },
-      "power": { "enabled": false },
-      "snippets": { "enabled": false },
-      "system": { "enabled": false },
-      "theme": { "enabled": false },
-      "wm": { "enabled": false }
-   }
+    "favorites": [],
+
+    "launcher_window": {
+        "client_side_decorations": { "enabled": false }
+    },
+
+    "providers": {
+        "browser-extension": { "enabled": false },
+        "clipboard": { "preferences": { "eraseOnStartup": true } },
+        "core": {
+            "entrypoints": {
+                "about": { "enabled": false },
+                "documentation": { "enabled": false },
+                "keybind-settings": { "enabled": false },
+                "manage-fallback": { "enabled": false },
+                "open-config-file": { "enabled": false },
+                "open-default-config": { "enabled": false },
+                "report-bug": { "enabled": false },
+                "search-tray": { "enabled": false },
+                "show-logs": { "enabled": false },
+                "sponsor": { "enabled": false }
+            }
+        },
+        "developer": { "enabled": false },
+        "files": { "enabled": false },
+        "manage-shortcuts": { "enabled": false },
+        "media": { "enabled": false },
+        "power": { "enabled": false },
+        "scripts": { "enabled": false },
+        "shortcuts": { "enabled": false },
+        "snippets": { "enabled": false },
+        "system": { "enabled": false },
+        "theme": { "enabled": false },
+        "wm": { "enabled": false }
+    }
 }
