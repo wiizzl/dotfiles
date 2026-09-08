@@ -1,8 +1,12 @@
-{{- range $slug, $url := .fonts }}
+{{- $fonts := dict
+  "jetbrains-mono-nerd-fonts" "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+-}}
+
+{{- range $slug, $url := $fonts }}
 [".local/share/fonts/{{ $slug }}"]
-    type = "archive"
-    url = "{{ $url }}"
-    stripComponents = 0
-    refreshPeriod = "336h"
-    include = ["**"]
+  type = "archive"
+  url = "{{ $url }}"
+  stripComponents = 0
+  refreshPeriod = "336h"
+  include = ["**"]
 {{- end }}

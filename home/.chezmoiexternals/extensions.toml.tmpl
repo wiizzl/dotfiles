@@ -1,12 +1,16 @@
-{{- if ne .chezmoi.os "darwin" }}
-{{- range $name, $url := .extensions.spicetify }}
-[".config/spicetify/Extensions/{{ $name }}.js"]
-    type = "file"
-    url = "{{ $url }}"
-    refreshPeriod = "336h"
-{{- end }}
-{{- end }}
+{{- $exts := dict
+  "dashboard-icons" "store.vicinae.dashboard-icons"
+  "gif-search" "store.raycast.gif-search"
+  "color-converter" "store.vicinae.color-converter"
+  "awww-switcher" "store.vicinae.awww-switcher"
+-}}
 
-{{- if ne .chezmoi.os "linux" }}
-
-{{- end }}
+{{- range $repoName, $targetName := $exts }}
+[".local/share/vicinae/extensions/{{ $targetName }}"]
+  type = "archive"
+  url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
+  exact = true
+  stripComponents = 3
+  refreshPeriod = "168h"
+  include = ["*/extensions/{{ $repoName }}/**"]
+{{ end -}}
