@@ -8,6 +8,7 @@ flatpak install -y --user flathub \
   it.mijorus.gearlever \
   io.github.flattool.Warehouse \
   org.onlyoffice.desktopeditors \
+  com.obsproject.Studio \
   org.localsend.localsend_app \
   io.dbeaver.DBeaverCommunity \
   com.github.tchx84.Flatseal \
