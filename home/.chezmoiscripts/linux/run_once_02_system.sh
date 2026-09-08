@@ -2,9 +2,8 @@
 set -euo pipefail
 
 sudo dnf install --setopt=install_weak_deps=False -y \
-  hyprland xdg-desktop-portal-hyprland polkit-gnome ghostty awww \
+  hyprland xdg-desktop-portal-hyprland ghostty awww \
   ly \
-  git \
   @virtualization \
   tailscale \
   fish \
