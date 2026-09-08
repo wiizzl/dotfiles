@@ -4,12 +4,16 @@
 
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
-.chezmoidata/services.yaml
 .chezmoiexternals/fonts.toml
+.chezmoiexternals/extensions.toml
 
 .config/fastfetch/**
-.config/cosmic/**
+.config/vicinae/**
+.config/mise/**
+.config/ly/**
+.config/dnf/**
+.config/ghosty/**
+.config/environment.d/**
+.config/hypr/**
 .config/fish/**
-.config/net.imput.helium/**
-.config/opencode/**
 {{ end }}

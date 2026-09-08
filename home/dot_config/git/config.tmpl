@@ -1,25 +1,33 @@
 [user]
 	email = "{{ .git_email }}"
 	name = "{{ .git_name }}"
-	signingkey = "{{ (bitwarden "item" "git-sign").sshKey.publicKey }}"
+	signingkey = ~/.ssh/allowed_signers
 
 [gpg]
-    format = "ssh"
+  format = "ssh"
 
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
 
 [commit]
 	gpgsign = true
+	verbose = true
 
 [tag]
 	gpgSign = true
+	sort = -version:refname
 
 [init]
 	defaultBranch = "main"
 
 [pull]
 	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[branch]
+	sort = -committerdate
 
 [url "git@github.com:"]
 	insteadOf = gh:

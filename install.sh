@@ -1,20 +1,23 @@
 #!/bin/sh
+set -euo pipefail
 
-set -e
-
-for cmd in git chezmoi bw; do
-    if ! command -v "$cmd" >/dev/null 2>&1; then
-        echo "Error: '$cmd' is required." >&2
-        exit 1
-    fi
-done
-
-if bw status | grep -q '"status":"unauthenticated"'; then
-    bw config server https://vault.bitwarden.eu
-    bw login
+if [ ! -f "$HOME/.local/bin/mise" ]; then
+  curl -sL https://mise.run | sh
 fi
 
-export BW_SESSION=$(bw unlock --raw)
+read -rp "Enter your Vault url: " VAULT_URL
+read -rp "Enter your GitHub username: " GIT_USERNAME
 
-read -rp "Enter your GitHub username: " GITHUB_USERNAME
-chezmoi init --apply "$GITHUB_USERNAME"
+~/.local/bin/mise exec git chezmoi bitwarden -- bash -c '
+  set -euo pipefail
+
+  if bw status | grep -q "\"status\":\"unauthenticated\""; then
+    bw config server "$1"
+    bw login
+  fi
+
+  export BW_SESSION=$(bw unlock --raw)
+
+  chezmoi init --apply "$2"
+
+' _ "$VAULT_URL" "$GIT_USERNAME"
