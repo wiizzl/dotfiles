@@ -10,7 +10,7 @@
 
 - name: Ensure Terra repository is installed
   become: true
-  ansible.builtin.dnf:
-    name: "https://repos.fyralabs.com/terra{{ ansible_facts['distribution_major_version'] }}/terra-release.noarch.rpm"
-    state: present
-    disable_gpg_check: true
+  ansible.builtin.shell: |
+    dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+  args:
+    creates: /etc/yum.repos.d/terra.repo
