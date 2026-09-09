@@ -43,7 +43,7 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 Run the playbook remotely:
 
 ```sh
-ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles scripts/playbook.yaml
+ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles scripts/playbook.yaml -K
 ```
 
 > [!IMPORTANT]
