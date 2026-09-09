@@ -17,7 +17,7 @@
       - xfce-polkit
       - gnome-keyring
       - wl-clip-persist
-      - ghostty
+      - alacritty
       - awww
       - ly
     state: present
