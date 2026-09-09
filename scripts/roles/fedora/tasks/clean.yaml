@@ -1,0 +1,6 @@
+---
+- name: Clean DNF cache and remove unused dependencies
+  become: true
+  ansible.builtin.dnf:
+    autoremove: true
+    clean: true

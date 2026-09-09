@@ -1,0 +1,15 @@
+---
+- name: Apply optimized DNF configuration
+  become: true
+  ansible.builtin.ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    state: present
+  loop:
+    - { option: "max_parallel_downloads", value: "10" }
+    - { option: "install_weak_deps", value: "False" }
+    - { option: "fastestmirror", value: "True" }
+    - { option: "installonly_limit", value: "2" }
+    - { option: "defaultyes", value: "True" }

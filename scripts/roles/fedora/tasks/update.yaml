@@ -1,0 +1,6 @@
+---
+- name: Full system upgrade
+  become: true
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest

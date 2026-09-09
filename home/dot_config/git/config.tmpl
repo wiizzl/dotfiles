@@ -1,13 +1,14 @@
 [user]
 	email = "{{ .git_email }}"
 	name = "{{ .git_name }}"
-	signingkey = ~/.ssh/allowed_signers
+{{- if .bitwarden_ssh }}
+	signingkey = {{ (bitwarden "item" "git-sign").sshKey.publicKey }}
+{{- else }}
+	signingkey = "{{ .git_signing_key }}"
+{{- end }}
 
 [gpg]
   format = "ssh"
-
-[gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
 
 [commit]
 	gpgsign = true
