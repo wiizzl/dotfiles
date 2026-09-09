@@ -40,17 +40,10 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 
 #### Steps
 
-Clone this repository directly into chezmoi's default source directory:
+Run the playbook remotely:
 
 ```sh
-git clone https://github.com/wiizzl/dotfiles.git ~/.local/share/chezmoi
-```
-
-Navigate to the scripts directory and run the playbook:
-
-```sh
-cd ~/.local/share/chezmoi/scripts
-ansible-playbook playbook.yaml -K
+ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles scripts/playbook.yaml
 ```
 
 > [!IMPORTANT]
