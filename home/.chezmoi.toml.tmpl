@@ -7,12 +7,24 @@
 {{- fail "Error: These dotfiles are exclusive to Fedora and macOS" -}}
 {{- end -}}
 
+{{- $bitwarden_ssh := false -}}
+{{- if hasKey . "bitwarden_ssh" -}}
+{{-   $bitwarden_ssh = .bitwarden_ssh -}}
+{{- end -}}
+
 [data]
   github_username = {{ promptStringOnce . "github_username" "What is your GitHub username" | quote }}
   git_name = {{ promptStringOnce . "git_name" "What is your git name" | quote }}
   git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
+  bitwarden_ssh = {{ $bitwarden_ssh }}
   mono_font = "JetBrainsMono Nerd Font Mono"
-
+{{- if not $bitwarden_ssh }}
+  git_sign = {{ promptStringOnce . "git_sign" "What is your public SSH signing key" | quote }}
+{{- end }}
 {{- if eq $osid "linux-fedora" }}
   is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
+
+[interpreters.bw]
+  command = "flatpak"
+  args = ["run", "--command=bw", "com.bitwarden.desktop"]
 {{- end }}

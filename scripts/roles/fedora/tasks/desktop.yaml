@@ -1,0 +1,28 @@
+---
+- name: Enable COPR repository
+  become: true
+  community.general.copr:
+    name:
+      - lionheartp/Hyprland
+      - leloubil/wl-clip-persist
+    state: enabled
+
+- name: Install Hyprland ecosystem and display manager
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - hyprland
+      - xdg-desktop-portal-hyprland
+      - xfce-polkit
+      - gnome-keyring
+      - wl-clip-persist
+      - ghostty
+      - awww
+      - ly
+    state: present
+
+- name: Enable Ly display manager service
+  become: true
+  ansible.builtin.systemd:
+    name: ly@tty2
+    enabled: true

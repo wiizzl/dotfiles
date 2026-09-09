@@ -1,0 +1,12 @@
+---
+- ansible.builtin.include_tasks: dnf.yaml
+- ansible.builtin.include_tasks: update.yaml
+- ansible.builtin.include_tasks: repos.yaml
+- ansible.builtin.include_tasks: docker.yaml
+- ansible.builtin.include_tasks: desktop.yaml
+- ansible.builtin.include_tasks: packages.yaml
+- ansible.builtin.include_tasks: flatpak.yaml
+- ansible.builtin.include_tasks: shell.yaml
+- ansible.builtin.include_tasks: clean.yaml
+- ansible.builtin.set_fact:
+  bw_cli: "flatpak run --command=bw com.bitwarden.desktop"

@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: true
+  tasks:
+    - ansible.builtin.include_role:
+        name: fedora
+      when: ansible_distribution == "Fedora"
+
+    - ansible.builtin.include_role:
+        name: macos
+      when: ansible_os_family == "Darwin"
+
+    - ansible.builtin.include_role:
+        name: chezmoi

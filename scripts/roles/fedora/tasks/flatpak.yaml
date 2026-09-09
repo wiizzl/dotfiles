@@ -1,0 +1,29 @@
+---
+- name: Ensure Flatpak is installed
+  become: true
+  ansible.builtin.dnf:
+    name: flatpak
+    state: present
+
+- name: Add Flathub repository
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    state: present
+
+- name: Install Flatpak apps
+  community.general.flatpak:
+    name:
+      - it.mijorus.gearlever
+      - io.github.flattool.Warehouse
+      - org.onlyoffice.desktopeditors
+      - com.obsproject.Studio
+      - org.localsend.localsend_app
+      - io.dbeaver.DBeaverCommunity
+      - com.github.tchx84.Flatseal
+      - com.usebruno.Bruno
+      - com.bitwarden.desktop
+      - io.missioncenter.MissionCenter
+      - eu.betterbird.Betterbird
+    state: present
+    method: system

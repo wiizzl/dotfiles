@@ -1,0 +1,57 @@
+---
+- name: Enable COPR repository
+  become: true
+  community.general.copr:
+    name:
+      - atim/lazydocker
+      - rossetnocpes/herdr
+    state: enabled
+
+- name: Install native system packages
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - git-core
+      - ffmpeg
+      - chezmoi
+      - mise
+      - "@virtualization"
+      - tailscale
+      - zed
+      - vesktop
+      - vicinae
+      - helium-browser-bin
+      - bat
+      - eza
+      - fzf
+      - herdr
+      - yazi
+      - ripgrep
+      - zoxide
+      - lazygit
+      - lazyssh
+      - lazydocker
+      - lazyjournal
+      - fastfetch
+      - gh
+      - starship
+    state: present
+
+- name: Install multimedia group packages
+  become: true
+  ansible.builtin.dnf:
+    name: "@multimedia"
+    state: present
+    setopt: "exclude=PackageKit-gstreamer-plugin"
+
+- name: Enable Tailscale service
+  become: true
+  ansible.builtin.systemd:
+    name: tailscaled
+    enabled: true
+
+- name: Disable NetworkManager-wait-online to speed up boot
+  become: true
+  ansible.builtin.systemd:
+    name: NetworkManager-wait-online
+    enabled: false

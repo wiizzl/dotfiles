@@ -1,36 +1,57 @@
 # dotfiles
 
-My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
-
-<a href="https://chezmoi.io">
-  <img src="https://raw.githubusercontent.com/twpayne/chezmoi/refs/heads/master/assets/images/mono.png" width="150" />
-</a>
+My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi) and optionally provisioned via [Ansible](https://ansible.com).
 
 Used to maintain a consistent setup across different environments:
 
 - [Fedora Everything](https://fedoraproject.org/misc/#everything)
-- [~~macOS~~](https://apple.com/os/macos/) (not yet supported...)
+- [macOS](https://apple.com/os/macos/)
 
 ## Installation
 
 > [!WARNING]
-> If you want to try these dotfiles, fork this repository first, review the files, and remove anything you do not want. Do not blindly apply settings you do not understand. Use at your own risk.
+> Do not blindly apply settings you do not understand. Use at your own risk.
 
-### Prerequisites
+### Option 1: Dotfiles Only
 
-- A clean installation of your operating system
+Use this method if you already have your system packages and tools installed and only want to apply the configuration files.
+
+#### Prerequisites
+
 - [git](https://git-scm.com/install)
+- [chezmoi](https://chezmoi.io/install)
 
-> [!NOTE]
-> Before running the install script, ensure your SSH keys are saved in your vault as `git-auth` and `git-sign`. These exact names are required for the script to function.
+#### Steps
 
-### Steps
-
-Run the [install script](./install.sh), which will check for missing dependencies and apply the dotfiles:
+Run the following commands:
 
 ```sh
-sh -c "$(curl -fsLS https://raw.githubusercontent.com/wiizzl/dotfiles/main/install.sh)"
+chezmoi init wiizzl --apply
+```
+
+### Option 2: Full System Provisioning
+
+Use this method on a fresh OS installation. Ansible will install all packages, and finally hand off to Chezmoi to apply the dotfiles.
+
+#### Prerequisites
+
+- A clean OS installation.
+- [Ansible](https://ansible.com)
+
+#### Steps
+
+Clone this repository directly into chezmoi's default source directory:
+
+```sh
+git clone https://github.com/wiizzl/dotfiles.git ~/.local/share/chezmoi
+```
+
+Navigate to the scripts directory and run the playbook:
+
+```sh
+cd ~/.local/share/chezmoi/scripts
+ansible-playbook playbook.yaml -K
 ```
 
 > [!IMPORTANT]
-> After installation, reboot your system to ensure everything works as expected. Enable the SSH agent in the Bitwarden app.
+> After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.

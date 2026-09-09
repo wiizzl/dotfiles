@@ -1,19 +1,15 @@
-{{ if ne .chezmoi.os "darwin" }}
-.chezmoiscripts/darwin/**
-{{ end }}
-
 {{ if ne .chezmoi.os "linux" }}
-.chezmoiscripts/linux/**
 .chezmoiexternals/fonts.toml
 .chezmoiexternals/extensions.toml
+
+.chezmoiscripts/run_onchange_ly.sh
 
 .config/fastfetch/**
 .config/vicinae/**
 .config/mise/**
 .config/ly/**
 .config/dnf/**
-.config/ghosty/**
-.config/environment.d/**
+.config/ghostty/**
 .config/hypr/**
 .config/fish/**
 {{ end }}

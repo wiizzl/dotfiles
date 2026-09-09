@@ -1,0 +1,12 @@
+---
+- name: Install shell
+  become: true
+  ansible.builtin.dnf:
+    name: fish
+    state: present
+
+- name: Set fish as the default user shell
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/fish

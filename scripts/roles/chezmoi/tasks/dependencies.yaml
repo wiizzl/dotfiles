@@ -1,0 +1,9 @@
+---
+- name: Check for required tools
+  ansible.builtin.command: "command -v {{ item }}"
+  loop:
+    - git
+    - chezmoi
+  register: tool_check
+  changed_when: false
+  failed_when: tool_check.rc != 0

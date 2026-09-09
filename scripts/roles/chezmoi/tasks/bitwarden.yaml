@@ -1,0 +1,27 @@
+---
+- name: Check that bw_cli is defined
+  ansible.builtin.assert:
+    that:
+      - bw_cli is defined
+      - bw_cli != ""
+    fail_msg: "bw_cli is undefined or empty."
+
+- name: Check for Bitwarden CLI tool
+  ansible.builtin.shell: "command -v {{ bw_cli.split(' ')[0] }}"
+  register: bw_tool_check
+  changed_when: false
+  failed_when: bw_tool_check.rc != 0
+
+- name: Check Bitwarden status
+  ansible.builtin.command:
+    cmd: "{{ bw_cli }} status"
+  register: bw_status
+  changed_when: false
+  failed_when: false
+
+- name: Connect to Bitwarden if not authenticated
+  ansible.builtin.command:
+    cmd: "{{ bw_cli }} login"
+  when:
+    - bw_status.stdout is defined
+    - '"unauthenticated" in bw_status.stdout'
