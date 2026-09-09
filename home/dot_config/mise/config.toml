@@ -4,7 +4,6 @@ minimum_release_age = "0s"
 
 [tools]
 usage = "latest"
-git = "latest"
 bitwarden = "latest"
 chezmoi = "latest"
 node = "24"

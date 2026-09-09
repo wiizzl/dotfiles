@@ -18,9 +18,8 @@ Used to maintain a consistent setup across different environments:
 
 ### Prerequisites
 
+- A clean installation of your operating system
 - [git](https://git-scm.com/install)
-- [chezmoi](https://chezmoi.io/install)
-- [Bitwarden CLI](https://bitwarden.com/help/cli/#download-and-install)
 
 > [!NOTE]
 > Before running the install script, ensure your SSH keys are saved in your vault as `git-auth` and `git-sign`. These exact names are required for the script to function.
