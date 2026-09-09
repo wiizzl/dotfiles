@@ -4,7 +4,7 @@ set -euo pipefail
 sudo dnf install -y flatpak
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y --user flathub \
+flatpak install -y flathub \
   it.mijorus.gearlever \
   io.github.flattool.Warehouse \
   org.onlyoffice.desktopeditors \
@@ -14,6 +14,5 @@ flatpak install -y --user flathub \
   com.github.tchx84.Flatseal \
   com.usebruno.Bruno \
   com.bitwarden.desktop \
-  org.gnome.DejaDup \
   io.missioncenter.MissionCenter \
   eu.betterbird.Betterbird
