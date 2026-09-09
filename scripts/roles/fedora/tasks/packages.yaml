@@ -1,11 +1,12 @@
 ---
-- name: Enable COPR repository
+- name: Enable COPR repositories
   become: true
   community.general.copr:
-    name:
-      - atim/lazydocker
-      - rossetnocpes/herdr
+    name: "{{ item }}"
     state: enabled
+  loop:
+    - atim/lazydocker
+    - rossetnocpes/herdr
 
 - name: Install native system packages
   become: true
