@@ -9,6 +9,6 @@ sudo dnf install --setopt=install_weak_deps=False -y \
   fish \
   zed vesktop vicinae helium-browser-bin
 
-sudo systemctl enable ly
+sudo systemctl enable ly@tty2
 sudo systemctl enable tailscaled
 sudo systemctl disable NetworkManager-wait-online

@@ -8,7 +8,7 @@ fi
 read -rp "Enter your Vault url: " VAULT_URL
 read -rp "Enter your GitHub username: " GIT_USERNAME
 
-~/.local/bin/mise exec chezmoi bitwarden -- bash -c '
+mise exec chezmoi bitwarden -- bash -c '
   set -euo pipefail
 
   if bw status | grep -q "\"status\":\"unauthenticated\""; then

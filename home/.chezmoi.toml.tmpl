@@ -13,6 +13,6 @@
   git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
   mono_font = "JetBrainsMono Nerd Font Mono"
 
-{{- if eq $osid "linux-fedora-cosmic" }}
+{{- if eq $osid "linux-fedora" }}
   is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
 {{- end }}
