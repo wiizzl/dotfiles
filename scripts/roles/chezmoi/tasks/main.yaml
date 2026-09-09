@@ -1,10 +1,12 @@
 ---
 - ansible.builtin.include_tasks: dependencies.yaml
+
 - ansible.builtin.include_tasks: bitwarden.yaml
+  when: enable_bitwarden | bool
 
 - name: Initialize dotfiles
   ansible.builtin.command:
-    cmd: "chezmoi init --source {{ ansible_env.HOME }}/.local/share/chezmoi --data bitwarden_ssh=true"
+    cmd: "chezmoi init {{ github_user }} --data bitwarden_ssh={{ enable_bitwarden }}"
   args:
     creates: "{{ ansible_env.HOME }}/.config/chezmoi/chezmoi.toml"
 

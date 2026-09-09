@@ -1,6 +1,18 @@
 ---
 - hosts: localhost
   gather_facts: true
+
+  vars_prompt:
+    - name: github_user
+      prompt: "Enter the GitHub username or organization to fetch the dotfiles from"
+      default: "wiizzl"
+      private: false
+
+    - name: enable_bitwarden
+      prompt: "Do you want to authenticate and retrieve your secrets and SSH keys via Bitwarden? (true/false)"
+      default: "true"
+      private: false
+
   tasks:
     - ansible.builtin.include_role:
         name: fedora
