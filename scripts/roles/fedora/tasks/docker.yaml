@@ -1,25 +1,12 @@
 ---
 - name: Add Docker official repository
   become: true
-  ansible.builtin.yum_repository:
-    name: docker-ce-stable
-    description: Docker CE Stable - Fedora
-    baseurl: https://download.docker.com/linux/fedora/$releasever/$basearch/stable
-    enabled: true
-    gpgcheck: true
-    gpgkey: https://download.docker.com/linux/fedora/gpg
-    file: docker-ce
-
-- name: Install Docker engine and plugins
-  become: true
-  ansible.builtin.dnf:
-    name:
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-buildx-plugin
-      - docker-compose-plugin
-    state: present
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    owner: root
+    group: root
+    mode: "0644"
 
 - name: Enable and start Docker service
   become: true
