@@ -1,11 +1,12 @@
 ---
-- name: Enable COPR repository
+- name: Enable COPR repositories
   become: true
   community.general.copr:
-    name:
-      - lionheartp/Hyprland
-      - leloubil/wl-clip-persist
+    name: "{{ item }}"
     state: enabled
+  loop:
+    - lionheartp/Hyprland
+    - leloubil/wl-clip-persist
 
 - name: Install Hyprland ecosystem and display manager
   become: true

@@ -46,5 +46,7 @@ Run the playbook remotely:
 ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles scripts/playbook.yaml -K
 ```
 
+You will be prompted for your user password. Make sure you have sudo access.
+
 > [!IMPORTANT]
 > After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
