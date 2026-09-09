@@ -9,4 +9,4 @@
 - ansible.builtin.include_tasks: shell.yaml
 - ansible.builtin.include_tasks: clean.yaml
 - ansible.builtin.set_fact:
-  bw_cli: "flatpak run --command=bw com.bitwarden.desktop"
+    bw_cli: "flatpak run --command=bw com.bitwarden.desktop"
