@@ -9,7 +9,7 @@
       private: false
 
     - name: enable_bitwarden
-      prompt: "Do you want to authenticate and retrieve your secrets and SSH keys via Bitwarden? (true/false)"
+      prompt: "Do you want to authenticate and retrieve your secrets via Bitwarden?"
       default: "true"
       private: false
 
