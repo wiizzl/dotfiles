@@ -21,7 +21,6 @@
       - awww
       - ly
     state: present
-    disable_gpg_check: true
 
 - name: Enable Ly display manager service
   become: true
