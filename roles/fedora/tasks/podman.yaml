@@ -1,0 +1,17 @@
+---
+- name: Install Podman and related tools
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - podman
+      - podman-compose
+      - podman-docker
+      - podman-tui
+    state: present
+
+- name: Enable and start Podman socket
+  ansible.builtin.systemd:
+    name: podman.socket
+    state: started
+    enabled: true
+    scope: user

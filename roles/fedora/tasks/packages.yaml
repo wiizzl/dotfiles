@@ -5,7 +5,6 @@
     name: "{{ item }}"
     state: enabled
   loop:
-    - atim/lazydocker
     - rossetnocpes/herdr
 
 - name: Install native system packages
@@ -30,7 +29,6 @@
       - zoxide
       - lazygit
       - lazyssh
-      - lazydocker
       - lazyjournal
       - fastfetch
       - gh
@@ -42,7 +40,7 @@
   ansible.builtin.dnf:
     name: "@multimedia"
     state: present
-    setopt: "exclude=PackageKit-gstreamer-plugin"
+    exclude: PackageKit-gstreamer-plugin
 
 - name: Enable Tailscale service
   become: true

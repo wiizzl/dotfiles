@@ -3,20 +3,16 @@
 	name = "{{ .git_name }}"
 {{- if .bitwarden_ssh }}
 	signingkey = {{ (bitwarden "item" "git-sign").sshKey.publicKey }}
-{{- else }}
-	signingkey = "{{ .git_signing_key }}"
-{{- end }}
 
 [gpg]
   format = "ssh"
 
 [commit]
 	gpgsign = true
-	verbose = true
 
 [tag]
 	gpgSign = true
-	sort = -version:refname
+{{- end }}
 
 [init]
 	defaultBranch = "main"
@@ -26,9 +22,6 @@
 
 [push]
 	autoSetupRemote = true
-
-[branch]
-	sort = -committerdate
 
 [url "git@github.com:"]
 	insteadOf = gh:
