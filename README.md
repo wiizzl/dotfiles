@@ -38,12 +38,12 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 - [git](https://git-scm.com/install)
 - [Ansible](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html)
 - <details>
-    <summary align="center">A clean OS installation.</summary>
-    <p align="center">
+    <summary>A clean OS installation.</summary>
+    <div>
       <img src=".github/assets/fedora.png" height="350" style="vertical-align: middle;">
       <br>
       <em>I recommend using the package selections seen in the above screenshot.</em>
-    </p>
+    </div>
   </details>
 
 #### Steps
