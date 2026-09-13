@@ -17,9 +17,6 @@
   git_email = {{ promptStringOnce . "git_email" "What is your git email" | quote }}
   bitwarden_ssh = {{ $bitwarden_ssh }}
   mono_font = "JetBrainsMono Nerd Font Mono"
-{{- if not $bitwarden_ssh }}
-  git_sign = {{ promptStringOnce . "git_sign" "What is your public SSH signing key" | quote }}
-{{- end }}
 {{- if eq $osid "linux-fedora" }}
   is_laptop = {{ promptBoolOnce . "is_laptop" "Is this host a laptop" }}
 

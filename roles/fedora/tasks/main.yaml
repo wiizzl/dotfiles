@@ -2,7 +2,7 @@
 - ansible.builtin.include_tasks: dnf.yaml
 - ansible.builtin.include_tasks: update.yaml
 - ansible.builtin.include_tasks: repos.yaml
-- ansible.builtin.include_tasks: docker.yaml
+- ansible.builtin.include_tasks: podman.yaml
 - ansible.builtin.include_tasks: desktop.yaml
 - ansible.builtin.include_tasks: packages.yaml
 - ansible.builtin.include_tasks: flatpak.yaml

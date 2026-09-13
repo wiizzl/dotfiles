@@ -5,7 +5,7 @@ My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi) and op
 Used to maintain a consistent setup across different environments:
 
 - [Fedora Everything](https://fedoraproject.org/misc/#everything)
-- [macOS](https://apple.com/os/macos/)
+- [macOS](https://apple.com/os/macos)
 
 ## Installation
 
@@ -35,15 +35,23 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 
 #### Prerequisites
 
-- A clean OS installation.
-- [Ansible](https://ansible.com)
+- [git](https://git-scm.com/install)
+- [Ansible](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html)
+- <details>
+    <summary align="center">A clean OS installation.</summary>
+    <p align="center">
+      <img src=".github/assets/fedora.png" height="350" style="vertical-align: middle;">
+      <br>
+      <em>I recommend using the package selections seen in the above screenshot.</em>
+    </p>
+  </details>
 
 #### Steps
 
 Run the playbook remotely:
 
 ```sh
-ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles scripts/playbook.yaml -K
+ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles playbook.yaml -K
 ```
 
 You will be prompted for your user password. Make sure you have sudo access.

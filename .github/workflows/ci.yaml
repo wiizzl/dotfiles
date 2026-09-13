@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      fedora: ${{ steps.filter.outputs.fedora }}
+      macos: ${{ steps.filter.outputs.macos }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            fedora:
+              - 'roles/fedora/**'
+              - 'roles/chezmoi/**'
+              - 'chezmoi/**'
+              - 'playbook.yaml'
+            macos:
+              - 'roles/macos/**'
+              - 'roles/chezmoi/**'
+              - 'chezmoi/**'
+              - 'playbook.yaml'
+
+  test-fedora:
+    needs: changes
+    if: ${{ needs.changes.outputs.fedora == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Ansible
+        run: pipx install ansible-core
+
+      - name: Start Fedora container with Systemd support
+        run: |
+          podman run -d --name fedora-test \
+            --privileged \
+            --cgroupns=host \
+            -v /sys/fs/cgroup:/sys/fs/cgroup:rw \
+            registry.fedoraproject.org/fedora:latest /sbin/init
+
+      - name: Run Ansible
+        run: ansible-playbook playbook.yaml -i fedora-test, -c podman
+
+  test-macos:
+    needs: changes
+    if: ${{ needs.changes.outputs.macos == 'true' }}
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Ansible
+        run: pipx install ansible-core
+
+      - name: Run Ansible
+        run: ansible-playbook playbook.yaml -i localhost, -c local
