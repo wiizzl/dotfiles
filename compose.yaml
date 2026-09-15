@@ -1,0 +1,10 @@
+services:
+  fedora-test:
+    build:
+      context: .
+    container_name: fedora-test
+    privileged: true
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - .:/home/docker_user/.dotfiles:ro

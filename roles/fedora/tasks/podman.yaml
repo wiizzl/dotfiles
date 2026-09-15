@@ -9,9 +9,18 @@
       - podman-tui
     state: present
 
-- name: Enable and start Podman socket
-  ansible.builtin.systemd:
-    name: podman.socket
-    state: started
-    enabled: true
-    scope: user
+- name: Silence Podman Docker emulation warning
+  become: true
+  ansible.builtin.file:
+    path: /etc/containers/nodocker
+    state: touch
+    mode: "0644"
+    modification_time: preserve
+    access_time: preserve
+# - name: Enable and start Podman socket
+#   ansible.builtin.systemd:
+#     name: podman.socket
+#     state: started
+#     enabled: true
+#     scope: user
+#   when: ansible_virtualization_type | default('') not in ['docker', 'podman']

@@ -6,12 +6,14 @@
     state: present
 
 - name: Add Flathub repository
+  become: true
   community.general.flatpak_remote:
     name: flathub
-    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 
 - name: Install Flatpak apps
+  become: true
   community.general.flatpak:
     name:
       - it.mijorus.gearlever
@@ -26,4 +28,3 @@
       - io.missioncenter.MissionCenter
       - eu.betterbird.Betterbird
     state: present
-    method: system
