@@ -45,7 +45,7 @@ jobs:
         run: docker compose up -d --build
 
       - name: Run Ansible
-        run: docker exec -u docker_user -it fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
+        run: docker exec -u docker_user fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
 
       - name: Clean up
         if: always()
@@ -63,4 +63,4 @@ jobs:
         run: pipx install ansible-core
 
       - name: Run Ansible
-        run: ansible-playbook playbook.yaml -i localhost, -c local
+        run: ansible-playbook playbook.yaml
