@@ -6,33 +6,7 @@ on:
   pull_request:
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      fedora: ${{ steps.filter.outputs.fedora }}
-      macos: ${{ steps.filter.outputs.macos }}
-    steps:
-      - uses: actions/checkout@v7
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            fedora:
-              - 'roles/fedora/**'
-              - 'roles/chezmoi/**'
-              - 'chezmoi/**'
-              - 'playbook.yaml'
-              - 'Dockerfile'
-              - 'compose.yaml'
-            macos:
-              - 'roles/macos/**'
-              - 'roles/chezmoi/**'
-              - 'chezmoi/**'
-              - 'playbook.yaml'
-
   test-fedora:
-    needs: changes
-    if: ${{ needs.changes.outputs.fedora == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,8 +26,6 @@ jobs:
         run: docker compose down
 
   test-macos:
-    needs: changes
-    if: ${{ needs.changes.outputs.macos == 'true' }}
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -61,6 +33,9 @@ jobs:
 
       - name: Install Ansible
         run: pipx install ansible-core
+
+      - name: Install Ansible collections
+        run: ansible-galaxy collection install community.general
 
       - name: Run Ansible
         run: ansible-playbook playbook.yaml
