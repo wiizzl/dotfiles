@@ -12,11 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Install Ansible
-        run: pipx install ansible-core
-
       - name: Start Fedora container with Systemd support
         run: docker compose up -d --build
+
+      - name: Inspect container logs (Debug)
+        run: |
+          docker ps -a
+          docker compose logs
 
       - name: Run Ansible
         run: docker exec -u docker_user fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
@@ -35,7 +37,7 @@ jobs:
         run: pipx install ansible-core
 
       - name: Install Ansible collections
-        run: ansible-galaxy collection install community.general
+        run: ansible-galaxy collection install -r requirements.yaml
 
       - name: Run Ansible
         run: ansible-playbook playbook.yaml
