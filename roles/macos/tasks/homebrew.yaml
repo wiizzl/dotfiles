@@ -1,0 +1,28 @@
+---
+- name: Install Homebrew
+  ansible.builtin.shell: |
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  args:
+    creates: /opt/homebrew/bin/brew
+
+- name: Install Formulae
+  community.general.homebrew:
+    name:
+      - starship
+      - bat
+      - fastfetch
+      - mise
+      - chezmoi
+      - bitwarden-cli
+
+- name: Install Casks
+  community.general.homebrew_cask:
+    name:
+      - raycast
+      - zed
+      - bruno
+      - obs
+      - dbeaver-community
+      - localsend
+      - jetbrains-toolbox
+    accept_external_apps: true
