@@ -66,5 +66,5 @@ You can validate the Ansible provisioning locally without affecting your host ma
 ```sh
 docker compose up -d --build
 docker exec -u docker_user -it fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
-docker compose down
+docker compose down -v --remove-orphans
 ```
