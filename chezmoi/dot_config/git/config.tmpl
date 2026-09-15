@@ -1,6 +1,10 @@
 [user]
-	email = "{{ .git_email }}"
+{{- if hasKey . "git_name" }}
 	name = "{{ .git_name }}"
+{{- end }}
+{{- if hasKey . "git_email" }}
+	email = "{{ .git_email }}"
+{{- end }}
 {{- if .bitwarden_ssh }}
 	signingkey = {{ (bitwarden "item" "git-sign").sshKey.publicKey }}
 

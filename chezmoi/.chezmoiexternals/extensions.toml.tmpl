@@ -1,16 +1,14 @@
 {{- $exts := dict
-  "dashboard-icons" "store.vicinae.dashboard-icons"
-  "gif-search" "store.raycast.gif-search"
-  "color-converter" "store.vicinae.color-converter"
-  "awww-switcher" "store.vicinae.awww-switcher"
+  "vicinae/dashboard-icons" "store.vicinae.dashboard-icons"
+  "raycast/gif-search" "store.raycast.gif-search"
+  "vicinae/color-converter" "store.vicinae.color-converter"
+  "vicinae/awww-switcher" "store.vicinae.awww-switcher"
 -}}
 
-{{- range $repoName, $targetName := $exts }}
+{{- range $apiPath, $targetName := $exts }}
 [".local/share/vicinae/extensions/{{ $targetName }}"]
   type = "archive"
-  url = "https://github.com/vicinaehq/extensions/archive/refs/heads/main.tar.gz"
+  url = "https://api.vicinae.com/v1/store/{{ $apiPath }}/download"
   exact = true
-  stripComponents = 3
-  refreshPeriod = "168h"
-  include = ["*/extensions/{{ $repoName }}/**"]
+  refreshPeriod = "336h"
 {{ end -}}

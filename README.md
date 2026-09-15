@@ -51,10 +51,20 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 Run the playbook remotely:
 
 ```sh
-ansible-pull -U https://github.com/wiizzl/dotfiles.git -d /tmp/dotfiles playbook.yaml -K
+ansible-pull -K -U https://github.com/wiizzl/dotfiles.git -d ~/.dotfiles playbook.yaml
 ```
 
 You will be prompted for your user password. Make sure you have sudo access.
 
 > [!IMPORTANT]
 > After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
+
+#### Local Testing
+
+You can validate the Ansible provisioning locally without affecting your host machine.
+
+```sh
+docker compose up -d --build
+docker exec -u docker_user -it fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
+docker compose down
+```

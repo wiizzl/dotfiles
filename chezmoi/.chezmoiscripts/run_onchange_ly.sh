@@ -2,4 +2,6 @@
 set -euo pipefail
 # hash: {{ include "dot_config/ly/config.ini" | sha256sum }}
 
-sudo cp "$HOME/.config/ly/config.ini" /etc/ly/config.ini
+if [ -f "$HOME/.config/ly/config.ini" ]; then
+  sudo cp "$HOME/.config/ly/config.ini" /etc/ly/config.ini
+fi

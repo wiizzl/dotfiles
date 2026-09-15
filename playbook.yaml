@@ -1,16 +1,22 @@
 ---
 - hosts: localhost
+  connection: local
   gather_facts: true
 
   vars_prompt:
-    - name: github_user
-      prompt: "Enter the GitHub username or organization to fetch the dotfiles from"
-      default: "wiizzl"
-      private: false
-
     - name: enable_bitwarden
       prompt: "Do you want to authenticate and retrieve your secrets via Bitwarden?"
-      default: "true"
+      default: "false"
+      private: false
+
+    - name: user_git_name
+      prompt: "What is your git name? (Leave blank to skip)"
+      default: ""
+      private: false
+
+    - name: user_git_email
+      prompt: "What is your git email? (Leave blank to skip)"
+      default: ""
       private: false
 
   tasks:

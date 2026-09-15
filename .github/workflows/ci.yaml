@@ -22,6 +22,8 @@ jobs:
               - 'roles/chezmoi/**'
               - 'chezmoi/**'
               - 'playbook.yaml'
+              - 'Dockerfile'
+              - 'compose.yaml'
             macos:
               - 'roles/macos/**'
               - 'roles/chezmoi/**'
@@ -40,15 +42,14 @@ jobs:
         run: pipx install ansible-core
 
       - name: Start Fedora container with Systemd support
-        run: |
-          podman run -d --name fedora-test \
-            --privileged \
-            --cgroupns=host \
-            -v /sys/fs/cgroup:/sys/fs/cgroup:rw \
-            registry.fedoraproject.org/fedora:latest /sbin/init
+        run: docker compose up -d --build
 
       - name: Run Ansible
-        run: ansible-playbook playbook.yaml -i fedora-test, -c podman
+        run: docker exec -u docker_user -it fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
+
+      - name: Clean up
+        if: always()
+        run: docker compose down
 
   test-macos:
     needs: changes
