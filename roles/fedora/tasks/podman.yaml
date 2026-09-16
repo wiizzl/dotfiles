@@ -1,12 +1,19 @@
 ---
+- name: Enable COPR repositories
+  become: true
+  community.general.copr:
+    name: atim/lazydocker
+    state: enabled
+
 - name: Install Podman and related tools
   become: true
   ansible.builtin.dnf:
     name:
       - podman
-      - podman-compose
+      - docker-compose
       - podman-docker
       - podman-tui
+      - lazydocker
     state: present
 
 - name: Silence Podman Docker emulation warning
@@ -17,10 +24,3 @@
     mode: "0644"
     modification_time: preserve
     access_time: preserve
-# - name: Enable and start Podman socket
-#   ansible.builtin.systemd:
-#     name: podman.socket
-#     state: started
-#     enabled: true
-#     scope: user
-#   when: ansible_virtualization_type | default('') not in ['docker', 'podman']
