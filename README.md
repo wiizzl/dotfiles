@@ -10,7 +10,7 @@ Used to maintain a consistent setup across different environments:
 ## Installation
 
 > [!WARNING]
-> Do not blindly apply settings you do not understand. Use at your own risk.
+> All this settings fits my personal preferences. Use at your own risk.
 
 ### Option 1: Dotfiles Only
 
@@ -59,12 +59,12 @@ You will be prompted for your user password. Make sure you have sudo access.
 > [!IMPORTANT]
 > After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
 
-#### Local Testing
+## Testing
 
 You can validate the Ansible provisioning locally without affecting your host machine.
 
 ```sh
 docker compose up -d --build
-docker exec -u docker_user fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
+docker exec -it -u docker_user fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
 docker compose down -v --remove-orphans
 ```

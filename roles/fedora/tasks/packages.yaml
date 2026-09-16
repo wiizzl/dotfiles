@@ -46,8 +46,3 @@
   ansible.builtin.systemd:
     name: tailscaled
     enabled: true
-# - name: Disable NetworkManager-wait-online to speed up boot
-#   become: true
-#   ansible.builtin.systemd:
-#     name: NetworkManager-wait-online
-#     enabled: false
