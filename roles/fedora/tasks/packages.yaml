@@ -12,27 +12,34 @@
   ansible.builtin.dnf:
     name:
       - ffmpeg
+      - micro
       - chezmoi
       - mise
-      - "@virtualization"
       - tailscale
-      - zed
-      - vesktop
-      - vicinae
-      - helium-browser-bin
+
       - bat
       - eza
       - fzf
       - herdr
-      - yazi
-      - ripgrep
       - zoxide
       - gitui
       - lazyssh
       - fastfetch
       - gh
       - starship
+
+      - "@virtualization"
+      - zed
+      - vesktop
+      - helium-browser-bin
     state: present
+
+- name: Remove native system packages
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - nano
+    state: absent
 
 - name: Install multimedia group packages
   become: true
@@ -41,8 +48,10 @@
     state: present
     exclude: PackageKit-gstreamer-plugin
 
-- name: Enable Tailscale service
+- name: Enable system services
   become: true
   ansible.builtin.systemd:
-    name: tailscaled
+    name: "{{ item }}"
     enabled: true
+  loop:
+    - tailscaled

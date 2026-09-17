@@ -13,17 +13,42 @@
   ansible.builtin.dnf:
     name:
       - hyprland
+      - sddm
+      - hyprland-guiutils
+      - xdg-user-dirs
       - xdg-desktop-portal-hyprland
-      - xfce-polkit
+      - xdg-desktop-portal-gtk
+
+      - hyprqt6engine
+      - kvantum
+      - hyprcursor
+
+      - hyprpolkitagent
       - gnome-keyring
-      - wl-clip-persist
+
+      - quickshell
+      - hypridle
+      - hyprpicker
+
+      - thunar
       - alacritty
+      - vicinae
+
+      - wl-clipboard
+      - wl-clip-persist
       - awww
-      - ly
+      - grim
+      - slurp
+      - swappy
     state: present
 
-- name: Enable Ly display manager service
+- name: Enable SDDM service
   become: true
   ansible.builtin.systemd:
-    name: ly@tty2
+    name: sddm
     enabled: true
+
+- name: Generate XDG user directories
+  ansible.builtin.command: xdg-user-dirs-update
+  args:
+    creates: "~/Downloads"

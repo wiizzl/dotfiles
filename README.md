@@ -48,10 +48,12 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 
 #### Steps
 
-Run the playbook remotely:
+Clone the repository and run the playbook:
 
 ```sh
-ansible-pull -K -U https://github.com/wiizzl/dotfiles.git -d ~/.dotfiles playbook.yaml
+git clone https://github.com/wiizzl/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+ansible-playbook -K playbook.yaml
 ```
 
 You will be prompted for your user password. Make sure you have sudo access.
