@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
 flatpak override --user --filesystem=$HOME/.themes
 flatpak override --user --filesystem=$HOME/.icons
 flatpak override --user --filesystem=$HOME/.config/Kvantum
