@@ -87,8 +87,7 @@ hl.config({
 
     col              = {
       active_border = {
-        colors = { colors.mauve, colors.teal },
-        angle = 45,
+        colors = { colors.mauve },
       },
       inactive_border = colors.surface1,
     },
@@ -131,8 +130,8 @@ hl.config({
     preserve_split = true,
     default_split_ratio = 1,
     force_split = 2,
-    pseudotile = true,
-    single_window_aspect_ratio = 0,
+    -- pseudotile = true,
+    -- single_window_aspect_ratio = 0,
     smart_split = false,
     special_scale_factor = 0.9
   },
@@ -151,7 +150,7 @@ hl.config({
 })
 
 hl.curve("default", { type = "bezier", points = { { 0.12, 0.92 }, { 0.08, 1.0 } } })
-hl.animation({ leaf = "global", enabled = true })
+hl.animation({ leaf = "global", enabled = true, speed = 6 })
 hl.animation({ leaf = "windows", enabled = true, speed = 6, bezier = "default", style = "slide" })
 hl.animation({ leaf = "border", enabled = true, speed = 6, bezier = "default" })
 hl.animation({ leaf = "borderangle", enabled = true, speed = 6, bezier = "default" })

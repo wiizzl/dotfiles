@@ -8,12 +8,11 @@
     - lionheartp/Hyprland
     - leloubil/wl-clip-persist
 
-- name: Install Hyprland ecosystem and display manager
+- name: Install desktop packages
   become: true
   ansible.builtin.dnf:
     name:
       - hyprland
-      - sddm
       - hyprland-guiutils
       - xdg-user-dirs
       - xdg-desktop-portal-hyprland
@@ -21,6 +20,7 @@
 
       - hyprqt6engine
       - kvantum
+      - nwg-look
       - hyprcursor
 
       - hyprpolkitagent
@@ -42,11 +42,13 @@
       - swappy
     state: present
 
-- name: Enable SDDM service
+- name: Remove desktop packages
   become: true
-  ansible.builtin.systemd:
-    name: sddm
-    enabled: true
+  ansible.builtin.dnf:
+    name:
+      - kitty
+      - nwg-panel
+    state: absent
 
 - name: Generate XDG user directories
   ansible.builtin.command: xdg-user-dirs-update
