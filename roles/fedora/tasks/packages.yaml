@@ -34,13 +34,6 @@
       - helium-browser-bin
     state: present
 
-- name: Remove native system packages
-  become: true
-  ansible.builtin.dnf:
-    name:
-      - nano
-    state: absent
-
 - name: Install multimedia group packages
   become: true
   ansible.builtin.dnf:

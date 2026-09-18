@@ -1,0 +1,19 @@
+{{- $themes := dict
+  ".config/Kvantum/catppuccin-mocha/catppuccin-mocha.kvconfig" "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.kvconfig"
+  ".config/Kvantum/catppuccin-mocha/catppuccin-mocha.svg" "https://raw.githubusercontent.com/catppuccin/kvantum/refs/heads/main/themes/catppuccin-mocha-mauve/catppuccin-mocha-mauve.svg"
+  "Downloads/stylus-catppuccin-mocha.json" "https://github.com/catppuccin/userstyles/releases/download/all-userstyles-export/import.json"
+-}}
+
+{{- range $path, $url := $themes }}
+["{{ $path }}"]
+  type = "file"
+  url = "{{ $url }}"
+  refreshPeriod = "336h"
+{{- end }}
+
+[".themes/catppuccin-mocha"]
+  type = "archive"
+  url = "https://github.com/catppuccin/gtk/releases/latest/download/catppuccin-mocha-mauve-standard+default.zip"
+  stripComponents = 1
+  refreshPeriod = "336h"
+  include = ["catppuccin-mocha-mauve-standard+default/**"]
