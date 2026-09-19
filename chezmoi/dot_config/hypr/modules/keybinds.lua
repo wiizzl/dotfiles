@@ -45,19 +45,22 @@ hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-local azerty_keys = { "&", "é", "\"", "'", "(", "-", "è", "_", "ç", "à" }
 for i = 1, 10 do
-  local key = azerty_keys[i]
+  local keycode = "code:" .. tostring(i + 9)
 
-  hl.bind(mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-  hl.bind(mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+  hl.bind(mod .. " + " .. keycode, hl.dsp.focus({ workspace = i }))
+  hl.bind(mod .. " + SHIFT + " .. keycode, hl.dsp.window.move({ workspace = i }))
+  hl.bind(mod .. " + ALT + " .. keycode, function()
+    hl.dsp.window.move({ workspace = i })
+    hl.dsp.focus({ workspace = i })
+  end)
 end
 
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
-hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mod .. " + X", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })
