@@ -12,7 +12,6 @@
   ansible.builtin.dnf:
     name:
       - ffmpeg
-      - micro
       - chezmoi
       - mise
       - tailscale
@@ -32,6 +31,9 @@
       - zed
       - vesktop
       - helium-browser-bin
+
+      - jetbrainsmono-nerd-fonts
+      - google-noto-color-emoji-fonts
     state: present
 
 - name: Install multimedia group packages

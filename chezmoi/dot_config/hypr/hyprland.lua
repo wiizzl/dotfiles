@@ -1,4 +1,3 @@
-require("modules.envs")
 require("modules.autostart")
 require("modules.input")
 require("modules.looknfeel")
