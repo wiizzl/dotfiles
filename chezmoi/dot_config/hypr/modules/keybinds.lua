@@ -1,11 +1,5 @@
 local mod = "SUPER"
 
-hl.config({
-  binds = {
-    workspace_back_and_forth = true,
-  },
-})
-
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd("alacritty"))
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd("helium-browser-bin"))
@@ -23,7 +17,6 @@ hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.window.kill())
 
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
-hl.bind(mod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 
 hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit"))
@@ -50,10 +43,6 @@ for i = 1, 10 do
 
   hl.bind(mod .. " + " .. keycode, hl.dsp.focus({ workspace = i }))
   hl.bind(mod .. " + SHIFT + " .. keycode, hl.dsp.window.move({ workspace = i }))
-  hl.bind(mod .. " + ALT + " .. keycode, function()
-    hl.dsp.window.move({ workspace = i })
-    hl.dsp.focus({ workspace = i })
-  end)
 end
 
 hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -62,7 +51,7 @@ hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
 
-hl.bind(mod .. " + SHIFT + M", hl.dsp.exec("uwsm stop"))
+hl.bind(mod .. " + SHIFT + M", hl.dsp.exec_cmd("uwsm stop"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })
