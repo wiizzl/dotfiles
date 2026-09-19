@@ -62,6 +62,8 @@ hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
 
+hl.bind(mod .. " + SHIFT + M", hl.dsp.exec("uwsm stop"))
+
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),

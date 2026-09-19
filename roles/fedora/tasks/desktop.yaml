@@ -12,6 +12,7 @@
   become: true
   ansible.builtin.dnf:
     name:
+      - uwsm
       - hyprland
       - hyprland-guiutils
       - xdg-user-dirs
@@ -42,7 +43,7 @@
       - swappy
     state: present
 
-- name: Remove desktop packages
+- name: Remove useless desktop packages
   become: true
   ansible.builtin.dnf:
     name:
@@ -54,3 +55,28 @@
   ansible.builtin.command: xdg-user-dirs-update
   args:
     creates: "~/Downloads"
+
+- name: Add pam_gnome_keyring.so for authentication
+  become: yes
+  community.general.pamd:
+    name: login
+    type: auth
+    control: substack
+    module_path: system-auth
+    new_type: auth
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    state: after
+
+- name: Add pam_gnome_keyring.so for session with argument
+  become: yes
+  community.general.pamd:
+    name: login
+    type: session
+    control: include
+    module_path: system-auth
+    new_type: session
+    new_control: optional
+    new_module_path: pam_gnome_keyring.so
+    module_arguments: "auto_start"
+    state: after
