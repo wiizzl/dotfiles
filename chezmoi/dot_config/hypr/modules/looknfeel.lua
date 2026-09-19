@@ -21,14 +21,23 @@ hl.config({
   },
 
   decoration = {
-    rounding = 0,
+    rounding           = 0,
 
-    shadow   = {
+    active_opacity     = 0.95,
+    inactive_opacity   = 0.95,
+    fullscreen_opacity = 1,
+
+    shadow             = {
       enabled = false,
     },
 
-    blur     = {
-      enabled = false,
+    blur               = {
+      enabled           = true,
+      size              = 6,
+      passes            = 2,
+      ignore_opacity    = true,
+      new_optimizations = true,
+      xray              = true,
     },
   },
 
