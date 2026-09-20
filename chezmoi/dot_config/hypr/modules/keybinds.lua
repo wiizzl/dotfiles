@@ -12,12 +12,12 @@ hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(apps.terminal))
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(apps.file))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(apps.browser))
 
-hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(uwsm .. "~/.local/bin/vicinae toggle"))
+hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(uwsm .. "vicinae toggle"))
 
-hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(uwsm .. "~/.local/bin/vicinae vicinae://launch/clipboard/history"))
-hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(uwsm .. "~/.local/bin/vicinae vicinae://launch/core/search-emojis"))
+hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/clipboard/history"))
+hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/core/search-emojis"))
 hl.bind(mod .. " + CTRL + W",
-  hl.dsp.exec_cmd(uwsm .. "~/.local/bin/vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wp-grid"))
+  hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wp-grid"))
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
 
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
