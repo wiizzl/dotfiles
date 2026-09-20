@@ -1,16 +1,9 @@
 local mod = "SUPER"
 local uwsm = "uwsm app -- "
-local term_cmd = uwsm .. "footclient"
 
-local apps = {
-  terminal = term_cmd,
-  file = term_cmd .. " -e yazi",
-  browser = uwsm .. "helium-browser-bin",
-}
-
-hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(apps.terminal))
-hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(apps.file))
-hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(apps.browser))
+hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(uwsm .. "footclient"))
+hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(uwsm .. "nautilus"))
+hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(uwsm .. "helium-browser-bin"))
 
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(uwsm .. "vicinae toggle"))
 
