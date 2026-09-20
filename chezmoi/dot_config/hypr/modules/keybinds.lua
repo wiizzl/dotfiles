@@ -5,13 +5,15 @@ hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd("helium-browser-bin"))
 
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd("vicinae toggle"))
-hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd("vicinae vicinae://extensions/vicinae/clipboard/history"))
-hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd("vicinae vicinae://extensions/vicinae/core/search-emojis"))
-hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd("vicinae vicinae://extensions/sovereign/awww-switcher/wpgrid"))
+
+hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
+hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"))
+hl.bind(mod .. " + CTRL + W",
+  hl.dsp.exec_cmd("vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wp-grid"))
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
 
-hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd("grim -g '$(slurp)' - | swappy -f -"))
-hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g '$(slurp -d)' - | wl-copy"))
+hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
+hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.window.kill())

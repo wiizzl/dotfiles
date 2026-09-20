@@ -33,11 +33,11 @@
 
       - thunar
       - alacritty
-      - vicinae
 
       - wl-clipboard
       - wl-clip-persist
       - awww
+
       - grim
       - slurp
       - swappy
@@ -50,6 +50,23 @@
       - kitty
       - nwg-panel
     state: absent
+
+- name: Setup Vicinae
+  block:
+    - name: Check if Vicinae is already installed
+      ansible.builtin.stat:
+        path: "{{ ansible_facts['env']['HOME'] }}/.local/bin/vicinae"
+      register: vicinae_binary
+
+    - name: Install Vicinae
+      ansible.builtin.shell: |
+        set -o pipefail
+        curl -fsSL https://vicinae.com/install | bash -s -- --prefix "{{ ansible_facts['env']['HOME'] }}/.local"
+      args:
+        executable: /bin/bash
+      register: vicinae_install
+      changed_when: "'successfully installed' in vicinae_install.stdout"
+      when: not vicinae_binary.stat.exists
 
 - name: Generate XDG user directories
   ansible.builtin.command: xdg-user-dirs-update
