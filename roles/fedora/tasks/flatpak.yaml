@@ -35,3 +35,10 @@
       - io.missioncenter.MissionCenter
       - eu.betterbird.Betterbird
     state: present
+
+- name: Allow Flatpaks to read Kvantum config
+  community.general.flatpak_override:
+    filesystem:
+      - "{{ ansible_facts['env']['HOME'] }}/.config/Kvantum:ro"
+      - "{{ ansible_facts['env']['HOME'] }}/.themes:ro"
+      - "{{ ansible_facts['env']['HOME'] }}/.icons:ro"
