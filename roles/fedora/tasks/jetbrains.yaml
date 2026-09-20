@@ -1,37 +1,13 @@
 ---
-- name: Create temporary directory
-  ansible.builtin.tempfile:
+- name: Create installation directory for JetBrains Toolbox
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.local/share/jetbrains-toolbox"
     state: directory
-  register: toolbox_temp
+    mode: "0755"
 
 - name: Download and extract JetBrains Toolbox
   ansible.builtin.unarchive:
     src: "https://data.services.jetbrains.com/products/download?code=TBA&platform=linux"
-    dest: "{{ toolbox_temp.path }}"
+    dest: "{{ ansible_facts['env']['HOME'] }}/.local/share/jetbrains-toolbox"
     remote_src: true
     extra_opts: [--strip-components=1]
-
-- name: Find the JetBrains Toolbox executable
-  ansible.builtin.find:
-    paths: "{{ toolbox_temp.path }}"
-    patterns: "jetbrains-toolbox"
-    recurse: true
-  register: toolbox_binary
-
-- name: Check if ~/.local/bin exists
-  ansible.builtin.file:
-    path: "{{ ansible_facts['env']['HOME'] }}/.local/bin"
-    state: directory
-    mode: "0755"
-
-- name: Move JetBrains Toolbox in ~/.local/bin
-  ansible.builtin.copy:
-    src: "{{ toolbox_binary.files[0].path }}"
-    dest: "{{ ansible_facts['env']['HOME'] }}/.local/bin/jetbrains-toolbox"
-    mode: "0755"
-    remote_src: true
-
-- name: Remove the temporary directory
-  ansible.builtin.file:
-    path: "{{ toolbox_temp.path }}"
-    state: absent

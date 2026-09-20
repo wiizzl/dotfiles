@@ -50,13 +50,14 @@ Use this method on a fresh OS installation. Ansible will install all packages, a
 
 Clone the repository and run the playbook:
 
+> [!NOTE]
+> You may need to install deps with `ansible-galaxy install -r requirements.yaml` depending on how you installed Ansible.
+
 ```sh
 git clone https://github.com/wiizzl/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ansible-playbook -K playbook.yaml
 ```
-
-You will be prompted for your user password. Make sure you have sudo access.
 
 > [!IMPORTANT]
 > After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
