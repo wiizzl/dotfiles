@@ -1,4 +1,11 @@
 ---
+- name: Set system default target to graphical
+  become: true
+  ansible.builtin.file:
+    src: /usr/lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link
+
 - name: Enable COPR repositories
   become: true
   community.general.copr:
@@ -19,25 +26,24 @@
       - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
 
-      - hyprqt6engine
+      - qt5ct
+      - qt6ct
       - kvantum
-      - nwg-look
       - hyprcursor
+      - jetbrainsmono-nerd-fonts
+      - google-noto-color-emoji-fonts
+      - bibata-cursor-theme-
 
-      - hyprpolkitagent
+      - polkit-kde
       - gnome-keyring
 
       - quickshell
       - hypridle
       - hyprpicker
-
-      - thunar
-      - alacritty
-
+      - foot
       - wl-clipboard
       - wl-clip-persist
       - awww
-
       - grim
       - slurp
       - swappy

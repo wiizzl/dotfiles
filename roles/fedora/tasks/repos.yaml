@@ -1,22 +1,24 @@
 ---
-- name: Import RPMFusion GPG keys
-  become: true
-  ansible.builtin.rpm_key:
-    key: "{{ item }}"
-    state: present
-  loop:
-    - "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020"
-    - "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020"
+- name: Install RPMFusion
+  block:
+    - name: Import RPMFusion GPG keys
+      become: true
+      ansible.builtin.rpm_key:
+        key: "{{ item }}"
+        state: present
+      loop:
+        - "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020"
+        - "https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020"
 
-- name: Install RPMFusion repositories
-  become: true
-  ansible.builtin.dnf:
-    name:
-      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
-      - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
-    state: present
+    - name: Install RPMFusion repositories
+      become: true
+      ansible.builtin.dnf:
+        name:
+          - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+          - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+        state: present
 
-- name: Ensure Terra repository is installed
+- name: Install Terra repository
   become: true
   ansible.builtin.shell: |
     dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release

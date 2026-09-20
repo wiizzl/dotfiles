@@ -23,17 +23,17 @@
       - zoxide
       - gitui
       - lazyssh
-      - fastfetch
       - gh
+
       - starship
+      - fastfetch
+      - cava
+      - cbonsai
 
       - "@virtualization"
       - zed
       - vesktop
       - helium-browser-bin
-
-      - jetbrainsmono-nerd-fonts
-      - google-noto-color-emoji-fonts
     state: present
 
 - name: Install multimedia group packages
@@ -41,7 +41,9 @@
   ansible.builtin.dnf:
     name: "@multimedia"
     state: present
-    exclude: PackageKit-gstreamer-plugin
+    exclude:
+      - PackageKit-gstreamer-plugin
+      - libheif-freeworld
 
 - name: Enable system services
   become: true

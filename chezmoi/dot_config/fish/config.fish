@@ -1,6 +1,8 @@
 if status is-login
   if test (tty) = "/dev/tty1"
-    exec uwsm start hyprland.desktop
+    if uwsm check may-start
+      exec uwsm start hyprland.desktop
+    end
   end
 end
 
