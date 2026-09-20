@@ -7,7 +7,7 @@
   loop:
     - rossetnocpes/herdr
 
-- name: Install native system packages
+- name: Install system packages
   become: true
   ansible.builtin.dnf:
     name:
