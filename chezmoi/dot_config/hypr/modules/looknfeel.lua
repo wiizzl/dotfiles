@@ -6,7 +6,7 @@ local colors = {
 hl.config({
   general = {
     gaps_in          = 3,
-    gaps_out         = 8,
+    gaps_out         = 3,
     border_size      = 1,
 
     col              = {
