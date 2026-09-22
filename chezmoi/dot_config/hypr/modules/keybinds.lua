@@ -10,14 +10,27 @@ hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(uwsm .. "vicinae toggle"))
 hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/clipboard/history"))
 hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/core/search-emojis"))
 hl.bind(mod .. " + CTRL + W",
-  hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wp-grid"))
+  hl.dsp.exec_cmd(uwsm .. "vicinae vicinae://launch/@sovereign/store.vicinae.awww-switcher/wpgrid"))
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
+
+hl.bind(mod .. " + L", function()
+  local ws = hl.get_active_workspace()
+  if not ws then return end
+
+  local new_layout = ws.tiled_layout == "dwindle" and "scrolling" or "dwindle"
+
+  hl.workspace_rule({
+    workspace = tostring(ws.id),
+    layout = new_layout
+  })
+end)
 
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'))
 
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.window.kill())
+hl.bind(mod .. " + CTRL + Q", hl.dsp.exec_cmd("uwsm stop"))
 
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
@@ -48,13 +61,11 @@ for i = 1, 10 do
   hl.bind(mod .. " + SHIFT + " .. keycode, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + SHIFT + TAB", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.bind(mod .. " + X", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:magic" }))
-
-hl.bind(mod .. " + SHIFT + M", hl.dsp.exec_cmd("uwsm stop"))
 
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
   { locked = true, repeating = true })

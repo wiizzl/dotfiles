@@ -1,10 +1,6 @@
 hl.config({
   input = {
     kb_layout          = "fr",
-    kb_variant         = "",
-    kb_model           = "",
-    kb_options         = "",
-    kb_rules           = "",
 
     sensitivity        = 0,
     follow_mouse       = 1,
@@ -20,11 +16,6 @@ hl.config({
     },
 
     accel_profile      = "flat",
-  },
-
-  misc = {
-    key_press_enables_dpms = true,
-    mouse_move_enables_dpms = true,
   },
 })
 
