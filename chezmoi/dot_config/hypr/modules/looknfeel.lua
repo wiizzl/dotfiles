@@ -6,7 +6,7 @@ local colors = {
 hl.config({
   general = {
     gaps_in          = 3,
-    gaps_out         = 3,
+    gaps_out         = 6,
     border_size      = 1,
 
     col              = {
@@ -33,8 +33,8 @@ hl.config({
 
     blur               = {
       enabled           = true,
-      size              = 6,
-      passes            = 2,
+      size              = 3,
+      passes            = 1,
       ignore_opacity    = true,
       new_optimizations = true,
     },
@@ -72,10 +72,6 @@ hl.config({
     preserve_split = true,
     force_split = 2,
     special_scale_factor = 0.92
-  },
-
-  master = {
-    new_status = "master",
   },
 
   scrolling = {
