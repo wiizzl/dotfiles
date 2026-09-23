@@ -18,6 +18,11 @@ hl.window_rule({
   no_focus = true,
 })
 
+hl.workspace_rule({
+  workspace = "special:magic",
+  gaps_out = 30,
+})
+
 hl.layer_rule({
   name = "vicinae-no-animation",
   match = { namespace = "vicinae" },

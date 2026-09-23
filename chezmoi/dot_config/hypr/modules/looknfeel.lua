@@ -71,7 +71,6 @@ hl.config({
   dwindle = {
     preserve_split = true,
     force_split = 2,
-    special_scale_factor = 0.92
   },
 
   scrolling = {
