@@ -25,7 +25,7 @@ RowLayout {
     }
 
     Timer {
-        interval: 2000
+        interval: 300
         running: true
         repeat: true
         onTriggered: volProc.running = true

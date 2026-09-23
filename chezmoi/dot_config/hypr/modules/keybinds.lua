@@ -2,8 +2,8 @@ local mod = "SUPER"
 local uwsm = "uwsm app -- "
 
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(uwsm .. "footclient"))
-hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(uwsm .. "nautilus"))
-hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(uwsm .. "helium-browser-bin"))
+hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(uwsm .. "nautilus --new-window"))
+hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(uwsm .. "helium-browser-bin --new-window"))
 
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(uwsm .. "vicinae toggle"))
 
@@ -38,18 +38,11 @@ hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
-
-hl.bind("ALT + Tab", hl.dsp.window.cycle_next(), { repeating = true })
-hl.bind("ALT + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }), { repeating = true })
-
-hl.bind(mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind(mod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
+for i = 1, 4 do
+  local directions = { "left", "right", "up", "down" }
+  hl.bind(mod .. " + " .. directions[i], hl.dsp.focus({ direction = directions[i] }))
+  hl.bind(mod .. " + SHIFT + " .. directions[i], hl.dsp.window.move({ direction = directions[i] }))
+end
 
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
