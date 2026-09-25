@@ -1,4 +1,19 @@
 ---
+- name: Install full ffmpeg
+  become: true
+  ansible.builtin.dnf:
+    name: ffmpeg
+    state: present
+    allowerasing: yes
+
+- name: Install multimedia group packages
+  become: true
+  ansible.builtin.dnf:
+    name: "@multimedia"
+    state: present
+    exclude:
+      - PackageKit-gstreamer-plugin
+
 - name: Enable COPR repositories
   become: true
   community.general.copr:
@@ -11,7 +26,6 @@
   become: true
   ansible.builtin.dnf:
     name:
-      - ffmpeg
       - chezmoi
       - mise
       - tailscale
@@ -39,15 +53,6 @@
       - cups
       - system-config-printer
     state: present
-
-- name: Install multimedia group packages
-  become: true
-  ansible.builtin.dnf:
-    name: "@multimedia"
-    state: present
-    exclude:
-      - PackageKit-gstreamer-plugin
-      - libheif-freeworld
 
 - name: Enable system services
   become: true
