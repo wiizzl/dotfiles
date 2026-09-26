@@ -1,76 +1,91 @@
 {
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
   "theme": "Catppuccin Mocha",
-  "icon_theme": "Symbols Icon Theme",
+  "icon_theme": "Warm Charmed Icons",
 
-  "base_keymap": "VSCode",
-
-  "cli_default_open_behavior": "new_window",
-
-  "buffer_font_family": "{{ .mono_font }}",
-  "buffer_font_size": 15,
-  "ui_font_size": 15,
-
-  "image_viewer": {
-    "unit": "decimal",
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": false,
+    "show_user_menu": false,
   },
-
-  "colorize_brackets": true,
-  "indent_guides": {
-    "coloring": "indent_aware",
-  },
-
-  "format_on_save": "on",
-  "autosave": "on_focus_change",
-
-  "middle_click_paste": false,
-
-  "minimap": {
-    "show": "always",
-    "display_in": "all_editors",
-    "max_width_columns": 65,
-  },
-
   "tab_bar": {
     "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
   },
-
-  "diagnostics": {
-    "include_warnings": true,
-    "inline": {
-      "enabled": true,
-      "update_debounce_ms": 150,
-      "padding": 4,
-      "min_column": 0,
-      "max_severity": null,
-    },
-  },
-
-  "edit_predictions": {
-    "provider": "zed",
-    "copilot": {
-      "enable_next_edit_suggestions": false,
-    },
-  },
-
-  "agent": {
-    "play_sound_when_agent_done": "always",
-    "dock": "left",
-    "default_profile": "write",
+  "toolbar": { "quick_actions": false },
+  "status_bar": { "experimental.show": false },
+  "scrollbar": { "show": "never" },
+  "gutter": {
+    "min_line_number_digits": 0,
+    "folds": false,
+    "runnables": false,
   },
 
   "git_panel": {
     "dock": "right",
+    "file_icons": true,
   },
   "project_panel": {
     "dock": "right",
     "auto_fold_dirs": false,
+    "hide_root": true,
     "indent_size": 12,
+    "sticky_scroll": false,
   },
   "collaboration_panel": {
-    "button": false,
+    "dock": "left",
+  },
+  "agent": {
+    "play_sound_when_agent_done": "always",
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
   },
 
+  "base_keymap": "VSCode",
+
+  "drag_and_drop_selection": { "enabled": false },
+  "show_whitespaces": "none",
+  "extend_comment_on_newline": false,
+
+  "close_on_file_delete": true,
+  "restore_on_startup": "empty_tab",
+  "session": { "restore_unsaved_buffers": false },
+  "middle_click_paste": false,
+
+  "buffer_font_family": "{{ .mono_font }}",
+  "ui_font_family": "{{ .mono_font }}",
+  "buffer_font_size": 15,
+  "ui_font_size": 14.5,
+
+  "image_viewer": { "unit": "decimal" },
+
+  "colorize_brackets": true,
+  "indent_guides": { "coloring": "indent_aware" },
+
+  "format_on_save": "on",
+  "autosave": "on_focus_change",
+
   "max_tabs": 6,
+  "tab_size": 2,
+
+  "minimap": {
+    "show": "always",
+    "display_in": "all_editors",
+    "max_width_columns": 50,
+  },
+
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
 
   "languages": {
     "TypeScript": {
@@ -100,14 +115,12 @@
     },
   },
 
-  "tab_size": 2,
-
   "auto_install_extensions": {
     "html": true,
     "scss": true,
     "toml": true,
     "catppuccin": true,
-    "symbols": true,
+    "charmed-icons": true,
     "biome": true,
     "dockerfile": true,
     "docker-compose": true,
@@ -125,10 +138,5 @@
     "fish": true,
     "lua": true,
     "qml": true,
-  },
-
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
   },
 }

@@ -14,6 +14,8 @@
   loop:
     - lionheartp/Hyprland
     - leloubil/wl-clip-persist
+    - mineiro/utility-belt
+    - yselkowitz/nwg-shell
 
 - name: Install desktop packages
   become: true
@@ -38,8 +40,13 @@
       - gnome-keyring
 
       - quickshell
+      - impala
+      - bluetui
+      - pulseaudio
       - hypridle
       - hyprpicker
+      - nwg-displays
+      - dunst
       - foot
       - wl-clipboard
       - wl-clip-persist

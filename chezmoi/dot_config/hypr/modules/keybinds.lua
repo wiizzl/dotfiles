@@ -14,15 +14,15 @@ hl.bind(mod .. " + CTRL + W",
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
 
 hl.bind(mod .. " + L", function()
-  local ws = hl.get_active_workspace()
-  if not ws then return end
+  local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+  if not workspace then
+    return
+  end
 
-  local new_layout = ws.tiled_layout == "dwindle" and "scrolling" or "dwindle"
+  local next_layout = (workspace.tiled_layout == "dwindle") and "scrolling" or "dwindle"
+  local ws_target = workspace.special and tostring(workspace.name) or ("name:" .. tostring(workspace.name))
 
-  hl.workspace_rule({
-    workspace = tostring(ws.id),
-    layout = new_layout
-  })
+  hl.workspace_rule({ workspace = ws_target, layout = next_layout })
 end)
 
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
