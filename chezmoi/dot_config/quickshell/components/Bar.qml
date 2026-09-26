@@ -38,9 +38,6 @@ PanelWindow {
                 Layout.fillWidth: true
             }
 
-            SystemStats {}
-            Separator {}
-
             Volume {}
             Separator {}
 

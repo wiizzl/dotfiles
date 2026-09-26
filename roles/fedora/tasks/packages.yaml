@@ -13,6 +13,7 @@
     state: present
     exclude:
       - PackageKit-gstreamer-plugin
+      - libheif-freeworld
 
 - name: Enable COPR repositories
   become: true

@@ -28,3 +28,31 @@ hl.layer_rule({
   match = { namespace = "vicinae" },
   no_anim = true,
 })
+
+hl.window_rule({
+  name   = "center-float-audio",
+  match  = { class = "pavucontrol" },
+  float  = true,
+  center = true,
+})
+
+hl.window_rule({
+  name   = "center-float-impala",
+  match  = { class = "impala-tui" },
+  float  = true,
+  center = true,
+})
+
+hl.window_rule({
+  name   = "center-float-bluetui",
+  match  = { class = "bluetui-tui" },
+  float  = true,
+  center = true,
+})
+
+hl.window_rule({
+  name   = "center-float-displays",
+  match  = { class = "nwg-displays" },
+  float  = true,
+  center = true,
+})
