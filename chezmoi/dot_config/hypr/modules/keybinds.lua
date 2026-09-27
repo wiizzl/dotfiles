@@ -38,14 +38,14 @@ hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
+hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
 for i = 1, 4 do
   local directions = { "left", "right", "up", "down" }
   hl.bind(mod .. " + " .. directions[i], hl.dsp.focus({ direction = directions[i] }))
   hl.bind(mod .. " + SHIFT + " .. directions[i], hl.dsp.window.move({ direction = directions[i] }))
 end
-
-hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 for i = 1, 10 do
   local keycode = "code:" .. tostring(i + 9)

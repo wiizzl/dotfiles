@@ -3,5 +3,16 @@ require("modules.input")
 require("modules.looknfeel")
 require("modules.rules")
 require("modules.keybinds")
-require("modules.monitors")
-require("modules.prefs")
+
+for _, file in ipairs({
+  "prefs.lua",
+  "monitors.lua"
+}) do
+  local path = os.getenv("HOME") .. "/.config/hypr/modules/" .. file
+  local f = io.open(path, "r")
+
+  if f then
+    f:close()
+    dofile(path)
+  end
+end

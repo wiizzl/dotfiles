@@ -15,7 +15,7 @@
     - lionheartp/Hyprland
     - leloubil/wl-clip-persist
     - mineiro/utility-belt
-    - yselkowitz/nwg-shell
+    - paolino/hyprmoncfg
 
 - name: Install desktop packages
   become: true
@@ -43,9 +43,9 @@
       - impala
       - bluetui
       - pulseaudio
+      - hyprmoncfg
       - hypridle
       - hyprpicker
-      - nwg-displays
       - dunst
       - foot
       - wl-clipboard
