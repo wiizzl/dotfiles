@@ -1,4 +1,20 @@
 ---
+- name: Install full ffmpeg
+  become: true
+  ansible.builtin.dnf:
+    name: ffmpeg
+    state: present
+    allowerasing: yes
+
+- name: Install multimedia group packages
+  become: true
+  ansible.builtin.dnf:
+    name: "@multimedia"
+    state: present
+    exclude:
+      - PackageKit-gstreamer-plugin
+      - libheif-freeworld
+
 - name: Setup hardware accelerated codecs
   become: true
   block:
@@ -32,20 +48,3 @@
           - intel-media-driver
         state: present
       when: "'Intel' in gpu_info.stdout"
-
-- name: Install full ffmpeg
-  become: true
-  ansible.builtin.dnf:
-    name: ffmpeg
-    state: present
-    allowerasing: yes
-
-- name: Install multimedia group packages
-  become: true
-  ansible.builtin.dnf:
-    name: "@multimedia"
-    state: present
-    setopt: "install_weak_deps=False"
-    exclude:
-      - PackageKit-gstreamer-plugin
-      - libheif-freeworld

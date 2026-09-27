@@ -54,6 +54,7 @@
   "show_whitespaces": "none",
   "extend_comment_on_newline": false,
 
+  "cli_default_open_behavior": "new_window",
   "close_on_file_delete": true,
   "restore_on_startup": "empty_tab",
   "session": { "restore_unsaved_buffers": false },
@@ -104,6 +105,11 @@
   },
 
   "lsp": {
+   "qmljs": {
+      "binary": {
+        "arguments": ["-E"],
+      },
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": ["cva", "cx"],

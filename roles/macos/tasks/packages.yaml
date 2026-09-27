@@ -10,7 +10,13 @@
     name:
       - starship
       - bat
+      - gh
       - fastfetch
+      - zoxide
+      - herdr
+      - fzf
+      - eza
+      - tailscale
       - mise
       - chezmoi
       - bitwarden-cli
@@ -25,4 +31,8 @@
       - dbeaver-community
       - localsend
       - jetbrains-toolbox
+      - openlogi
+      - zed
+      - vesktop
+      - helium-browser
     accept_external_apps: true
