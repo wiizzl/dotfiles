@@ -1,11 +1,12 @@
 hl.on("hyprland.start", function()
+  hl.exec_cmd("systemctl --user start hypridle")
   hl.exec_cmd("systemctl --user start vicinae")
   hl.exec_cmd("systemctl --user start foot-server")
   hl.exec_cmd("systemctl --user start podman.socket")
+  hl.exec_cmd("systemctl --user start hyprmoncfgd")
 
   hl.exec_cmd("uwsm app -- /usr/libexec/kf6/polkit-kde-authentication-agent-1")
   hl.exec_cmd("uwsm app -- awww-daemon")
   hl.exec_cmd("uwsm app -- quickshell -d")
-  hl.exec_cmd("uwsm app -- hypridle")
   hl.exec_cmd("uwsm app -- wl-clip-persist --clipboard both")
 end)
