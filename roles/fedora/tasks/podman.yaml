@@ -1,10 +1,4 @@
 ---
-- name: Enable COPR repositories
-  become: true
-  community.general.copr:
-    name: atim/lazydocker
-    state: enabled
-
 - name: Install Podman and related tools
   become: true
   ansible.builtin.dnf:

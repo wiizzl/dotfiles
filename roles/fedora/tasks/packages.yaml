@@ -1,5 +1,5 @@
 ---
-- name: Install Hyprland, CLI tools and Applications
+- name: Install all packages
   become: true
   ansible.builtin.dnf:
     name:
@@ -9,7 +9,7 @@
       - xdg-user-dirs
       - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
-      - polkit-kde
+      - mate-polkit
       - gnome-keyring
 
       - qt5ct
@@ -86,6 +86,28 @@
       register: vicinae_install
       changed_when: "'successfully installed' in vicinae_install.stdout"
       when: not vicinae_binary.stat.exists
+
+- name: Install JetBrains Toolbox
+  block:
+    - name: Check if JetBrains Toolbox is already installed
+      ansible.builtin.stat:
+        path: "{{ ansible_facts['env']['HOME'] }}/.local/share/jetbrains-toolbox/jetbrains-toolbox"
+      register: toolbox_binary
+
+    - name: Create installation directory for JetBrains Toolbox
+      when: not toolbox_binary.stat.exists
+      ansible.builtin.file:
+        path: "{{ ansible_facts['env']['HOME'] }}/.local/share/jetbrains-toolbox"
+        state: directory
+        mode: "0755"
+
+    - name: Download and extract JetBrains Toolbox
+      when: not toolbox_binary.stat.exists
+      ansible.builtin.unarchive:
+        src: "https://data.services.jetbrains.com/products/download?code=TBA&platform=linux"
+        dest: "{{ ansible_facts['env']['HOME'] }}/.local/share/jetbrains-toolbox"
+        remote_src: true
+        extra_opts: [--strip-components=2]
 
 - name: Generate XDG user directories
   ansible.builtin.command: xdg-user-dirs-update
