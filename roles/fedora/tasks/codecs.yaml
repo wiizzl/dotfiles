@@ -1,0 +1,51 @@
+---
+- name: Setup hardware accelerated codecs
+  become: true
+  block:
+    - name: Detect available GPUs
+      ansible.builtin.shell: lspci | grep -i -E 'vga|3d|display'
+      register: gpu_info
+      changed_when: false
+
+    - name: Install AMD codecs
+      become: true
+      ansible.builtin.dnf:
+        name:
+          - mesa-va-drivers-freeworld
+          - mesa-vulkan-drivers-freeworld
+        state: present
+        allowerasing: yes
+      when: "'AMD' in gpu_info.stdout or 'Advanced Micro Devices' in gpu_info.stdout"
+
+    - name: Install NVIDIA codecs
+      become: true
+      ansible.builtin.dnf:
+        name:
+          - libva-nvidia-driver
+        state: present
+      when: "'NVIDIA' in gpu_info.stdout"
+
+    - name: Install Intel codecs
+      become: true
+      ansible.builtin.dnf:
+        name:
+          - intel-media-driver
+        state: present
+      when: "'Intel' in gpu_info.stdout"
+
+- name: Install full ffmpeg
+  become: true
+  ansible.builtin.dnf:
+    name: ffmpeg
+    state: present
+    allowerasing: yes
+
+- name: Install multimedia group packages
+  become: true
+  ansible.builtin.dnf:
+    name: "@multimedia"
+    state: present
+    setopt: "install_weak_deps=False"
+    exclude:
+      - PackageKit-gstreamer-plugin
+      - libheif-freeworld

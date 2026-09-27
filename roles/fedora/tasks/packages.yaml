@@ -1,36 +1,44 @@
 ---
-- name: Install full ffmpeg
-  become: true
-  ansible.builtin.dnf:
-    name: ffmpeg
-    state: present
-    allowerasing: yes
-
-- name: Install multimedia group packages
-  become: true
-  ansible.builtin.dnf:
-    name: "@multimedia"
-    state: present
-    exclude:
-      - PackageKit-gstreamer-plugin
-      - libheif-freeworld
-
-- name: Enable COPR repositories
-  become: true
-  community.general.copr:
-    name: "{{ item }}"
-    state: enabled
-  loop:
-    - rossetnocpes/herdr
-
-- name: Install system packages
+- name: Install Hyprland, CLI tools and Applications
   become: true
   ansible.builtin.dnf:
     name:
+      - uwsm
+      - hyprland
+      - hyprland-guiutils
+      - xdg-user-dirs
+      - xdg-desktop-portal-hyprland
+      - xdg-desktop-portal-gtk
+      - polkit-kde
+      - gnome-keyring
+
+      - qt5ct
+      - qt6ct
+      - kvantum
+      - hyprcursor
+      - jetbrainsmono-nerd-fonts
+      - google-noto-color-emoji-fonts
+      - bibata-cursor-theme
+
+      - quickshell
+      - impala
+      - bluetui
+      - pavucontrol
+      - hyprmoncfg
+      - hypridle
+      - hyprpicker
+      - dunst
+      - foot
+      - wl-clipboard
+      - wl-clip-persist
+      - awww
+      - grim
+      - slurp
+      - swappy
+
       - chezmoi
       - mise
       - tailscale
-
       - bat
       - eza
       - fzf
@@ -39,7 +47,6 @@
       - gitui
       - lazyssh
       - gh
-
       - starship
       - fastfetch
       - cava
@@ -55,6 +62,36 @@
       - system-config-printer
     state: present
 
+- name: Remove conflicting and useless packages
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - kitty
+      - nwg-panel
+    state: absent
+
+- name: Setup Vicinae
+  block:
+    - name: Check if Vicinae is already installed
+      ansible.builtin.stat:
+        path: "{{ ansible_facts['env']['HOME'] }}/.local/bin/vicinae"
+      register: vicinae_binary
+
+    - name: Install Vicinae
+      ansible.builtin.shell: |
+        set -o pipefail
+        curl -fsSL https://vicinae.com/install | bash -s -- --prefix "{{ ansible_facts['env']['HOME'] }}/.local"
+      args:
+        executable: /bin/bash
+      register: vicinae_install
+      changed_when: "'successfully installed' in vicinae_install.stdout"
+      when: not vicinae_binary.stat.exists
+
+- name: Generate XDG user directories
+  ansible.builtin.command: xdg-user-dirs-update
+  args:
+    creates: "~/Downloads"
+
 - name: Enable system services
   become: true
   ansible.builtin.systemd:
@@ -63,3 +100,10 @@
   loop:
     - cups
     - tailscaled
+
+- name: Set system default target to graphical
+  become: true
+  ansible.builtin.file:
+    src: /usr/lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link

@@ -24,3 +24,15 @@
     dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
   args:
     creates: /etc/yum.repos.d/terra.repo
+
+- name: Enable all required COPR repositories
+  become: true
+  community.general.copr:
+    name: "{{ item }}"
+    state: enabled
+  loop:
+    - lionheartp/Hyprland
+    - leloubil/wl-clip-persist
+    - mineiro/utility-belt
+    - paolino/hyprmoncfg
+    - rossetnocpes/herdr
