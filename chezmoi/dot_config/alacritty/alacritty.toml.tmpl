@@ -1,0 +1,19 @@
+[general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 14, y = 14 }
+
+[font]
+normal = { family = {{ .mono_font | quote }} }
+size   = 10
+
+[scrolling]
+history    = 10000
+multiplier = 7
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }

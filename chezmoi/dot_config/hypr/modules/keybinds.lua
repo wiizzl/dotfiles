@@ -2,28 +2,17 @@ local mod = "SUPER"
 local uwsm = "uwsm app -- "
 local ipc = "noctalia msg "
 
-hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(uwsm .. "footclient"))
+hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(uwsm .. "alacritty"))
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd(uwsm .. "nautilus --new-window"))
 hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(uwsm .. "helium-browser-bin --new-window"))
 
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 
 hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher /emo"))
 hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
-
-hl.bind(mod .. " + L", function()
-  local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
-  if not workspace then
-    return
-  end
-
-  local next_layout = (workspace.tiled_layout == "dwindle") and "scrolling" or "dwindle"
-  local ws_target = workspace.special and tostring(workspace.name) or ("name:" .. tostring(workspace.name))
-
-  hl.workspace_rule({ workspace = ws_target, layout = next_layout })
-end)
 
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd(ipc .. "screenshot-annotate"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
