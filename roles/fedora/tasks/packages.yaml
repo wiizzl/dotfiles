@@ -9,32 +9,21 @@
       - xdg-user-dirs
       - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
-      - mate-polkit
       - gnome-keyring
 
-      - qt5ct
+      - adw-gtk3-theme
       - qt6ct
-      - kvantum
       - hyprcursor
       - jetbrainsmono-nerd-fonts
       - google-noto-color-emoji-fonts
       - bibata-cursor-theme
 
-      - quickshell
-      - impala
-      - bluetui
-      - pavucontrol
+      - noctalia-git
+      - bluez
       - hyprmoncfg
-      - hypridle
       - hyprpicker
-      - dunst
       - foot
       - wl-clipboard
-      - wl-clip-persist
-      - awww
-      - grim
-      - slurp
-      - swappy
 
       - chezmoi
       - mise
@@ -70,23 +59,6 @@
       - nwg-panel
     state: absent
 
-- name: Setup Vicinae
-  block:
-    - name: Check if Vicinae is already installed
-      ansible.builtin.stat:
-        path: "{{ ansible_facts['env']['HOME'] }}/.local/bin/vicinae"
-      register: vicinae_binary
-
-    - name: Install Vicinae
-      ansible.builtin.shell: |
-        set -o pipefail
-        curl -fsSL https://vicinae.com/install | bash -s -- --prefix "{{ ansible_facts['env']['HOME'] }}/.local"
-      args:
-        executable: /bin/bash
-      register: vicinae_install
-      changed_when: "'successfully installed' in vicinae_install.stdout"
-      when: not vicinae_binary.stat.exists
-
 - name: Install JetBrains Toolbox
   block:
     - name: Check if JetBrains Toolbox is already installed
@@ -121,6 +93,7 @@
     enabled: true
   loop:
     - cups
+    - bluetooth
     - tailscaled
 
 - name: Set system default target to graphical

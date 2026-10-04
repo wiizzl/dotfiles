@@ -1,11 +1,11 @@
 [user]
-{{- if hasKey . "git_name" }}
-	name = "{{ .git_name }}"
+{{- with get . "git_name" }}
+	name = {{ . | quote }}
 {{- end }}
-{{- if hasKey . "git_email" }}
-	email = "{{ .git_email }}"
+{{- with get . "git_email" }}
+	email = {{ . | quote }}
 {{- end }}
-{{- if .bitwarden_ssh }}
+{{- if get . "bitwarden_ssh" }}
 	signingkey = {{ (bitwarden "item" "git-sign").sshKey.publicKey }}
 
 [gpg]

@@ -1,8 +1,5 @@
 onboarding = false
 
-[theme]
-name = "catppuccin"
-
 [terminal]
 new_cwd = "follow"
 

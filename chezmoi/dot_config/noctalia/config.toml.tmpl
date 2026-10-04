@@ -1,0 +1,35 @@
+[shell]
+font_family         = {{ .mono_font | quote }}
+corner_radius_scale = 0.0
+telemetry_enabled   = false
+polkit_agent        = true
+setup_wizard_enabled = false
+
+[theme]
+mode    = "dark"
+source  = "builtin"
+builtin = "Catppuccin"
+
+[theme.templates]
+enable_builtin_templates   = true
+builtin_ids                = ["gtk3", "gtk4", "qt", "foot", "cava", "hyprland"]
+enable_community_templates = true
+community_ids              = ["bat", "zed", "discord"]
+
+[theme.templates.user.terminal-sequences]
+input_path  = "~/.config/noctalia/templates/terminal-sequences"
+output_path = "~/.cache/terminal-sequences"
+post_hook   = "tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences > /dev/null"
+
+[wallpaper]
+directory = {{ joinPath .chezmoi.homeDir ".local/share/wallpapers" | quote }}
+
+[idle.behavior.lock]
+timeout = 600
+action  = "lock"
+enabled = true
+
+[idle.behavior.screen-off]
+timeout = 700
+action  = "screen_off"
+enabled = true

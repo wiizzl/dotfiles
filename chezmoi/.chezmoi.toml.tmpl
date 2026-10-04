@@ -1,30 +1,13 @@
-{{- $bitwarden_ssh := false -}}
-{{- if hasKey . "bitwarden_ssh" -}}
-{{-   $bitwarden_ssh = .bitwarden_ssh -}}
-{{- end -}}
-
-{{- $git_name := "" -}}
-{{- if hasKey . "git_name" -}}
-{{-   $git_name = .git_name -}}
-{{- end -}}
-
-{{- $git_email := "" -}}
-{{- if hasKey . "git_email" -}}
-{{-   $git_email = .git_email -}}
-{{- end -}}
-
+{{- $bitwarden_ssh := promptBoolOnce . "bitwarden_ssh" "Use Bitwarden for SSH keys and commit signing" false -}}
+{{- $git_name := promptStringOnce . "git_name" "Git name (leave blank to skip)" "" -}}
+{{- $git_email := promptStringOnce . "git_email" "Git email (leave blank to skip)" "" -}}
 [data]
   bitwarden_ssh = {{ $bitwarden_ssh }}
   mono_font = "JetBrainsMono Nerd Font Mono"
-{{- if $git_name }}
   git_name = {{ $git_name | quote }}
-{{- end }}
-{{- if $git_email }}
   git_email = {{ $git_email | quote }}
-{{- end }}
-
 {{- if eq .chezmoi.os "linux" }}
-[interpreters.bw]
-  command = "flatpak"
-  args = ["run", "--command=bw", "com.bitwarden.desktop"]
+
+[bitwarden]
+  command = {{ joinPath .chezmoi.sourceDir ".bin/bw" | quote }}
 {{- end }}
