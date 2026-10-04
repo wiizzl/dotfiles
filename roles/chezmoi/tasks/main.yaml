@@ -27,12 +27,14 @@
           - init
           - --source
           - "{{ playbook_dir }}"
+          # Each key is the prompt TEXT from chezmoi/.chezmoi.toml.tmpl, not the variable name:
+          # a key that does not match makes chezmoi ask on a TTY, which Ansible does not have.
           - --promptBool
-          - "bitwarden_ssh={{ enable_bitwarden }}"
+          - "Use Bitwarden for SSH keys and commit signing={{ enable_bitwarden | bool | lower }}"
           - --promptString
-          - "git_name={{ user_git_name }}"
+          - "Git name (leave blank to skip)={{ user_git_name }}"
           - --promptString
-          - "git_email={{ user_git_email }}"
+          - "Git email (leave blank to skip)={{ user_git_email }}"
       changed_when: false
 
     - name: Apply dotfiles
