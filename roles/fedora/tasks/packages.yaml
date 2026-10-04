@@ -13,7 +13,6 @@
 
       - adw-gtk3-theme
       - qt6ct
-      - hyprcursor
       - jetbrainsmono-nerd-fonts
       - google-noto-color-emoji-fonts
       - bibata-cursor-theme
@@ -22,7 +21,7 @@
       - bluez
       - hyprmoncfg
       - hyprpicker
-      - foot
+      - alacritty
       - wl-clipboard
 
       - chezmoi

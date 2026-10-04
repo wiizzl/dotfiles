@@ -12,14 +12,9 @@ builtin = "Catppuccin"
 
 [theme.templates]
 enable_builtin_templates   = true
-builtin_ids                = ["gtk3", "gtk4", "qt", "foot", "cava", "hyprland"]
+builtin_ids                = ["gtk3", "gtk4", "qt", "alacritty", "cava", "hyprland"]
 enable_community_templates = true
 community_ids              = ["bat", "zed", "discord"]
-
-[theme.templates.user.terminal-sequences]
-input_path  = "~/.config/noctalia/templates/terminal-sequences"
-output_path = "~/.cache/terminal-sequences"
-post_hook   = "tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences > /dev/null"
 
 [wallpaper]
 directory = {{ joinPath .chezmoi.homeDir ".local/share/wallpapers" | quote }}

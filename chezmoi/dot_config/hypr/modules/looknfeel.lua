@@ -1,18 +1,8 @@
-local colors = {
-  primary = "rgb(cba6f7)",
-  secondary = "rgb(45475a)",
-}
-
 hl.config({
   general = {
     gaps_in          = 3,
     gaps_out         = 6,
     border_size      = 1,
-
-    col              = {
-      active_border = colors.primary,
-      inactive_border = colors.secondary,
-    },
 
     resize_on_border = false,
     allow_tearing    = false,
@@ -71,10 +61,6 @@ hl.config({
   dwindle = {
     preserve_split = true,
     force_split = 2,
-  },
-
-  scrolling = {
-    column_width = 0.49,
   },
 
   binds = {
