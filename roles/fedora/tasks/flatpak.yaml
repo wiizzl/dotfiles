@@ -8,6 +8,7 @@
 - name: Setup Flatpak repos
   block:
     - name: Remove default repository
+      become: true
       community.general.flatpak_remote:
         name: fedora
         state: absent
@@ -36,4 +37,5 @@
       - com.bitwarden.desktop
       - io.missioncenter.MissionCenter
       - eu.betterbird.Betterbird
+      - org.gtk.Gtk3theme.adw-gtk3-dark
     state: present

@@ -15,13 +15,70 @@
 - name: Check Bitwarden status
   ansible.builtin.command:
     cmd: "{{ bw_cli }} status"
-  register: bw_status
+  register: bw_status_raw
   changed_when: false
-  failed_when: false
 
-- name: Connect to Bitwarden if not authenticated
+- name: Parse Bitwarden status
+  ansible.builtin.set_fact:
+    bw_status: "{{ (bw_status_raw.stdout | from_json).status }}"
+
+- name: Reuse the existing Bitwarden session
+  ansible.builtin.set_fact:
+    bw_session: "{{ lookup('ansible.builtin.env', 'BW_SESSION') }}"
+  no_log: true
+  when: bw_status == "unlocked"
+
+- name: Log in or unlock Bitwarden
+  when: bw_status != "unlocked"
+  block:
+    - name: Ask for the Bitwarden email
+      ansible.builtin.pause:
+        prompt: "Bitwarden email"
+      register: bw_email
+      when: bw_status == "unauthenticated"
+
+    - name: Ask for the Bitwarden 2FA code
+      ansible.builtin.pause:
+        prompt: "Bitwarden authenticator code (leave blank if 2FA is disabled)"
+      register: bw_code
+      when: bw_status == "unauthenticated"
+
+    - name: Ask for the Bitwarden master password
+      ansible.builtin.pause:
+        prompt: "Bitwarden master password"
+        echo: false
+      register: bw_password
+
+    - name: Log in to Bitwarden
+      ansible.builtin.command:
+        cmd: >-
+          {{ bw_cli }} login {{ bw_email.user_input | quote }}
+          --passwordenv BW_PASSWORD --raw
+          {% if bw_code.user_input %}--method 0 --code {{ bw_code.user_input | quote }}{% endif %}
+      environment:
+        BW_PASSWORD: "{{ bw_password.user_input }}"
+      register: bw_login
+      no_log: true
+      when: bw_status == "unauthenticated"
+
+    - name: Unlock Bitwarden
+      ansible.builtin.command:
+        cmd: "{{ bw_cli }} unlock --passwordenv BW_PASSWORD --raw"
+      environment:
+        BW_PASSWORD: "{{ bw_password.user_input }}"
+      register: bw_unlock
+      no_log: true
+      when: bw_status == "locked"
+
+    - name: Store the Bitwarden session
+      ansible.builtin.set_fact:
+        bw_session: "{{ (bw_login.stdout if bw_status == 'unauthenticated' else bw_unlock.stdout) | trim }}"
+      no_log: true
+
+- name: Sync the Bitwarden vault
   ansible.builtin.command:
-    cmd: "{{ bw_cli }} login"
-  when:
-    - bw_status.stdout is defined
-    - '"unauthenticated" in bw_status.stdout'
+    cmd: "{{ bw_cli }} sync"
+  environment:
+    BW_SESSION: "{{ bw_session }}"
+  changed_when: false
+  no_log: true

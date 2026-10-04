@@ -32,8 +32,6 @@
     state: enabled
   loop:
     - lionheartp/Hyprland
-    - leloubil/wl-clip-persist
-    - mineiro/utility-belt
     - paolino/hyprmoncfg
     - rossetnocpes/herdr
     - atim/lazydocker

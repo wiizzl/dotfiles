@@ -7,4 +7,4 @@
 - ansible.builtin.include_tasks: flatpak.yaml
 - ansible.builtin.include_tasks: shell.yaml
 - ansible.builtin.set_fact:
-    bw_cli: "flatpak run --command=bw com.bitwarden.desktop"
+    bw_cli: "{{ playbook_dir }}/chezmoi/.bin/bw"

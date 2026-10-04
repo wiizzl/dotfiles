@@ -1,3 +1,4 @@
 {
-  "frameless": true
+  "frameless": true,
+  "enabledThemes": ["noctalia.theme.css"]
 }

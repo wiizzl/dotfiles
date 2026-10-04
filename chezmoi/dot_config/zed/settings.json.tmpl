@@ -4,7 +4,16 @@
     "metrics": false,
   },
 
-  "theme": "Catppuccin Mocha",
+  "theme": {
+    "mode": "system",
+{{- if eq .chezmoi.os "linux" }}
+    "light": "Noctalia Light",
+    "dark": "Noctalia Dark",
+{{- else }}
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha",
+{{- end }}
+  },
   "icon_theme": "Warm Charmed Icons",
 
   "title_bar": {
@@ -105,11 +114,6 @@
   },
 
   "lsp": {
-   "qmljs": {
-      "binary": {
-        "arguments": ["-E"],
-      },
-    },
     "tailwindcss-language-server": {
       "settings": {
         "classFunctions": ["cva", "cx"],
@@ -123,10 +127,12 @@
   },
 
   "auto_install_extensions": {
+{{- if ne .chezmoi.os "linux" }}
+    "catppuccin": true,
+{{- end }}
     "html": true,
     "scss": true,
     "toml": true,
-    "catppuccin": true,
     "charmed-icons": true,
     "biome": true,
     "dockerfile": true,
@@ -144,6 +150,5 @@
     "make": true,
     "fish": true,
     "lua": true,
-    "qml": true,
   },
 }
