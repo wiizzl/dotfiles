@@ -24,18 +24,18 @@
   become: true
   community.general.flatpak:
     name:
-      - org.gnome.Loupe
-      - org.gnome.baobab
+      - org.gtk.Gtk3theme.adw-gtk3-dark
+      - org.gtk.Gtk3theme.adw-gtk3
+      - com.github.tchx84.Flatseal
       - it.mijorus.gearlever
       - io.github.flattool.Warehouse
+      - org.gnome.Loupe
+      - org.gnome.baobab
       - org.onlyoffice.desktopeditors
-      - com.obsproject.Studio
-      - org.localsend.localsend_app
+      - io.missioncenter.MissionCenter
       - io.dbeaver.DBeaverCommunity
-      - com.github.tchx84.Flatseal
       - com.usebruno.Bruno
       - com.bitwarden.desktop
-      - io.missioncenter.MissionCenter
+      - org.localsend.localsend_app
       - eu.betterbird.Betterbird
-      - org.gtk.Gtk3theme.adw-gtk3-dark
     state: present

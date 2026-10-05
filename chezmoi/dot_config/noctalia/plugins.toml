@@ -1,0 +1,6 @@
+[plugins]
+enabled = ["thaer99ob/default-apps", "noctalia/wallhaven"]
+
+[plugin_settings."noctalia/wallhaven"]
+browser_placement = "floating"
+browser_position = "center"

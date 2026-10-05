@@ -17,12 +17,10 @@
       - google-noto-color-emoji-fonts
       - bibata-cursor-theme
 
-      - noctalia-git
-      - bluez
+      - noctalia
       - hyprmoncfg
       - hyprpicker
       - alacritty
-      - wl-clipboard
 
       - chezmoi
       - mise
@@ -36,9 +34,6 @@
       - lazyssh
       - gh
       - starship
-      - fastfetch
-      - cava
-      - cbonsai
 
       - "@virtualization"
       - zed
@@ -92,12 +87,11 @@
     enabled: true
   loop:
     - cups
-    - bluetooth
     - tailscaled
 
-- name: Set system default target to graphical
+- name: Allow managing system VMs without root
   become: true
-  ansible.builtin.file:
-    src: /usr/lib/systemd/system/graphical.target
-    dest: /etc/systemd/system/default.target
-    state: link
+  ansible.builtin.user:
+    name: "{{ ansible_facts['user_id'] }}"
+    groups: libvirt
+    append: true

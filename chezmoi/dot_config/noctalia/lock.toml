@@ -1,0 +1,12 @@
+[lockscreen]
+transition = ["disc"]
+
+[idle.behavior.lock]
+timeout = 600
+action = "lock"
+enabled = true
+
+[idle.behavior.screen-off]
+timeout = 700
+action = "screen_off"
+enabled = true

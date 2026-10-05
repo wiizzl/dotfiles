@@ -1,0 +1,9 @@
+[audio]
+enable_overdrive = true
+enable_sounds = false
+
+[location]
+auto_locate = true
+
+[control_center.calendar]
+show_events_card = false

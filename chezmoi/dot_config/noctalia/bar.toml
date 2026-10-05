@@ -1,0 +1,26 @@
+[bar.default]
+position = "left"
+radius = 0
+margin_ends = 0
+shadow = false
+concave_edge_corners = false
+widget_spacing = 10
+
+start = ["notifications", "clock"]
+center = ["workspaces"]
+end = ["tray", "media", "volume", "brightness", "bluetooth", "network", "battery", "session"]
+
+[widget.workspaces]
+change_color_on_hover = false
+labels_only_when_occupied = true
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+vpn_status = "both"
+
+[widget.volume]
+show_label = false

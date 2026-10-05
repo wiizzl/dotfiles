@@ -69,8 +69,8 @@
   "session": { "restore_unsaved_buffers": false },
   "middle_click_paste": false,
 
-  "buffer_font_family": "{{ .mono_font }}",
-  "ui_font_family": "{{ .mono_font }}",
+  "buffer_font_family": {{ .mono_font | quote }},
+  "ui_font_family": {{ .mono_font | quote }},
   "buffer_font_size": 15,
   "ui_font_size": 14.5,
 
