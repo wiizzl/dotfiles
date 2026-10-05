@@ -1,0 +1,31 @@
+[shell]
+font_family = {{ .mono_font | quote }}
+corner_radius_scale = 0.0
+telemetry_enabled = false
+polkit_agent = true
+setup_wizard_enabled = false
+screen_time_enabled = true
+launch_apps_as_systemd_services = true
+
+app_icon_colorize = true
+app_icon_color = "on_surface_variant"
+
+[shell.launcher]
+categories = false
+compact = true
+
+[shell.panel]
+control_center_placement = "floating"
+control_center_position = "center"
+session_placement = "floating"
+session_position = "center"
+wallpaper_placement = "floating"
+wallpaper_position = "center"
+shadow = false
+
+[shell.screenshot]
+remember_last_region = true
+save_to_file = false
+
+[shell.session]
+show_shortcuts = false

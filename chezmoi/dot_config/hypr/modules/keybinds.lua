@@ -11,8 +11,11 @@ hl.bind(mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 
 hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher /emo"))
-hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
+hl.bind(mod .. " + CTRL + D", hl.dsp.exec_cmd(ipc .. "panel-toggle thaer99ob/default-apps:manager"))
 hl.bind(mod .. " + CTRL + P", hl.dsp.exec_cmd("hyprpicker -aln"))
+
+hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"))
+hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/wallhaven:browser"))
 
 hl.bind(mod .. " + CTRL + S", hl.dsp.exec_cmd(ipc .. "screenshot-annotate"))
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
