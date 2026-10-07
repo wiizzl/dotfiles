@@ -3,4 +3,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("systemctl --user start hyprmoncfgd")
 
   hl.exec_cmd("uwsm app -- noctalia")
+{{- if get . "bitwarden_ssh" }}
+  hl.exec_cmd("uwsm app -- com.bitwarden.desktop.desktop")
+{{- end }}
 end)
