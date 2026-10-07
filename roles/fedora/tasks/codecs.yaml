@@ -22,6 +22,7 @@
       ansible.builtin.shell: lspci | grep -i -E 'vga|3d|display'
       register: gpu_info
       changed_when: false
+      failed_when: gpu_info.rc not in [0, 1]
 
     - name: Install AMD codecs
       become: true

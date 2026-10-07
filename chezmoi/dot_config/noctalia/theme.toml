@@ -1,7 +1,6 @@
 [theme]
 mode = "dark"
-source = "community"
-community_palette = "Catppuccin Mocha Blue"
+source = "wallpaper"
 
 [theme.templates]
 enable_builtin_templates = true
