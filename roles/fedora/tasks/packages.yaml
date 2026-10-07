@@ -12,6 +12,9 @@
       - gnome-keyring
 
       - adw-gtk3-theme
+      - papirus-icon-theme
+      - papirus-icon-theme-dark
+      - papirus-icon-theme-light
       - qt6ct
       - jetbrainsmono-nerd-fonts
       - google-noto-color-emoji-fonts
@@ -95,3 +98,10 @@
     name: "{{ ansible_facts['user_id'] }}"
     groups: libvirt
     append: true
+
+- name: Set system default target to graphical
+  become: true
+  ansible.builtin.file:
+    src: /usr/lib/systemd/system/graphical.target
+    dest: /etc/systemd/system/default.target
+    state: link
