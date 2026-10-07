@@ -10,6 +10,7 @@
       - xdg-desktop-portal-hyprland
       - xdg-desktop-portal-gtk
       - gnome-keyring
+      - gnome-keyring-pam
 
       - adw-gtk3-theme
       - papirus-icon-theme
@@ -105,3 +106,26 @@
     src: /usr/lib/systemd/system/graphical.target
     dest: /etc/systemd/system/default.target
     state: link
+
+- name: Unlock GNOME Keyring at console login
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/pam.d/login
+    line: "{{ item.line }}"
+    insertafter: "{{ item.after }}"
+  loop:
+    - {
+        line: "-auth      optional     pam_gnome_keyring.so",
+        after: '^auth\s+include\s+postlogin',
+      }
+    - {
+        line: "-session   optional     pam_gnome_keyring.so auto_start",
+        after: '^session\s+include\s+postlogin',
+      }
+
+- name: Enable the GNOME Keyring socket for all users
+  become: true
+  ansible.builtin.systemd:
+    name: gnome-keyring-daemon.socket
+    enabled: true
+    scope: global
