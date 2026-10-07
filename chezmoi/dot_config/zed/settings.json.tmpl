@@ -10,8 +10,8 @@
     "light": "Noctalia Light",
     "dark": "Noctalia Dark",
 {{- else }}
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha",
+    "light": "macOS Classic Light",
+    "dark": "macOS Classic Dark",
 {{- end }}
   },
   "icon_theme": "Warm Charmed Icons",
@@ -128,7 +128,7 @@
 
   "auto_install_extensions": {
 {{- if ne .chezmoi.os "linux" }}
-    "catppuccin": true,
+    "macos-classic": true,
 {{- end }}
     "html": true,
     "scss": true,
