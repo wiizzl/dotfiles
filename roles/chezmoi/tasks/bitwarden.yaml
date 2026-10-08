@@ -31,6 +31,28 @@
 - name: Log in or unlock Bitwarden
   when: bw_status != "unlocked"
   block:
+    - name: Ask for the Bitwarden server
+      ansible.builtin.pause:
+        prompt: "Bitwarden server: eu, com or a self-hosted URL (default: eu)"
+      register: bw_server
+      when: bw_status == "unauthenticated"
+
+    - name: Configure the Bitwarden server
+      ansible.builtin.command:
+        argv:
+          - "{{ bw_cli }}"
+          - config
+          - server
+          - "{{ bw_servers.get(bw_server_input | lower, bw_server_input) }}"
+      vars:
+        bw_servers:
+          "": https://vault.bitwarden.eu
+          eu: https://vault.bitwarden.eu
+          com: https://vault.bitwarden.com
+        bw_server_input: "{{ bw_server.user_input | trim }}"
+      changed_when: true
+      when: bw_status == "unauthenticated"
+
     - name: Ask for the Bitwarden email
       ansible.builtin.pause:
         prompt: "Bitwarden email"
