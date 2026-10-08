@@ -1,0 +1,14 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export EDITOR=nano
+export STARSHIP_CONFIG="$HOME/.config/starship/config.toml"
+{{- if get . "bitwarden_ssh" }}
+export SSH_AUTH_SOCK="{{ template "bitwarden-ssh-agent-sock" . }}"
+{{- end }}
+
+path=("$HOME/.local/bin" $path)
+
+eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
+source <(fzf --zsh)

@@ -8,13 +8,6 @@
 - name: Install Formulae
   community.general.homebrew:
     name:
-      - starship
-      - bat
-      - gh
-      - zoxide
-      - herdr
-      - fzf
-      - eza
       - tailscale
       - mise
       - chezmoi
@@ -24,6 +17,7 @@
   community.general.homebrew_cask:
     name:
       - raycast
+      - bitwarden
       - zed
       - bruno
       - obs

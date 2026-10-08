@@ -29,15 +29,6 @@
       - chezmoi
       - mise
       - tailscale
-      - bat
-      - eza
-      - fzf
-      - herdr
-      - zoxide
-      - gitui
-      - lazyssh
-      - gh
-      - starship
 
       - "@virtualization"
       - zed

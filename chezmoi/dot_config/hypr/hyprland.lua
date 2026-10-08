@@ -10,4 +10,4 @@ if ok then
   noctalia.apply_theme()
 end
 
-dofile(os.getenv("HOME") .. "/.config/hypr/hyprmoncfg-monitors.lua")
+pcall(dofile, os.getenv("HOME") .. "/.config/hypr/hyprmoncfg-monitors.lua")

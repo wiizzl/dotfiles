@@ -1,5 +1,5 @@
 [settings]
-minimum_release_age = "0s"
+minimum_release_age = "1d"
 
 [tools]
 node = "24"
@@ -9,3 +9,15 @@ rust = "latest"
 java = "25"
 zig = "latest"
 uv = "latest"
+
+bat = "latest"
+eza = "latest"
+fzf = "latest"
+gh = "latest"
+lazygit = "latest"
+herdr = "latest"
+lazydocker = "latest"
+lazyssh = "latest"
+lazyjournal = "latest"
+starship = "latest"
+zoxide = "latest"

@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ -z "${DBUS_SESSION_BUS_ADDRESS:-}" ] && command -v dbus-run-session >/dev/null; then
+  exec dbus-run-session -- "$0" "$@"
+fi
+
+if [ -n "${DBUS_SESSION_BUS_ADDRESS:-}" ]; then
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+
+  gsettings set org.gnome.desktop.interface cursor-theme {{ .cursor_theme | squote }}
+  gsettings set org.gnome.desktop.interface cursor-size {{ .cursor_size }}
+fi
+
+flatpak --user override --filesystem=xdg-config/gtk-3.0:ro
+flatpak --user override --filesystem=xdg-config/gtk-4.0:ro
+flatpak --user override --filesystem=xdg-data/icons:ro

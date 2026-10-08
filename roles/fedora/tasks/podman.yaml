@@ -6,8 +6,6 @@
       - podman
       - docker-compose
       - podman-docker
-      - podman-tui
-      - lazydocker
     state: present
 
 - name: Silence Podman Docker emulation warning
@@ -18,3 +16,10 @@
     mode: "0644"
     modification_time: preserve
     access_time: preserve
+
+- name: Enable the Podman socket for all users
+  become: true
+  ansible.builtin.systemd:
+    name: podman.socket
+    enabled: true
+    scope: global
