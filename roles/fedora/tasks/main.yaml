@@ -6,5 +6,3 @@
 - ansible.builtin.include_tasks: podman.yaml
 - ansible.builtin.include_tasks: flatpak.yaml
 - ansible.builtin.include_tasks: shell.yaml
-- ansible.builtin.set_fact:
-    bw_cli: "{{ playbook_dir }}/chezmoi/.bin/bw"

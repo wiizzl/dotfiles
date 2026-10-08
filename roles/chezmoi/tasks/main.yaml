@@ -1,9 +1,6 @@
 ---
 - ansible.builtin.include_tasks: dependencies.yaml
 
-- ansible.builtin.include_tasks: bitwarden.yaml
-  when: enable_bitwarden | bool
-
 - name: Initialize and apply dotfiles
   block:
     - name: Ensure local share directory exists
@@ -27,10 +24,10 @@
           - init
           - --source
           - "{{ playbook_dir }}"
-          # Each key is the prompt TEXT from chezmoi/.chezmoi.toml.tmpl, not the variable name:
-          # a key that does not match makes chezmoi ask on a TTY, which Ansible does not have.
           - --promptBool
-          - "Use Bitwarden for SSH keys and commit signing={{ enable_bitwarden | bool | lower }}"
+          - "Use the Bitwarden SSH agent={{ bitwarden_ssh | bool | lower }}"
+          - --promptString
+          - "SSH public key for commit signing (leave blank to skip)={{ git_signing_key }}"
           - --promptString
           - "Git name (leave blank to skip)={{ user_git_name }}"
           - --promptString
@@ -40,6 +37,5 @@
     - name: Apply dotfiles
       ansible.builtin.command:
         cmd: "chezmoi apply"
-      environment: "{{ {'BW_SESSION': bw_session} if bw_session is defined else {} }}"
       register: chezmoi_apply
       changed_when: chezmoi_apply.stdout | length > 0
