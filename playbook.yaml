@@ -4,9 +4,14 @@
   gather_facts: true
 
   vars_prompt:
-    - name: enable_bitwarden
-      prompt: "Do you want to authenticate and retrieve your secrets via Bitwarden?"
+    - name: bitwarden_ssh
+      prompt: "Do you want to use the Bitwarden SSH agent?"
       default: "false"
+      private: false
+
+    - name: git_signing_key
+      prompt: "What is your SSH public key for commit signing? (Leave blank to skip)"
+      default: ""
       private: false
 
     - name: user_git_name

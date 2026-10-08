@@ -5,8 +5,8 @@
 {{- with get . "git_email" }}
 	email = {{ . | quote }}
 {{- end }}
-{{- if get . "bitwarden_ssh" }}
-	signingkey = {{ (bitwarden "item" "git-sign").sshKey.publicKey }}
+{{- with get . "git_signing_key" }}
+	signingkey = {{ . | quote }}
 
 [gpg]
 	format = "ssh"
