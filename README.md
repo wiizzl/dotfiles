@@ -61,13 +61,3 @@ ansible-playbook -K playbook.yaml
 
 > [!IMPORTANT]
 > After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
-
-## Testing
-
-You can validate the Ansible provisioning locally without affecting your host machine.
-
-```sh
-docker compose up -d --build
-docker exec -it -u docker_user fedora-test bash -c "cd ~/.dotfiles && ansible-playbook playbook.yaml"
-docker compose down -v --remove-orphans
-```

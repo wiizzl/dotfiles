@@ -13,3 +13,7 @@
 .config/xdg-desktop-portal/**
 .local/share/wallpapers/**
 {{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+.zshrc
+{{ end }}

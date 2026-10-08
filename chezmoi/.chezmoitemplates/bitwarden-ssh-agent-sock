@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.os "darwin" -}}
+{{ joinPath .chezmoi.homeDir ".bitwarden-ssh-agent.sock" }}
+{{- else -}}
+{{ joinPath .chezmoi.homeDir ".var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock" }}
+{{- end -}}

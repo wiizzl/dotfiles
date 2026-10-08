@@ -33,5 +33,3 @@
   loop:
     - lionheartp/Hyprland
     - paolino/hyprmoncfg
-    - rossetnocpes/herdr
-    - atim/lazydocker
