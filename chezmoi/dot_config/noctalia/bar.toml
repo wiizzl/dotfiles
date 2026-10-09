@@ -8,7 +8,7 @@ widget_spacing = 10
 
 start = ["notifications", "clock"]
 center = ["workspaces"]
-end = ["tray", "media", "volume", "brightness", "bluetooth", "network", "battery", "session"]
+end = ["tray", "media", "volume", "bluetooth", "network", "battery", "session"]
 
 [widget.workspaces]
 change_color_on_hover = false
@@ -23,4 +23,7 @@ show_label = false
 vpn_status = "both"
 
 [widget.volume]
+show_label = false
+
+[widget.battery]
 show_label = false
