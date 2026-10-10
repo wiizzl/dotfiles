@@ -1,6 +1,8 @@
 set -g fish_greeting ""
 
 set -gx MANPAGER "bat -plman"
+
+set -gx CLAUDE_CONFIG_DIR "$HOME/.config/claude"
 set -gx STARSHIP_CONFIG "$HOME/.config/starship/config.toml"
 
 set -gx EDITOR nano
