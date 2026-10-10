@@ -1,6 +1,8 @@
 {
   "theme": "auto",
 
+  "spinnerTipsEnabled": false,
+
   "attribution": {
     "commit": "",
     "pr": ""
