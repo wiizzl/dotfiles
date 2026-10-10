@@ -11,6 +11,7 @@
       - xdg-desktop-portal-gtk
       - gnome-keyring
       - gnome-keyring-pam
+      - lm_sensors
 
       - adw-gtk3-theme
       - papirus-icon-theme
@@ -18,7 +19,6 @@
       - papirus-icon-theme-light
       - qt6ct
       - jetbrainsmono-nerd-fonts
-      - google-noto-color-emoji-fonts
       - bibata-cursor-theme
 
       - noctalia
@@ -46,6 +46,7 @@
     name:
       - kitty
       - nwg-panel
+      - google-noto-color-emoji-fonts
     state: absent
 
 - name: Install JetBrains Toolbox

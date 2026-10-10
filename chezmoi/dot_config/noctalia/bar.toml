@@ -6,9 +6,9 @@ shadow = false
 concave_edge_corners = false
 widget_spacing = 10
 
-start = ["notifications", "clock"]
+start = ["notifications", "clock", "media"]
 center = ["workspaces"]
-end = ["tray", "media", "volume", "bluetooth", "network", "battery", "session"]
+end = ["tray", "volume", "bluetooth", "network", "battery", "session"]
 
 [widget.workspaces]
 change_color_on_hover = false

@@ -1,5 +1,9 @@
 onboarding = false
 
+[theme]
+name = "terminal"
+auto_switch = false
+
 [terminal]
 new_cwd = "follow"
 
