@@ -38,6 +38,11 @@ hl.window_rule({
   size = { 1080, 920 },
 })
 
+hl.window_rule({
+  match   = { class = "Alacritty" },
+  opacity = 0.95,
+})
+
 hl.workspace_rule({ workspace = "1", persistent = true })
 hl.workspace_rule({ workspace = "2", persistent = true })
 hl.workspace_rule({ workspace = "3", persistent = true })
