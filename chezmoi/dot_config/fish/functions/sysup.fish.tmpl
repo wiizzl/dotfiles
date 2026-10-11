@@ -1,8 +1,14 @@
 function sysup
+{{- if eq .chezmoi.os "darwin" }}
+  brew update
+  brew upgrade
+  brew cleanup --prune=all
+{{- else }}
   sudo dnf upgrade --refresh -y
 
   flatpak update -y
   flatpak uninstall --unused -y
+{{- end }}
 
   mise upgrade -y
   mise prune -y

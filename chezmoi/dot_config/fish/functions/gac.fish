@@ -1,5 +1,5 @@
 function gac
   git add .
-  git commit -m $argv[1]
+  git commit -m "$argv"
   git push
 end

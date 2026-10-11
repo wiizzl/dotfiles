@@ -2,4 +2,6 @@
 set -euo pipefail
 # hash: {{ include "dot_config/mise/conf.d/default.toml" | sha256sum }}
 
+command -v mise >/dev/null || exit 0
+
 mise install

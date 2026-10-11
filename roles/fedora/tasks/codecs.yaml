@@ -4,7 +4,7 @@
   ansible.builtin.dnf:
     name: ffmpeg
     state: present
-    allowerasing: yes
+    allowerasing: true
 
 - name: Install multimedia group packages
   become: true
@@ -31,7 +31,7 @@
           - mesa-va-drivers-freeworld
           - mesa-vulkan-drivers-freeworld
         state: present
-        allowerasing: yes
+        allowerasing: true
       when: "'AMD' in gpu_info.stdout or 'Advanced Micro Devices' in gpu_info.stdout"
 
     - name: Install NVIDIA codecs

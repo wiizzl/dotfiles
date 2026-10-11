@@ -8,7 +8,9 @@ hl.bind(mod .. " + SHIFT + B", hl.dsp.exec_cmd(uwsm .. "helium-browser-bin --new
 
 hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+
 hl.bind(mod .. " + ESCAPE", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
+hl.bind(mod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 
 hl.bind(mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 

@@ -6,7 +6,7 @@
 	email = {{ . | quote }}
 {{- end }}
 {{- with get . "git_signing_key" }}
-	signingkey = {{ . | quote }}
+	signingkey = {{ if hasPrefix "key::" . }}{{ . | quote }}{{ else }}{{ printf "key::%s" . | quote }}{{ end }}
 
 [gpg]
 	format = "ssh"
@@ -24,11 +24,54 @@
 [init]
 	defaultBranch = "main"
 
+[core]
+	autocrlf = "input"
+
+[column]
+	ui = "auto"
+
+[branch]
+	sort = "-committerdate"
+
+[tag]
+	sort = "version:refname"
+
+[commit]
+	verbose = true
+
+[status]
+	showUntrackedFiles = "all"
+
+[diff]
+	algorithm = "histogram"
+	colorMoved = "plain"
+	mnemonicPrefix = true
+	renames = true
+
+[merge]
+	conflictStyle = "zdiff3"
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[fetch]
+	prune = true
+
 [pull]
 	rebase = true
 
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+
 [push]
 	autoSetupRemote = true
+	followTags = true
+
+[help]
+	autocorrect = "prompt"
 
 [url "git@github.com:"]
 	insteadOf = gh:

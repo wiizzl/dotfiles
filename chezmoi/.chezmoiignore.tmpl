@@ -5,16 +5,13 @@
 .config/alacritty/**
 .config/hypr/**
 .config/uwsm/**
-.config/fish/**
+.config/fish/functions/remind.fish
 .config/gtk-3.0/**
 .config/gtk-4.0/**
 .config/qt6ct/**
 .config/noctalia/**
 .config/vesktop/**
 .config/xdg-desktop-portal/**
-.local/share/wallpapers/**
-{{ end }}
 
-{{ if ne .chezmoi.os "darwin" }}
-.zshrc
+.local/share/wallpapers/**
 {{ end }}

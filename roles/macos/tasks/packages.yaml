@@ -8,6 +8,7 @@
 - name: Install Formulae
   community.general.homebrew:
     name:
+      - fish
       - tailscale
       - mise
       - chezmoi
@@ -26,4 +27,5 @@
       - openlogi
       - vesktop
       - helium-browser
+      - font-jetbrains-mono-nerd-font
     accept_external_apps: true
