@@ -1,10 +1,10 @@
-{{- $bitwarden_ssh := promptBoolOnce . "bitwarden_ssh" "Use the Bitwarden SSH agent" false -}}
+{{- $bitwarden_ssh := promptBoolOnce . "bitwarden_ssh" "Use the Bitwarden SSH agent" (eq (env "DOTFILES_BITWARDEN_SSH") "true") -}}
 {{- $git_signing_key := "" -}}
 {{- if $bitwarden_ssh -}}
-{{-   $git_signing_key = promptStringOnce . "git_signing_key" "SSH public key for commit signing (leave blank to skip)" "" -}}
+{{-   $git_signing_key = promptStringOnce . "git_signing_key" "SSH public key for commit signing (leave blank to skip)" (env "DOTFILES_GIT_SIGNING_KEY") -}}
 {{- end -}}
-{{- $git_name := promptStringOnce . "git_name" "Git name (leave blank to skip)" "" -}}
-{{- $git_email := promptStringOnce . "git_email" "Git email (leave blank to skip)" "" -}}
+{{- $git_name := promptStringOnce . "git_name" "Git name (leave blank to skip)" (env "DOTFILES_GIT_NAME") -}}
+{{- $git_email := promptStringOnce . "git_email" "Git email (leave blank to skip)" (env "DOTFILES_GIT_EMAIL") -}}
 [data]
   bitwarden_ssh = {{ $bitwarden_ssh }}
   mono_font = "JetBrainsMono Nerd Font Mono"

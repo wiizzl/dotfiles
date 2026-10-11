@@ -1,5 +1,12 @@
 ---
-- ansible.builtin.include_tasks: dependencies.yaml
+- name: Check for required tools
+  ansible.builtin.command: "command -v {{ item }}"
+  loop:
+    - git
+    - chezmoi
+  register: tool_check
+  changed_when: false
+  failed_when: tool_check.rc != 0
 
 - name: Initialize and apply dotfiles
   block:
@@ -24,14 +31,12 @@
           - init
           - --source
           - "{{ playbook_dir }}"
-          - --promptBool
-          - "Use the Bitwarden SSH agent={{ bitwarden_ssh | bool | lower }}"
-          - --promptString
-          - "SSH public key for commit signing (leave blank to skip)={{ git_signing_key }}"
-          - --promptString
-          - "Git name (leave blank to skip)={{ user_git_name }}"
-          - --promptString
-          - "Git email (leave blank to skip)={{ user_git_email }}"
+          - --promptDefaults
+      environment:
+        DOTFILES_BITWARDEN_SSH: "{{ bitwarden_ssh | bool | lower }}"
+        DOTFILES_GIT_SIGNING_KEY: "{{ git_signing_key }}"
+        DOTFILES_GIT_NAME: "{{ user_git_name }}"
+        DOTFILES_GIT_EMAIL: "{{ user_git_email }}"
       changed_when: false
 
     - name: Apply dotfiles

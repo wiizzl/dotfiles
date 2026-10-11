@@ -1,0 +1,3 @@
+
+Match all
+Include ~/.ssh/config.d/*
