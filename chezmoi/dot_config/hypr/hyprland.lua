@@ -3,12 +3,7 @@ require("modules.input")
 require("modules.looknfeel")
 require("modules.rules")
 require("modules.keybinds")
-
-local ok, noctalia = pcall(require, "noctalia")
-if ok then
-  noctalia.apply_theme()
-end
-
+require("noctalia").apply_theme()
 require("modules.local")
 
 ---@format disable
