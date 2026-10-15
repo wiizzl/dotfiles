@@ -3,3 +3,6 @@ export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME="hyprqt6engine"
 
 export GDK_BACKEND="wayland,x11,*"
+
+export XCURSOR_THEME="Bibata-Modern-Ice"
+export XCURSOR_SIZE="28"
