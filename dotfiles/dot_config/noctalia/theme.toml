@@ -1,0 +1,13 @@
+[theme]
+mode = "dark"
+source = "wallpaper"
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids = ["gtk3", "gtk4", "qt", "kitty", "hyprland"]
+enable_community_templates = true
+community_ids = ["bat", "zed", "discord", "hyprtoolkit", "papirus-icons"]
+
+[theme.templates.user.hyprqt6engine]
+input_path = "$HOME/.config/noctalia/templates/hyprqt6engine.conf"
+output_path = "$HOME/.config/hypr/hyprqt6engine.conf"

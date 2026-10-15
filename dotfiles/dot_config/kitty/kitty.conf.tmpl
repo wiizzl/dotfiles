@@ -1,0 +1,19 @@
+include themes/noctalia.conf
+
+font_family {{ .mono_font }}
+font_size 11
+
+window_padding_width 14
+
+scrollback_lines 10000
+wheel_scroll_multiplier 7
+
+cursor_shape beam
+
+term xterm-256color
+shell_integration disabled
+allow_remote_control no
+enable_audio_bell no
+confirm_os_window_close 0
+
+map shift+enter send_text all \x1b\r

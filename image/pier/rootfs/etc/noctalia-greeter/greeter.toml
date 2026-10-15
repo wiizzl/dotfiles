@@ -1,0 +1,5 @@
+[session]
+default = "Hyprland (uwsm-managed)"
+
+[keyboard]
+layout = "fr"
