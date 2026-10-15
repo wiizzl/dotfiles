@@ -1,2 +1,0 @@
-[hooks]
-colors_changed = "hyprctl reload"
