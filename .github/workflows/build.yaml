@@ -35,7 +35,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # Each base file is one image: image/pier/base-nvidia is tagged pier-nvidia
       - name: List variants
         id: list
         run: |
@@ -72,8 +71,6 @@ jobs:
             --label "org.opencontainers.image.version=${{ matrix.tag }}-$(date +%Y%m%d)" \
             -t localhost/atomic:${{ matrix.tag }} .
 
-      # Split the image into per-package layers so that updates only download
-      # what changed, keeping the layout of the previously published image
       - name: Rechunk image
         run: |
           args=()
