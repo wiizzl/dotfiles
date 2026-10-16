@@ -1,6 +1,6 @@
 # atomic
 
-My Fedora Atomic setup: custom [bootc](https://bootc-dev.github.io/bootc) images for my machines, and [`chezmoi`](https://github.com/twpayne/chezmoi) for my dotfiles.
+My Fedora Atomic setup: custom [bootc](https://bootc-dev.github.io/bootc) images for my machines, and [`chezmoi`](https://chezmoi.io) for my dotfiles.
 
 - [`image`](image) builds the systems, rebuilt weekly and published to `ghcr.io/wiizzl/atomic`.
 - [`dotfiles`](dotfiles) holds my user settings and tools.
@@ -30,8 +30,4 @@ Some images need a few extra steps after installation, described in their direct
 
 ### Dotfiles only
 
-To get only my user settings and tools on any Linux, see [`dotfiles`](dotfiles):
-
-```sh
-chezmoi init wiizzl/atomic --apply
-```
+To get only my user settings and tools on any Linux, see [`dotfiles`](dotfiles).
