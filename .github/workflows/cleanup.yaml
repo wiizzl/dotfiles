@@ -18,3 +18,4 @@ jobs:
           older-than: 90 days
           delete-tags: "*-20*"
           delete-untagged: true
+          delete-orphaned-images: true
