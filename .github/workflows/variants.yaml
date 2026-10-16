@@ -1,0 +1,31 @@
+name: Variants
+
+on:
+  workflow_call:
+    outputs:
+      images:
+        description: Every image to build, as a matrix of tag, variant and base
+        value: ${{ jobs.list.outputs.images }}
+      isos:
+        description: Tags that get an installer ISO, one per variant
+        value: ${{ jobs.list.outputs.isos }}
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      images: ${{ steps.list.outputs.images }}
+      isos: ${{ steps.list.outputs.isos }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: List variants
+        id: list
+        run: |
+          images=$(find image -mindepth 2 -maxdepth 2 -name 'base*' | sort | jq -Rnc '
+            [inputs | . as $base | capture("^image/(?<variant>[^/]+)/base(?<flavor>.*)$")
+              | {variant, tag: (.variant + .flavor), base: $base}]')
+          echo "images=$images" >> "$GITHUB_OUTPUT"
+          echo "isos=$(jq -c '[.[] | select(.tag == .variant) | .tag]' <<<"$images")" >> "$GITHUB_OUTPUT"

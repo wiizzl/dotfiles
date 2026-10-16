@@ -9,15 +9,19 @@ env:
   IMAGE: ghcr.io/${{ github.repository_owner }}/atomic
 
 jobs:
+  variants:
+    uses: ./.github/workflows/variants.yaml
+
   build:
     name: ${{ matrix.tag }}
+    needs: variants
     runs-on: ubuntu-latest
     permissions:
       contents: read
     strategy:
       fail-fast: false
       matrix:
-        tag: [pier, family]
+        tag: ${{ fromJson(needs.variants.outputs.isos) }}
     steps:
       - uses: projectbluefin/actions/bootc-build/setup-runner@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
 

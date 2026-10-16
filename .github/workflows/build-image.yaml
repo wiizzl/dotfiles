@@ -8,12 +8,14 @@ on:
       - image/**
       - "!image/**/README.md"
       - .github/workflows/build-image.yaml
+      - .github/workflows/variants.yaml
   pull_request:
     paths:
       - Containerfile
       - image/**
       - "!image/**/README.md"
       - .github/workflows/build-image.yaml
+      - .github/workflows/variants.yaml
   schedule:
     - cron: "0 4 * * 1"
   workflow_dispatch:
@@ -26,8 +28,12 @@ env:
   IMAGE: ghcr.io/${{ github.repository_owner }}/atomic
 
 jobs:
+  variants:
+    uses: ./.github/workflows/variants.yaml
+
   build:
     name: ${{ matrix.tag }}
+    needs: variants
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -35,10 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - { tag: pier, variant: pier, base: image/pier/base }
-          - { tag: pier-nvidia, variant: pier, base: image/pier/base-nvidia }
-          - { tag: family, variant: family, base: image/family/base }
+        include: ${{ fromJson(needs.variants.outputs.images) }}
     steps:
       - uses: projectbluefin/actions/bootc-build/setup-runner@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
 
