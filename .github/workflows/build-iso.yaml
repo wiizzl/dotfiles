@@ -1,0 +1,52 @@
+name: Build ISO
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+env:
+  IMAGE: ghcr.io/${{ github.repository_owner }}/atomic
+
+jobs:
+  build:
+    name: ${{ matrix.tag }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: [pier, family]
+    steps:
+      - uses: projectbluefin/actions/bootc-build/setup-runner@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
+
+      - uses: actions/checkout@v7
+
+      - name: Build ISO
+        run: |
+          mkdir output
+          sed "s/@TAG@/${{ matrix.tag }}/" image/iso.toml >output/config.toml
+          sudo podman pull "$IMAGE:${{ matrix.tag }}"
+          sudo podman run --rm --privileged --pull=newer \
+            --security-opt label=type:unconfined_t \
+            -v /var/lib/containers/storage:/var/lib/containers/storage \
+            -v ./output/config.toml:/config.toml:ro \
+            -v ./output:/output \
+            quay.io/centos-bootc/bootc-image-builder:latest \
+            --type anaconda-iso --use-librepo=True "$IMAGE:${{ matrix.tag }}"
+          sudo mv output/bootiso/install.iso "atomic-${{ matrix.tag }}.iso"
+          sudo chown "$(id -u):$(id -g)" "atomic-${{ matrix.tag }}.iso"
+          sha256sum "atomic-${{ matrix.tag }}.iso" >"atomic-${{ matrix.tag }}.iso.sha256"
+
+      - name: Upload to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: auto
+          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+        run: |
+          for file in "atomic-${{ matrix.tag }}.iso" "atomic-${{ matrix.tag }}.iso.sha256"; do
+            aws s3 cp --endpoint-url "$ENDPOINT" "$file" "s3://${{ secrets.R2_BUCKET }}/$file"
+          done

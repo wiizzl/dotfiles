@@ -1,10 +1,5 @@
 A ready-to-use KDE desktop for family members, built on [Aurora](https://getaurora.dev).
 
-## Installation
+Compared to Aurora, it adds LibreOffice and KDE desktop sharing (`krfb`), and drops Tailscale and Sunshine.
 
-Install [Aurora](https://getaurora.dev), then rebase onto the image and reboot:
-
-```sh
-sudo bootc switch ghcr.io/wiizzl/atomic:family
-systemctl reboot
-```
+See the [main README](../../README.md#installation) to install it.
