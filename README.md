@@ -27,3 +27,11 @@ systemctl reboot
 ```
 
 Some images need a few extra steps after installation, described in their directory.
+
+### Dotfiles only
+
+To get only my user settings and tools on any Linux, see [`dotfiles`](dotfiles):
+
+```sh
+chezmoi init wiizzl/atomic --apply
+```
