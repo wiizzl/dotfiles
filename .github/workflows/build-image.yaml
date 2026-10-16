@@ -80,6 +80,8 @@ jobs:
 
       - uses: projectbluefin/actions/bootc-build/sign-and-publish@59f783ed76fd9d449ef6887a6649446801bd5434
         if: github.event_name != 'pull_request'
+        env:
+          COSIGN_PASSWORD: ""
         with:
           image: ${{ env.IMAGE }}
           digest: ${{ steps.push.outputs.digest }}
