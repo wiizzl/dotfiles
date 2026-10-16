@@ -7,13 +7,13 @@ on:
       - Containerfile
       - image/**
       - "!image/**/README.md"
-      - .github/workflows/build.yaml
+      - .github/workflows/build-image.yaml
   pull_request:
     paths:
       - Containerfile
       - image/**
       - "!image/**/README.md"
-      - .github/workflows/build.yaml
+      - .github/workflows/build-image.yaml
   schedule:
     - cron: "0 4 * * 1"
   workflow_dispatch:
