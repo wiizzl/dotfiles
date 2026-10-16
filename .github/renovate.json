@@ -26,6 +26,11 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true
+    },
+    {
+      "description": "Bluefin build actions move fast, review them by hand",
+      "matchPackageNames": ["projectbluefin/actions"],
+      "automerge": false
     }
   ]
 }
