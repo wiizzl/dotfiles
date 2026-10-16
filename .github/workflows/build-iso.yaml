@@ -34,7 +34,7 @@ jobs:
             -v ./output/config.toml:/config.toml:ro \
             -v ./output:/output \
             quay.io/centos-bootc/bootc-image-builder:latest \
-            --type anaconda-iso --use-librepo=True "$IMAGE:${{ matrix.tag }}"
+            --type anaconda-iso --rootfs btrfs --use-librepo=True "$IMAGE:${{ matrix.tag }}"
           sudo mv output/bootiso/install.iso "atomic-${{ matrix.tag }}.iso"
           sudo chown "$(id -u):$(id -g)" "atomic-${{ matrix.tag }}.iso"
           sha256sum "atomic-${{ matrix.tag }}.iso" >"atomic-${{ matrix.tag }}.iso.sha256"
