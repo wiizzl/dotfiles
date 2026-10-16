@@ -1,0 +1,3 @@
+docker:
+  ghcr.io/wiizzl/atomic:
+    use-sigstore-attachments: true

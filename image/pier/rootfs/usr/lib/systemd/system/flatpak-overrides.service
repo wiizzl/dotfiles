@@ -1,0 +1,11 @@
+[Unit]
+Description=Let Flatpaks follow the system GTK and icon themes
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak override --system --filesystem=xdg-config/gtk-3.0:ro --filesystem=xdg-config/gtk-4.0:ro --filesystem=xdg-data/icons:ro
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

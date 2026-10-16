@@ -1,63 +1,15 @@
-# dotfiles
+# atomic
 
-My dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi) and optionally provisioned via [Ansible](https://ansible.com).
+My Fedora Atomic setup: custom [bootc](https://bootc-dev.github.io/bootc) images for my machines, and [`chezmoi`](https://github.com/twpayne/chezmoi) for my dotfiles.
 
-Used to maintain a consistent setup across different environments:
+- [`image`](image) builds the systems, rebuilt weekly and published to `ghcr.io/wiizzl/atomic`.
+- [`dotfiles`](dotfiles) holds my user settings and tools.
 
-- [Fedora Everything](https://fedoraproject.org/misc/#everything)
-- [macOS](https://apple.com/os/macos)
+## Images
 
-## Installation
+| Tag                      | Base                                                     | For                                                           |
+| ------------------------ | -------------------------------------------------------- | ------------------------------------------------------------- |
+| [`pier`](image/pier)     | [Universal Blue](https://universal-blue.org) `base-main` | My Hyprland workstation, paired with the [dotfiles](dotfiles) |
+| [`family`](image/family) | [Aurora](https://getaurora.dev)                          | A ready-to-use KDE desktop for my family                      |
 
-> [!WARNING]
-> All this settings fits my personal preferences. Use at your own risk.
-
-### Option 1: Dotfiles Only
-
-Use this method if you already have your system packages and tools installed and only want to apply the configuration files.
-
-#### Prerequisites
-
-- [git](https://git-scm.com/install)
-- [chezmoi](https://chezmoi.io/install)
-
-#### Steps
-
-Run the following commands:
-
-```sh
-chezmoi init wiizzl --apply
-```
-
-### Option 2: Full System Provisioning
-
-Use this method on a fresh OS installation. Ansible will install all packages, and finally hand off to Chezmoi to apply the dotfiles.
-
-#### Prerequisites
-
-- [git](https://git-scm.com/install)
-- [Ansible](https://docs.ansible.com/projects/ansible/latest/installation_guide/intro_installation.html)
-- <details>
-    <summary>A clean OS installation.</summary>
-    <div>
-      <img src=".github/assets/fedora.png" height="350" style="vertical-align: middle;">
-      <br>
-      <em>I recommend using the package selections seen in the above screenshot.</em>
-    </div>
-  </details>
-
-#### Steps
-
-Clone the repository and run the playbook:
-
-> [!NOTE]
-> You may need to install deps with `ansible-galaxy install -r requirements.yaml` depending on how you installed Ansible.
-
-```sh
-git clone https://github.com/wiizzl/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-ansible-playbook -K playbook.yaml
-```
-
-> [!IMPORTANT]
-> After the full installation completes, reboot your system to ensure everything loaded correctly. Make sure to enable the SSH agent in your Bitwarden app.
+Each image has its own installation guide in its directory.

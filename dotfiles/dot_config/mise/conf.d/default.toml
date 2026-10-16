@@ -1,0 +1,17 @@
+[settings]
+minimum_release_age = "12h"
+
+[tools]
+node = "24"
+bun = "latest"
+go = "latest"
+uv = "latest"
+
+gh = "latest"
+yazi = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+lazyssh = "latest"
+lazyjournal = "latest"
+herdr = "latest"
+claude-code = "latest"
