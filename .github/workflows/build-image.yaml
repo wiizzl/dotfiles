@@ -40,7 +40,7 @@ jobs:
           - { tag: pier-nvidia, variant: pier, base: image/pier/base-nvidia }
           - { tag: family, variant: family, base: image/family/base }
     steps:
-      - uses: projectbluefin/actions/bootc-build/setup-runner@59f783ed76fd9d449ef6887a6649446801bd5434
+      - uses: projectbluefin/actions/bootc-build/setup-runner@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
 
       - uses: actions/checkout@v7
 
@@ -63,14 +63,14 @@ jobs:
             echo "previous=docker://$IMAGE:${{ matrix.tag }}" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: projectbluefin/actions/bootc-build/rechunk@59f783ed76fd9d449ef6887a6649446801bd5434
+      - uses: projectbluefin/actions/bootc-build/rechunk@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
         with:
           source-image: localhost/atomic-build:${{ matrix.tag }}
           output-image: atomic:${{ matrix.tag }}
           max-layers: 96
           previous-build: ${{ steps.build.outputs.previous }}
 
-      - uses: projectbluefin/actions/bootc-build/push-image@59f783ed76fd9d449ef6887a6649446801bd5434
+      - uses: projectbluefin/actions/bootc-build/push-image@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
         id: push
         if: github.event_name != 'pull_request'
         with:
@@ -78,7 +78,7 @@ jobs:
           tags: ${{ matrix.tag }} ${{ matrix.tag }}-${{ steps.build.outputs.date }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: projectbluefin/actions/bootc-build/sign-and-publish@59f783ed76fd9d449ef6887a6649446801bd5434
+      - uses: projectbluefin/actions/bootc-build/sign-and-publish@59f783ed76fd9d449ef6887a6649446801bd5434 # v1
         if: github.event_name != 'pull_request'
         env:
           COSIGN_PASSWORD: ""
