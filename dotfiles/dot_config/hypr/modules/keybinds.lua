@@ -12,8 +12,6 @@ hl.bind(mod .. " + SHIFT + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle control-
 hl.bind(mod .. " + ESCAPE", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 hl.bind(mod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 
-hl.bind(mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
-
 hl.bind(mod .. " + CTRL + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 hl.bind(mod .. " + CTRL + E", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher /emo"))
 hl.bind(mod .. " + CTRL + D", hl.dsp.exec_cmd(ipc .. "panel-toggle thaer99ob/default-apps:manager"))
