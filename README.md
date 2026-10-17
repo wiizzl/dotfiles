@@ -16,8 +16,8 @@ My Fedora Atomic setup: custom [bootc](https://bootc-dev.github.io/bootc) images
 
 Download the ISO of the image, write it to a USB drive and boot from it. The installer asks for the language, keyboard, disk and user.
 
-- [`atomic-pier.iso`](https://pub-d08c18f0133e42f199c9b17a3e5b6e37.r2.dev/atomic-pier.iso) ([sha256](https://pub-d08c18f0133e42f199c9b17a3e5b6e37.r2.dev/atomic-pier.iso.sha256))
-- [`atomic-family.iso`](https://pub-d08c18f0133e42f199c9b17a3e5b6e37.r2.dev/atomic-family.iso) ([sha256](https://pub-d08c18f0133e42f199c9b17a3e5b6e37.r2.dev/atomic-family.iso.sha256))
+- [`atomic-pier.iso`](https://atomic.houlliere.com/atomic-pier.iso) ([sha256](https://atomic.houlliere.com/atomic-pier.iso.sha256))
+- [`atomic-family.iso`](https://atomic.houlliere.com/atomic-family.iso) ([sha256](https://atomic.houlliere.com/atomic-family.iso.sha256))
 
 Already on Fedora Atomic? Switch instead and reboot:
 
