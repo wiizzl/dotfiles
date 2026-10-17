@@ -2,7 +2,13 @@ name: Lint
 
 on:
   push:
+    paths:
+      - "image/**.sh"
+      - .github/workflows/lint.yaml
   pull_request:
+    paths:
+      - "image/**.sh"
+      - .github/workflows/lint.yaml
 
 jobs:
   lint:
