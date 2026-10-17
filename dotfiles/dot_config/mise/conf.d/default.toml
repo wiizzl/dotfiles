@@ -9,7 +9,6 @@ uv = "latest"
 
 gh = "latest"
 btop = "latest"
-yazi = "latest"
 lazygit = "latest"
 lazydocker = "latest"
 lazyssh = "latest"
